@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Timeline1 } from '../components/timeline/timeline';
-import { Tree } from '../components/tree/tree';
+import Tree from '../components/tree/tree';
 import { Intro } from '../components/intro/intro';
 import { Skills } from '../components/skills/skills';
 

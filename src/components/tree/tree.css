@@ -27,15 +27,28 @@
     transition: all .2s ease-in-out;
 }
 
-@media only screen and (max-width: 1200px) {
-    .tree-circle-small-text {
-        font-size: 65%;
-    }
-  }
+
+
+
 
 @media only screen and (max-width: 1600px) {
     .tree-circle-small-text {
         font-size: 85%;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .tree-circle-small-text {
+        font-size: 65%;
+    }
+}
+@media only screen and (max-width: 576px) {
+    .tree-circle-small-text {
+        font-size: 55%;
+    }
+}
+@media only screen and (max-width: 420px) {
+    .tree-circle-small-text {
+        font-size: 35%;
     }
 }
 
@@ -54,17 +67,24 @@
     transition: all .2s ease-in-out;
 }
 
-@media only screen and (max-width: 1200px) {
-    .tree-circle-medium-text {
-        font-size: 110%;
-    }
-  }
 
 @media only screen and (max-width: 1600px) {
     .tree-circle-medium-text {
         font-size: 130%;
     }
 }
+@media only screen and (max-width: 1200px) {
+    .tree-circle-medium-text {
+        font-size: 110%;
+    }
+  }
+
+@media only screen and (max-width: 576px) {
+    .tree-circle-medium-text {
+        font-size: 80%;
+    }
+}
+
 
 .tree-circle-large {
     width: 6%;
@@ -81,18 +101,23 @@
     transition: all .2s ease-in-out;
 }
 
-@media only screen and (max-width: 1200px) {
-    .tree-circle-large-text {
-        font-size: 150%;
-    }
-}
+
 
 @media only screen and (max-width: 1600px) {
     .tree-circle-large-text {
         font-size: 190%;
     }
 }
-
+@media only screen and (max-width: 1200px) {
+    .tree-circle-large-text {
+        font-size: 150%;
+    }
+}
+@media only screen and (max-width: 576px) {
+    .tree-circle-large-text {
+        font-size: 100%;
+    }
+}
 
 .tree-circle-small:hover {
     transform: scale(1.3); 

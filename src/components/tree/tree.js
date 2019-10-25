@@ -62,7 +62,7 @@ export default class Tree extends React.Component {
                 <TreeCircle active={active} id="ts-circle" size="small" position={{top: '13.2%', left: '83%'}}/>
                 <TreeCircleText active={active} id="ts-circle-text" size="small" position={{top: '16%', left: '84%'}}>TypeScript</TreeCircleText>
                 <TreeCircle active={active} id="react-circle" size="small" position={{top: '31.4%', left: '93.3%'}}/>
-                <TreeCircleText active={active} id="react-circle-text" size="small" position={{top: '33.5%', left: '91.3%'}}>React</TreeCircleText>
+                <TreeCircleText active={active} id="react-circle-text" size="small" position={{top: '33.75%', left: '91.3%'}}>React</TreeCircleText>
                 <TreeCircle active={active} id="jquery-circle" size="small" position={{top: '24%', left: '94.3%'}}/>
                 <TreeCircleText active={active} id="jquery-circle-text" size="small" position={{top: '20.5%', left: '91.3%'}}>JQuery</TreeCircleText>
 

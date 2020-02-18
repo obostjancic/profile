@@ -6,6 +6,7 @@ import './timeline.css';
 
 export const Timeline1 = () => (
 	<VerticalTimeline>
+		
 		<VerticalTimelineElement
 			id="timeline-element-ta"
 			className="vertical-timeline-element--education"
@@ -13,10 +14,13 @@ export const Timeline1 = () => (
 			icon={ <MdSchool />}
 			iconStyle={{ background: '#478fb3', color: '#fff' }}
 		>
-			<h3 className="primary vertical-timeline-element-title">Teaching assistant</h3>
-			<h4 className="primary vertical-timeline-element-subtitle">Faculty of natural sciences and mathematics</h4>
-			<p className="primary">Introduction to web development </p>	
+			<a target="_blank" href="http://math.pmf.unsa.ba/strucni-studij/informacione-tehnologije.html">
+				<h3 className="primary vertical-timeline-element-title">Teaching assistant</h3>
+				<h4 className="primary vertical-timeline-element-subtitle">Faculty of natural sciences and mathematics</h4>
+				<p className="primary">Introduction to web development </p>	
+			</a>
 		</VerticalTimelineElement>
+		
 		<VerticalTimelineElement
 			id="timeline-element-workflow"
 			className="vertical-timeline-element--education"
@@ -24,9 +28,11 @@ export const Timeline1 = () => (
 			icon={ <MdWork />}
 			iconStyle={{ background: '#0076b2', color: '#fff' }}
 		>
-			<h3 className="primary vertical-timeline-element-title">Web developer</h3>
-			<h4 className="primary vertical-timeline-element-subtitle">Workflow EDV GmbH, Vienna</h4>
-			<p className="primary">Frontend (React) {'&'} backend development (Spring)</p>
+			<a target="_blank" href="https://www.workflow.at/">
+				<h3 className="primary vertical-timeline-element-title">Web developer</h3>
+				<h4 className="primary vertical-timeline-element-subtitle">Workflow EDV GmbH, Vienna</h4>
+				<p className="primary">Frontend (React) {'&'} backend development (Spring)</p>
+			</a>
 		</VerticalTimelineElement>
 		<VerticalTimelineElement
 			id="timeline-element-msc"
@@ -35,9 +41,11 @@ export const Timeline1 = () => (
 			icon={ <MdSchool />}
 			iconStyle={{ background: '#478fb3', color: '#fff' }}
 		>
-			<h3 className="primary vertical-timeline-element-title">MSc Computer Science</h3>
-			<h4 className="primary vertical-timeline-element-subtitle">Faculty of natural sciences and mathematics</h4>
-			<p className="primary">Computer geometry and graphics, Software engineering, ​Artificial intelligence​. </p>
+			<a target="_blank" href="http://math.pmf.unsa.ba/en/postdiplomski-studij/teorijska-kompjuterska-nauka.html">
+				<h3 className="primary vertical-timeline-element-title">MSc Computer Science</h3>
+				<h4 className="primary vertical-timeline-element-subtitle">Faculty of natural sciences and mathematics</h4>
+				<p className="primary">Computer geometry and graphics, Software engineering, ​Artificial intelligence​. </p>
+			</a>
 		</VerticalTimelineElement>
 		<VerticalTimelineElement
 			id="timeline-element-bek"
@@ -46,9 +54,11 @@ export const Timeline1 = () => (
 			icon={ <MdWork />}
 			iconStyle={{ background: '#0076b2', color: '#fff' }}
 		>
-			<h3 className="primary vertical-timeline-element-title">BEK - Bosnian language corpus</h3>
-			<h4 className="primary vertical-timeline-element-subtitle">Language institute of University of Sarajevo</h4>
-			<p className="primary">Natural language processing with Python (Django)</p>
+			<a target="_blank" href="http://izj.unsa.ba/en/">
+				<h3 className="primary vertical-timeline-element-title">BEK - Bosnian language corpus</h3>
+				<h4 className="primary vertical-timeline-element-subtitle">Language institute of University of Sarajevo</h4>
+				<p className="primary">Natural language processing with Python (Django)</p>
+			</a>
 		</VerticalTimelineElement>
 		<VerticalTimelineElement
 			id="timeline-element-utic"
@@ -57,9 +67,11 @@ export const Timeline1 = () => (
 			icon={ <MdWork />}
 			iconStyle={{ background: '#0076b2', color: '#fff' }}
 		>
-			<h3 className="primary vertical-timeline-element-title">Web developer (Part time)</h3>
-			<h4 className="primary vertical-timeline-element-subtitle">IT Services of University of Sarajevo</h4>
-			<p className="primary">Backend development with Java (Spring)</p>
+			<a target="_blank" href="http://www.utic.unsa.ba/">
+				<h3 className="primary vertical-timeline-element-title">Web developer (Part time)</h3>
+				<h4 className="primary vertical-timeline-element-subtitle">IT Services of University of Sarajevo</h4>
+				<p className="primary">Backend development with Java (Spring)</p>
+			</a>
 		</VerticalTimelineElement>
 		<VerticalTimelineElement
 			id="timeline-element-bsc"
@@ -68,10 +80,12 @@ export const Timeline1 = () => (
 			icon={ <MdSchool />}
 			iconStyle={{ background: '#478fb3', color: '#fff' }}
 		>
-			<h3 className="primary primary vertical-timeline-element-title">BSc Computer Science</h3>
-			<h4 className="primary primary vertical-timeline-element-subtitle">Faculty of natural sciences and mathematics</h4>
-			<p className="primary">OOP, Data structures {'&'} algorithms, Computer networking, Probability theory.</p>
-			{/* <p className="secondary">OOP, Data structures {'&'} algorithms, Computer networking, Probability theory.</p> */}
+			<a target="_blank" href="http://math.pmf.unsa.ba/en/dodiplomski-studij/teorijska-kompjuterska-nauka.html">
+				<h3 className="primary primary vertical-timeline-element-title">BSc Computer Science</h3>
+				<h4 className="primary primary vertical-timeline-element-subtitle">Faculty of natural sciences and mathematics</h4>
+				<p className="primary">OOP, Data structures {'&'} algorithms, Computer networking, Probability theory.</p>
+				{/* <p className="secondary">OOP, Data structures {'&'} algorithms, Computer networking, Probability theory.</p> */}
+			</a>
 		</VerticalTimelineElement>
 	</VerticalTimeline>
 );

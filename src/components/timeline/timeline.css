@@ -2,6 +2,15 @@
     box-sizing: border-box
 }
 
+.vertical-timeline a {
+    text-decoration: none;
+    color: #212529;
+}
+
+.vertical-timeline a:visited {
+    color: #212529;
+}
+
 .vertical-timeline {
     width: 95%;
     max-width: 1170px;

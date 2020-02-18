@@ -1,4 +1,5 @@
 import React from 'react';
+import { Row, Col } from 'react-bootstrap';
 import VSParagraph from '../VSParagraph';
 import VSDiv from '../VSDiv';
 
@@ -14,18 +15,32 @@ export const Intro = () => (
         <VSParagraph direction="right">Parallel to work I graduated with a Bachelor in Computer Science, and I am studying a Master Degree in Computer Science.</VSParagraph>
         <VSParagraph direction="left" style={{fontSize: '100%'}}>Contact me, take a look at some of my code or check my resume here:</VSParagraph>
         <div className="from-right" style={{textAlign:'center', marginTop: '1rem'}}>
-            <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/ognjen.bostjancic">
-                <img className="contact-icon" style={{width:'60px', margin: '0 3.5%', borderRadius: '50%'}} src="Facebook.png" />
-            </a>
-            <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/obostjancic/">
-                <img className="contact-icon" style={{width:'60px', margin: '0 3.5%', borderRadius: '50%'}} src="Linkedin.png" />
-            </a>
-            <a target="_blank" rel="noopener noreferrer" href="https://gitlab.com/obostjancic">
-                <img className="contact-icon" style={{width:'60px', margin: '0 3.5%', borderRadius: '50%'}} src="Gitlab.png" />
-            </a>
-            <a target="_blank" rel="noopener noreferrer" href="ognjen-bostjancic-cv.pdf">
-                <img className="contact-icon" style={{width:'60px', margin: '0 3.5%', borderRadius: '50%'}} src="cv.png" />
-            </a>
+            <Row style={{padding: '1rem 4rem'}}>
+                <Col lg={3} md={6} sm={6} xs={6}>
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/ognjen.bostjancic">
+                        <img className="contact-icon" style={{width:'60px', marginBottom: '1rem', borderRadius: '50%'}} src="Facebook.png" />
+                    </a>
+                </Col>
+                <Col lg={3} md={6} sm={6} xs={6}>
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/obostjancic/">
+                        <img className="contact-icon" style={{width:'60px', marginBottom: '1rem', borderRadius: '50%'}} src="Linkedin.png" />
+                    </a>
+                </Col>
+                <Col lg={3} md={6} sm={6} xs={6}>
+                    <a target="_blank" rel="noopener noreferrer" href="https://gitlab.com/obostjancic">
+                        <img className="contact-icon" style={{width:'60px', marginBottom: '1rem', borderRadius: '50%'}} src="Gitlab.png" />
+                    </a>
+                </Col>
+                <Col lg={3} md={6} sm={6} xs={6}>
+                    <a target="_blank" rel="noopener noreferrer" href="ognjen-bostjancic-cv.pdf">
+                        <img className="contact-icon" style={{width:'60px', marginBottom: '1rem', borderRadius: '50%'}} src="cv.png" />
+                    </a>
+                </Col>
+            </Row>
+            
+            
+            
+            
         </div>
     </div>
 );

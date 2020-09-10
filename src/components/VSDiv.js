@@ -1,27 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import VisibilitySensor from "react-visibility-sensor";
 
-export default class VSDiv extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { active: false };
-  }
+const VSDiv = ({ childStyle, direction, children }) => {
+  const [active, setActive] = useState(false);
 
-  render() {
-    return (
-      <VisibilitySensor
-        partialVisibility={true}
-        onChange={isVisible => {
-          this.setState({ active: isVisible === true ? true : this.state.active });
-        }}
+  return (
+    <VisibilitySensor
+      partialVisibility={true}
+      onChange={isVisible => {
+        setActive(isVisible === true ? true : active);
+      }}
+    >
+      <div
+        style={{ visibility: active ? "visible" : "hidden", ...childStyle }}
+        className={active ? `from-${direction}` : ""}
       >
-        <div
-          style={{ visibility: this.state.active ? "visible" : "hidden", ...this.props.childStyle }}
-          className={this.state.active ? `from-${this.props.direction}` : ""}
-        >
-          {this.props.children}
-        </div>
-      </VisibilitySensor>
-    );
-  }
-}
+        {children}
+      </div>
+    </VisibilitySensor>
+  );
+};
+
+export default VSDiv;

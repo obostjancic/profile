@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./tree.css";
 import VisibilitySensor from "react-visibility-sensor";
 import data from "./tree.json";
@@ -34,39 +34,35 @@ const TreeCircleWrapper = ({ active, data }) => (
     </TreeCircleText>
   </>
 );
-export default class Tree extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { active: false };
-  }
+const Tree = () => {
+  const [active, setActive] = useState(false);
 
-  render() {
-    const { active } = this.state;
-    return (
-      <VisibilitySensor
-        partialVisibility={true}
-        minTopValue={100}
-        onChange={isVisible => {
-          this.setState({ active: isVisible === true ? true : active });
+  return (
+    <VisibilitySensor
+      partialVisibility={true}
+      minTopValue={100}
+      onChange={isVisible => {
+        setActive(isVisible === true ? true : active);
+      }}
+    >
+      <div
+        className={active ? "tree" : ""}
+        style={{
+          textAlign: "center",
+          position: "relative",
+          margin: "0 12.5% ",
+          background: "url(tree3.svg) no-repeat center",
+          backgroundSize: "contain",
+          visibility: active ? "visible" : "hidden",
         }}
       >
-        <div
-          className={active ? "tree" : ""}
-          style={{
-            textAlign: "center",
-            position: "relative",
-            margin: "0 12.5% ",
-            background: "url(tree3.svg) no-repeat center",
-            backgroundSize: "contain",
-            visibility: active ? "visible" : "hidden",
-          }}
-        >
-          <img src="tree.svg" alt="" style={{ visibility: "hidden" }} />
-          {data.map(el => (
-            <TreeCircleWrapper key={el.id} data={el} active={active} />
-          ))}
-        </div>
-      </VisibilitySensor>
-    );
-  }
-}
+        <img src="tree.svg" alt="" style={{ visibility: "hidden" }} />
+        {data.map(el => (
+          <TreeCircleWrapper key={el.id} data={el} active={active} />
+        ))}
+      </div>
+    </VisibilitySensor>
+  );
+};
+
+export default Tree;

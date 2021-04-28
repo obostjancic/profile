@@ -1,18 +1,21 @@
 import React from "react";
 import "./App.css";
+import { Experience } from "./Experience";
 import { Intro } from "./Intro";
 
-const Experience = () => <>experience list</>;
-const Projects = () => <>some projects</>;
-const Education = () => <>education list</>;
+const Projects = () => <div>some projects</div>;
+const Education = () => <div>education list</div>;
 
 function App() {
   return (
     <>
-      <Intro />
-      <Experience />
-      <Projects />
-      <Education />
+      <div className="background-shape"></div>
+      <div className="main">
+        <Intro />
+        <Experience />
+        <Projects />
+        <Education />
+      </div>
     </>
   );
 }

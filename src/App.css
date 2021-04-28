@@ -1,6 +1,18 @@
 body {
   font-family: "Montserrat", "Source Sans Pro", sans-serif;
-  /* font-size: 1em; */
+  font-size: 1em;
+}
+
+.section {
+  padding: 0 50px;
+  max-width: 600px;
+  margin: 7.5em auto 10em auto;
+  opacity: 1;
+
+  transition: all 2s fadeIn;
+  -webkit-animation: fadeIn 1s;
+  -moz-animation: fadeIn 1s;
+  animation: fadeIn 1s;
 }
 
 p {
@@ -29,7 +41,7 @@ p {
   background-size: 60px 60px;
   background-position: 0 0, 30px 30px;
 }
-/* 
+
 .section-heading {
-   color: #0077b2; 
-} */
+  margin-bottom: 3em;
+}

@@ -1,20 +1,73 @@
 .intro {
-  padding: 10% 50px;
+  padding: 0 50px;
   max-width: 600px;
-  margin: 0 auto;
-  /* transition: all 1.2s ease-in-out; */
-  -webkit-animation: cd-bounce-2 1s;
-  -moz-animation: cd-bounce-2 1s;
-  animation: cd-bounce-2 1s;
+  margin: 10% auto;
+  opacity: 1;
+
+  transition: all 2s fadeIn;
+  -webkit-animation: fadeIn 1s;
+  -moz-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.hidden {
+  opacity: 0;
 }
 
 .heading {
   margin: 0;
-  margin-top: 0.75em;
+  margin-top: 1em;
   font-weight: bold;
 }
 
 .subheading {
+  margin-top: 0.5em;
+  margin-bottom: 0;
   color: #0077b2;
 }
 
@@ -42,6 +95,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: baseline;
 }
 
 .icon {

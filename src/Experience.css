@@ -1,0 +1,23 @@
+.job {
+  margin: 4em auto;
+}
+
+.company {
+  margin-bottom: 0.25em;
+}
+
+.duration {
+  margin-top: 0;
+  font-size: 0.8em;
+  line-height: 2;
+}
+
+.description {
+  background-color: #f5f7fb;
+  line-height: 2;
+}
+
+.position {
+  margin: 0;
+  color: #0077b2;
+}

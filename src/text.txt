@@ -1,0 +1,34 @@
+
+Computer science student and software developer currently focused on web development, but interested in pretty
+much everything that ends up compiled or interpreted.
+
+Currently, I am working as a web developer for Anyline GmbH, where I am mostly commited to development of a cloud
+infrastructure used to automatize Machine learning and Computer vision processes.
+
+Colleagues know me as motivated, communicative and a creative developer who likes to help others, and who can be
+trusted to come up with a solution. I welcome individual responsibility, and I can work well alone, but I’m at my
+best collaborating with others.
+
+Parallel to work I graduated with a Bachelor in Computer Science, and I am studying a Master Degree in Computer
+Science.
+
+Contact me, take a look at some of my code or check my resume here:
+
+
+
+
+I have been working professionally as a Web developer for more than three years, and I am particularly experienced
+in the development of stable and scalable REST API's. Even though my primary role was that of a backend developer,
+I frequently took responsibility in other areas like: Frontend development, Database design, UI/UX design and
+deployment processes.
+
+Apart from work I have developed a web applications with Python (Django framework) that is used to create, search
+and manage language corporas. It utilizes natural language processing to recognize and categorize words from input
+text. It is currently in production and contains 2.900.000 + words.
+
+During my studies, I have taken part in various projects in different areas of computer science like: Computer
+Graphics, Computer Vision and Artificial Intelligence. Most notably, I was a team leader on a student attendance
+system which was developed as an internal faculty project.
+
+When it comes to my side projects, I generally choose technologies with which I haven’t had a lot of experience to
+that point. I enjoy 'Learning-by-doing' and picking up a new framework is not a problem for me.

@@ -2,9 +2,10 @@
   padding: 10% 50px;
   max-width: 600px;
   margin: 0 auto;
-  transition: all 1.2s ease-in-out;
-
-  /* background-color: #f5f7fb; */
+  /* transition: all 1.2s ease-in-out; */
+  -webkit-animation: cd-bounce-2 1s;
+  -moz-animation: cd-bounce-2 1s;
+  animation: cd-bounce-2 1s;
 }
 
 .heading {

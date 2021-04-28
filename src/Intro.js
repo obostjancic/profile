@@ -1,19 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Intro.css";
 import git from "./icons/git.svg";
 import linkedin from "./icons/linkedin.svg";
 import mail from "./icons/mail.svg";
 import cv from "./icons/cv.svg";
 import VisibilitySensor from "react-visibility-sensor";
+
 const Icon = ({ src, href }) => (
   <a href={href} className="icon" target="_blank" rel="noopener noreferrer">
     <img src={src} alt="" />
   </a>
 );
+
 export const Intro = () => {
+  const [active, setActive] = useState(false);
+
   return (
-    <VisibilitySensor>
-      <div className="intro">
+    <VisibilitySensor
+      partialVisibility={true}
+      onChange={isVisible => {
+        setActive(isVisible || active);
+      }}
+    >
+      <div className="intro" style={{ visibility: active ? "visible" : "hidden" }}>
         <div className="photo" style={{ background: "url(profile-photo-square.jpg)", backgroundSize: "contain" }} />
         <h2 className="heading">Ognjen Bostjancic</h2>
         <h4 className="subheading">Software developer</h4>

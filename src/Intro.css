@@ -1,0 +1,59 @@
+.intro {
+  padding: 10% 50px;
+  max-width: 600px;
+  margin: 0 auto;
+  transition: all 1.2s ease-in-out;
+
+  /* background-color: #f5f7fb; */
+}
+
+.heading {
+  margin: 0;
+  margin-top: 0.75em;
+  font-weight: bold;
+}
+
+.subheading {
+  color: #0077b2;
+}
+
+.photo {
+  min-height: 128px;
+  max-width: 128px;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 1px solid #0077b2;
+  transition: all 0.2s ease-in-out;
+}
+
+.photo:hover {
+  box-shadow: 0 0 10px #0077b2;
+}
+
+.summary {
+  margin: 3em auto;
+  line-height: 2;
+  background-color: #f5f7fb;
+}
+
+.icons {
+  padding: 0 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.icon {
+  filter: invert(27%) sepia(40%) saturate(6820%) hue-rotate(183deg) brightness(93%) contrast(101%);
+  max-height: 2em;
+  min-width: 2em;
+  cursor: pointer;
+  opacity: 0.95;
+  transition: all 0.2s ease-in-out;
+  margin: 0 1em;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}

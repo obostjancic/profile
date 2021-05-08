@@ -32,3 +32,10 @@ system which was developed as an internal faculty project.
 
 When it comes to my side projects, I generally choose technologies with which I haven’t had a lot of experience to
 that point. I enjoy 'Learning-by-doing' and picking up a new framework is not a problem for me.
+
+
+axios retry policy
+react query
+rest supercharger
+design patterns in typescirpt
+canvas star

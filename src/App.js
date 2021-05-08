@@ -3,20 +3,22 @@ import "./App.css";
 import { Experience } from "./Experience";
 import { Skills } from "./Skills";
 import { Intro } from "./Intro";
+import { Projects } from "./Projects";
+import { Blog } from "./Blog";
 
-const Projects = () => <div>some projects</div>;
 const Education = () => <div>education list</div>;
 
 function App() {
   return (
     <>
-      <div className="background-shape"></div>
+      <div className="background-shape" />
       <div className="main">
         <Intro />
-        <Experience />
         <Skills />
         <Projects />
+        <Experience />
         <Education />
+        <Blog />
       </div>
     </>
   );

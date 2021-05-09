@@ -1,0 +1,66 @@
+.writing {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.articles {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.article {
+  min-width: 250px;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  justify-content: flex-start;
+  text-align: left;
+  margin: 1em 0.75em;
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px #ddd;
+}
+
+.article-inner {
+  flex: 1;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  justify-content: space-between;
+}
+
+.article-image {
+  min-height: 128px;
+  min-width: 100%;
+  margin: 0 auto;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  transition: all 0.2s ease-in-out;
+}
+
+.article-title {
+  display: inline-block;
+  margin: 0;
+  padding-bottom: 0.5em;
+  padding-right: 1em;
+  border-bottom: 1px solid #0077b2;
+}
+
+.article-summary {
+  font-size: 14px;
+  margin: 1em 0;
+}
+
+.article-button {
+  font-size: 14px;
+  color: #0077b2;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.article-button > a {
+  text-decoration: none;
+}

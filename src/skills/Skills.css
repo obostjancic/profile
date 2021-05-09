@@ -1,28 +1,30 @@
 .skills {
   max-width: 1000px;
-  margin: 0 auto;
+  /* margin-top: 5em; */
+  /* margin: 0 auto; */
 }
 
 .flex-wrapper {
-  display: flex;
-  flex-direction: row;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 0px;
   flex: 1 1 0px;
 }
 
 .skills-summary {
+  -ms-flex-preferred-size: 100%;
   flex-basis: 100%;
   text-align: left;
   margin: 0 1em;
 }
 
 .skills-bars {
+  -ms-flex-preferred-size: 100%;
   flex-basis: 100%;
   text-align: left;
   margin: 0 1em;
 }
 
 .skill {
-  display: flex;
   margin: 0.75em 0;
   border-radius: 100px;
 }
@@ -31,20 +33,18 @@
   max-width: 20%;
   min-width: 6em;
   padding: 0.25em 0.75em;
-  color: #0077b2;
   font-weight: bold;
-  border: 1px solid #0077b2;
   border-radius: 100px 0 0 100px;
 }
 
 .skill-bar-wrapper {
   width: 80%;
-  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 2px 2px;
   border-left: 0;
   border-radius: 0 100px 100px 0;
-  border: 1px solid #0077b2;
   font-weight: 600;
   line-height: 1.5;
 }
@@ -62,8 +62,12 @@
 }
 
 @media only screen and (max-width: 999px) {
-  .flex-wrapper {
+  .column-wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
   }
   .skills-summary {

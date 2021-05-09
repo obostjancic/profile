@@ -1,10 +1,11 @@
 import React from "react";
 import "./App.css";
-import { Experience } from "./Experience";
-import { Skills } from "./Skills";
-import { Intro } from "./Intro";
-import { Projects } from "./Projects";
-import { Writing } from "./Writing";
+import { Experience } from "./experience/Experience";
+import { Skills } from "./skills/Skills";
+import { Intro } from "./intro/Intro";
+import { Projects } from "./projects/Projects";
+import { Writing } from "./writing/Writing";
+import { Footer } from "./footer/Footer";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Projects />
         <Experience />
         <Writing />
+        <Footer />
       </div>
     </>
   );

@@ -1,13 +1,30 @@
 .intro {
   padding: 0 50px;
   max-width: 600px;
-  margin: 10% auto;
+  margin: 0 auto;
+  padding-top: 10em;
   opacity: 1;
+  min-height: 100vh;
 }
 
-@media only screen and (max-width: 999px) {
+.intro-background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #f5f7fb;
+  z-index: -1;
+}
+
+@media only screen and (max-width: 768px) {
   .intro {
     padding: 0;
+    margin: 5em auto 5em auto;
+  }
+  .intro-background {
+    top: -5em;
+    min-height: 130vh;
   }
 }
 
@@ -33,10 +50,13 @@
   margin: 0 auto;
   border-radius: 50%;
   border: 1px solid #0077b2;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
 
 .photo:hover {
+  -webkit-box-shadow: 0 0 10px #0077b2;
   box-shadow: 0 0 10px #0077b2;
 }
 
@@ -48,23 +68,30 @@
 
 .icons {
   padding: 0 10%;
-  display: flex;
-  flex-direction: row;
+
+  -ms-flex-pack: distribute;
   justify-content: space-around;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
   align-items: baseline;
 }
 
 .icon {
+  -webkit-filter: invert(27%) sepia(40%) saturate(6820%) hue-rotate(183deg) brightness(93%) contrast(101%);
   filter: invert(27%) sepia(40%) saturate(6820%) hue-rotate(183deg) brightness(93%) contrast(101%);
   max-height: 2em;
   min-width: 2em;
   cursor: pointer;
   opacity: 0.95;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   margin: 0 1em;
 }
 
 .icon:hover {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
   transform: scale(1.2);
   cursor: pointer;
 }

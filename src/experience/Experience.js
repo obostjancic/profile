@@ -1,12 +1,11 @@
 import React from "react";
 import "./Experience.css";
-import { VSSection } from "./VSSection";
+import { VSSection } from "../components/VSSection";
 
 const Job = ({ company, position, duration, children }) => (
   <div className="job">
-    {/* <img src="https://anyline.com/_nuxt/img/anyline-logo.dd2eceb.svg" /> */}
     <h2 className="company">{company}</h2>
-    <h3 className="position">{position}</h3>
+    <h3 className="position primary">{position}</h3>
     <p className="duration">{duration}</p>
     <div className="description">{children}</div>
   </div>

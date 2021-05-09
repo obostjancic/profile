@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "./Projects.css";
-import { VSSection } from "./VSSection";
+import { VSSection } from "../components/VSSection";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
 const url =
@@ -139,7 +139,7 @@ const Project = ({ project, right }) => {
   const { name, description, images } = project;
   const summary = images.find(img => img.id === selectedId).description;
   return (
-    <div className={`project ${right ? "right" : ""}`}>
+    <div className={`project ${right ? "right" : ""} flex row`}>
       <div className="project-image">
         <Carousel
           showThumbs={false}
@@ -153,7 +153,7 @@ const Project = ({ project, right }) => {
           ))}
         </Carousel>
       </div>
-      <div className="project-inner">
+      <div className="project-inner flex column">
         <div className="project-name">
           <h2>{name}</h2>
           <p>{description}</p>
@@ -168,7 +168,7 @@ const Project = ({ project, right }) => {
 export const Projects = () => {
   return (
     <VSSection>
-      <div className="projects">
+      <div className="section">
         <h2 className="section-heading">Projects</h2>
         <div>
           <Project project={projects[1]} />

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import VisibilitySensor from "react-visibility-sensor";
 
-export const VSSection = ({ children }) => {
+export const VSSection = ({ children, intro }) => {
   const [active, setActive] = useState(false);
 
   return (
@@ -11,7 +11,9 @@ export const VSSection = ({ children }) => {
         setActive(isVisible || active);
       }}
     >
-      <div className={active ? "section" : "hidden"}>{children}</div>
+      <div className={active ? "vs-section" : "hidden"} style={intro && { margin: "0 auto" }}>
+        {children}
+      </div>
     </VisibilitySensor>
   );
 };

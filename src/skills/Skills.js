@@ -1,11 +1,11 @@
 import React from "react";
 import "./Skills.css";
-import { VSSection } from "./VSSection";
+import { VSSection } from "../components/VSSection";
 
 const Skill = ({ label, width }) => (
-  <div className="skill">
-    <div className="skill-label">{label}</div>
-    <div className="skill-bar-wrapper">
+  <div className="skill flex">
+    <div className="skill-label border primary">{label}</div>
+    <div className="skill-bar-wrapper border flex">
       <div className="skill-bar" style={{ width: `${width - 3}%` }} />
       <div className="skill-bar-percent">{width}%</div>
     </div>
@@ -14,9 +14,9 @@ const Skill = ({ label, width }) => (
 
 export const Skills = () => (
   <VSSection>
-    <div className="skills">
+    <div className="section skills">
       <h2 className="section-heading">Skills & Interests</h2>
-      <div className="flex-wrapper">
+      <div className="flex row column-wrap">
         <div className="skills-summary">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis pellentesque felis. Nam cursus justo

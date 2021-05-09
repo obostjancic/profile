@@ -1,0 +1,8 @@
+.footer {
+  padding: 1em;
+  background-color: #e7eef1;
+
+  -webkit-box-shadow: inset 0px 0px 10px #a6c3cf;
+
+  box-shadow: inset 0px 0px 10px #a6c3cf;
+}

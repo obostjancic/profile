@@ -1,3 +1,7 @@
+.wrapper {
+  display: flex;
+}
+
 .intro {
   padding: 0 50px;
   max-width: 600px;
@@ -5,26 +9,24 @@
   padding-top: 10em;
   opacity: 1;
   min-height: 100vh;
+  pointer-events: none;
 }
 
-.intro-background {
+.pts-react {
   position: absolute;
   left: 0;
   top: 0;
   min-height: 100vh;
   width: 100%;
-  background-color: #f5f7fb;
+  background-color: #eeeeee55;
   z-index: -1;
+  box-shadow: inset 0px 0px 10px #a6c3cf;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 600px) {
   .intro {
     padding: 0;
     margin: 5em auto 5em auto;
-  }
-  .intro-background {
-    top: -5em;
-    min-height: 130vh;
   }
 }
 
@@ -41,7 +43,8 @@
 .subheading {
   margin-top: 0.5em;
   margin-bottom: 0;
-  color: #0077b2;
+  background-color: #eeeeee25;
+  display: inline-block;
 }
 
 .photo {
@@ -49,21 +52,19 @@
   max-width: 128px;
   margin: 0 auto;
   border-radius: 50%;
-  border: 1px solid #0077b2;
-  -webkit-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+
+  pointer-events: auto;
 }
 
 .photo:hover {
-  -webkit-box-shadow: 0 0 10px #0077b2;
-  box-shadow: 0 0 10px #0077b2;
+  -webkit-box-shadow: 0 0 10px var(--primary);
+  box-shadow: 0 0 10px var(--primary);
 }
 
 .summary {
   margin: 3em auto;
   line-height: 2;
-  background-color: #f5f7fb;
+  background-color: #eeeeee25;
 }
 
 .icons {
@@ -74,6 +75,7 @@
   -webkit-box-align: baseline;
   -ms-flex-align: baseline;
   align-items: baseline;
+  pointer-events: auto;
 }
 
 .icon {
@@ -83,9 +85,6 @@
   min-width: 2em;
   cursor: pointer;
   opacity: 0.95;
-  -webkit-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
   margin: 0 1em;
 }
 

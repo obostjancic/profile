@@ -1,7 +1,16 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Montserrat", "Source Sans Pro", sans-serif;
   font-size: 1em;
   overflow-x: hidden;
+}
+
+html:root {
+  --primary: #0077b2;
+  --primary-light: #0077b2df;
 }
 
 .vs-section {
@@ -9,6 +18,11 @@ body {
   padding: 0 50px;
   margin: 0 auto 7.5em auto;
   opacity: 1;
+  -o-transition: all 1s ease-in-out;
+  -webkit-transition: all 1s ease-in-out;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
 }
 
 p {
@@ -33,8 +47,10 @@ p {
   background-color: #f1f1f1;
 
   opacity: 0.4;
-  background-image: -o-radial-gradient(#0077b2 1px, transparent 1px), -o-radial-gradient(#0077b2 1px, #e5ebf7 1px);
-  background-image: radial-gradient(#0077b2 1px, transparent 1px), radial-gradient(#0077b2 1px, #e5ebf7 1px);
+  background-image: -o-radial-gradient(var(--primary) 1px, transparent 1px),
+    -o-radial-gradient(var(--primary) 1px, #e5ebf7 1px);
+  background-image: radial-gradient(var(--primary) 1px, transparent 1px),
+    radial-gradient(var(--primary) 1px, #e5ebf7 1px);
   background-size: 60px 60px;
   background-position: 0 0, 30px 30px;
 }
@@ -64,10 +80,25 @@ p {
   flex-direction: column;
 }
 
+.transition {
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
 .primary {
-  color: #0077b2;
+  color: var(--primary);
 }
 
 .border {
-  border: 1px solid #0077b2;
+  border: 1px solid var(--primary);
+}
+
+@media only screen and (max-width: 600px) {
+  .vs-section {
+    -webkit-transition: all 0;
+    -o-transition: all 0;
+    transition: all 0s;
+  }
 }

@@ -8,7 +8,7 @@ const url =
 const articles = [
   {
     id: 0,
-    title: "Lorem impsum article 1",
+    title: "Simple fetch retry policy",
     imgUrl: url,
     url: "https://www.w3schools.com/howto/howto_css_image_responsive.asp",
     description:
@@ -16,7 +16,7 @@ const articles = [
   },
   {
     id: 1,
-    title: "Lorem impsum article 2",
+    title: "REST API - supercharged",
     imgUrl: url,
     url: "https://www.w3schools.com/howto/howto_css_image_responsive.asp",
     description:
@@ -24,7 +24,7 @@ const articles = [
   },
   {
     id: 2,
-    title: "Lorem impsum article 3",
+    title: "Design patterns in Typescript",
     imgUrl: url,
     url: "https://www.w3schools.com/howto/howto_css_image_responsive.asp",
     description:
@@ -32,13 +32,19 @@ const articles = [
   },
   {
     id: 3,
-    title: "Lorem impsum article 4",
+    title: "Managing hierarchical data in SQL",
     imgUrl: url,
     url: "https://www.w3schools.com/howto/howto_css_image_responsive.asp",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit.  quam ligula imperdiet neque, condimentum finibus erat orci vel velit. Donec molestiecondimentum augue a rutrum. Morbi quis nisl vel mauris lobortis accumsan.",
   },
 ];
+
+// axios retry policy
+// react query
+// rest supercharger
+// design patterns in typescirpt
+// managing hierarchical data in sql
 
 const Post = ({ article }) => {
   const { title, description, url, imgUrl } = article;
@@ -60,7 +66,7 @@ const Post = ({ article }) => {
 
 export const Writing = () => {
   return (
-    <VSSection>
+    <VSSection anchor="writing">
       <div className="section">
         <h2 className="section-heading">Writing</h2>
         <div className="articles flex row">

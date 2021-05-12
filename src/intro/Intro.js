@@ -1,31 +1,31 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
+import { VSSection } from "../components/VSSection";
 import cv from "../icons/cv.svg";
-import git from "../icons/git.svg";
+import git from "../icons/github.svg";
 import linkedin from "../icons/linkedin.svg";
 import medium from "../icons/medium.svg";
+import { isMobile } from "../utils";
+import { Canvas } from "./Canvas";
 import "./Intro.css";
-import { VSSection } from "../components/VSSection";
-import useCanvas from "./useCanvas";
 
 const Icon = ({ src, href }) => (
-  <a href={href} className="icon" target="_blank" rel="noopener noreferrer">
+  <a href={href} className="icon transition" target="_blank" rel="noopener noreferrer">
     <img src={src} alt="" />
   </a>
 );
 
-const Canvas = () => {
-  return <canvas className="intro-background" />;
-};
-
 export const Intro = () => {
   return (
     <>
-      <Canvas />
+      {!isMobile() && <Canvas />}
       <VSSection intro>
         <div className="intro">
-          <div className="photo" style={{ background: "url(profile-photo-square.jpg)", backgroundSize: "contain" }} />
+          <div
+            className="photo border transition"
+            style={{ background: "url(profile-photo-square.jpg)", backgroundSize: "contain" }}
+          />
           <h1 className="heading">Ognjen Bostjancic</h1>
-          <h3 className="subheading">Software developer</h3>
+          <h3 className="subheading primary">Software developer</h3>
           <div className="summary">
             Computer science student and software developer currently focused on web development, but interested in
             pretty much everything that ends up compiled or interpreted. Currently, I am working as a web developer for

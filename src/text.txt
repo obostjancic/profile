@@ -15,8 +15,6 @@ Science.
 Contact me, take a look at some of my code or check my resume here:
 
 
-
-
 I have been working professionally as a Web developer for more than three years, and I am particularly experienced
 in the development of stable and scalable REST API's. Even though my primary role was that of a backend developer,
 I frequently took responsibility in other areas like: Frontend development, Database design, UI/UX design and
@@ -38,4 +36,4 @@ axios retry policy
 react query
 rest supercharger
 design patterns in typescirpt
-canvas star
+managing hierarchical data in sql

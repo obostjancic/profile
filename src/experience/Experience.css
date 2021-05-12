@@ -14,12 +14,12 @@
 .duration {
   margin-top: 0;
   font-size: 0.8em;
-  line-height: 2;
+  line-height: 1.5;
 }
 
 .description {
   background-color: #f5f7fb;
-  line-height: 2;
+  line-height: 1.5;
 }
 
 .position {

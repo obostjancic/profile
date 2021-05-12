@@ -12,7 +12,7 @@ const Job = ({ company, position, duration, children }) => (
 );
 
 export const Experience = () => (
-  <VSSection>
+  <VSSection anchor="experience">
     <div className="experience">
       <h2 className="section-heading">Experience</h2>
 

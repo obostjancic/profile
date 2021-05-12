@@ -167,7 +167,7 @@ const Project = ({ project, right }) => {
 
 export const Projects = () => {
   return (
-    <VSSection>
+    <VSSection anchor="projects">
       <div className="section">
         <h2 className="section-heading">Projects</h2>
         <div>

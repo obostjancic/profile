@@ -41,9 +41,6 @@
   margin: 0 auto;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  -webkit-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
 }
 
 .article-title {
@@ -51,7 +48,7 @@
   margin: 0;
   padding-bottom: 0.5em;
   padding-right: 1em;
-  border-bottom: 1px solid #0077b2;
+  border-bottom: 1px solid var(--primary);
 }
 
 .article-summary {
@@ -67,4 +64,8 @@
 
 .article-button > a {
   text-decoration: none;
+}
+.article-button > a:visited {
+  text-decoration: none;
+  color: var(--primary);
 }

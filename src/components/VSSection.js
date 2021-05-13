@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import VisibilitySensor from "react-visibility-sensor";
+import { Section } from "./Wrappers";
 
 export const VSSection = ({ children, intro, anchor, handleChange = () => {} }) => {
   const [active, setActive] = useState(false);
@@ -10,17 +11,12 @@ export const VSSection = ({ children, intro, anchor, handleChange = () => {} }) 
       offset={{ top: 500 }}
       onChange={isVisible => {
         setActive(isVisible || active);
-        console.log("calling");
         handleChange(isVisible || active);
       }}
     >
-      <div
-        id={anchor}
-        className={active ? "vs-section" : "hidden"}
-        style={intro && { margin: "0 auto", pointerEvents: "none" }}
-      >
+      <Section id={anchor} active={active} intro={intro}>
         {children}
-      </div>
+      </Section>
     </VisibilitySensor>
   );
 };

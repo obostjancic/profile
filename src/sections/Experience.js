@@ -1,19 +1,46 @@
 import React from "react";
-import "./Experience.css";
+import styled from "styled-components";
+import { theme } from "../components";
 import { VSSection } from "../components/VSSection";
 
+const ExperienceWrapper = styled.div`
+  max-width: 600px;
+  margin: 0 auto;
+`;
+
+const JobWrapper = styled.div`
+  margin: 4em auto;
+
+  & > h2 {
+    margin-bottom: 0.25em;
+  }
+  & > h3 {
+    margin: 0;
+    color: ${theme.primary};
+  }
+  & > p {
+    margin-top: 0;
+    font-size: 0.8em;
+    line-height: 1.5;
+  }
+  & > div {
+    background-color: #f5f7fb;
+    line-height: 1.5;
+  }
+`;
+
 const Job = ({ company, position, duration, children }) => (
-  <div className="job">
-    <h2 className="company">{company}</h2>
-    <h3 className="position primary">{position}</h3>
-    <p className="duration">{duration}</p>
-    <div className="description">{children}</div>
-  </div>
+  <JobWrapper>
+    <h2>{company}</h2>
+    <h3>{position}</h3>
+    <p>{duration}</p>
+    <div>{children}</div>
+  </JobWrapper>
 );
 
 export const Experience = () => (
   <VSSection anchor="experience">
-    <div className="experience">
+    <ExperienceWrapper>
       <h2 className="section-heading">Experience</h2>
 
       <Job company="Anyline GmbH, Vienna" position="Web developer" duration={"February 2020 - Present"}>
@@ -31,6 +58,6 @@ export const Experience = () => (
         dignissim lacus viverra at. Curabitur pulvinar est nec lectus sagittis egestas. Sed porttitor orci eu nisl
         bibendum ultrices. Etiam in nisi sit amet.
       </Job>
-    </div>
+    </ExperienceWrapper>
   </VSSection>
 );

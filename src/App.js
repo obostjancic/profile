@@ -1,12 +1,12 @@
 import React from "react";
 import "./App.css";
-import { Experience } from "./experience/Experience";
+import { Experience } from "./sections/Experience";
 import { Skills } from "./skills/Skills";
-import { Intro } from "./intro/Intro";
-import { Projects } from "./projects/Projects";
-import { Writing } from "./writing/Writing";
-import { Footer } from "./footer/Footer";
-import { Navbar } from "./navbar/Navbar";
+import { Intro } from "./sections/intro/Intro";
+import { Projects } from "./sections/Projects";
+import { Writing } from "./sections/Writing";
+import { Footer } from "./sections/Footer";
+import { Navbar } from "./sections/Navbar";
 
 function App() {
   return (

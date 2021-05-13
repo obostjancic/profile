@@ -8,9 +8,8 @@ body {
   overflow-x: hidden;
 }
 
-html:root {
-  --primary: #0077b2;
-  --primary-light: #0077b2df;
+p {
+  line-height: 1.75em;
 }
 
 .vs-section {
@@ -23,10 +22,6 @@ html:root {
   -webkit-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-}
-
-p {
-  line-height: 1.75rem;
 }
 
 .main {
@@ -53,46 +48,6 @@ p {
     radial-gradient(var(--primary) 1px, #e5ebf7 1px);
   background-size: 60px 60px;
   background-position: 0 0, 30px 30px;
-}
-
-.section-heading {
-  text-transform: uppercase;
-  margin-bottom: 2em;
-}
-
-.flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.row {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
-
-.column {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.transition {
-  -moz-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-
-.primary {
-  color: var(--primary);
-}
-
-.border {
-  border: 1px solid var(--primary);
 }
 
 @media only screen and (max-width: 600px) {

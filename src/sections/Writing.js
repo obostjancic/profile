@@ -1,6 +1,7 @@
 import React from "react";
-import "./Writing.css";
 import { VSSection } from "../components/VSSection";
+import { FlexColumn, FlexRow, JustifyContent, SectionHeading, theme } from "../components";
+import styled from "styled-components";
 
 const url =
   "https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80";
@@ -40,42 +41,89 @@ const articles = [
   },
 ];
 
-// axios retry policy
-// react query
-// rest supercharger
-// design patterns in typescirpt
-// managing hierarchical data in sql
+const Articles = styled(FlexRow)`
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  ${JustifyContent("center")}
+  margin-bottom: 2em;
+`;
 
-const Post = ({ article }) => {
+const ArticleWrapper = styled(FlexColumn)`
+  min-width: 250px;
+  max-width: 400px;
+  ${JustifyContent("flex-start")};
+  text-align: left;
+  margin: 1em 0.75em;
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 2px 10px #ddd;
+  box-shadow: 2px 2px 10px #ddd;
+`;
+
+const Image = styled.img`
+  min-height: 128px;
+  width: 100%;
+  margin: 0 auto;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+`;
+
+const ArticleInner = styled(FlexColumn)`
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 1em;
+  ${JustifyContent("space-between")};
+
+  & > h3 {
+    display: inline-block;
+    margin: 0;
+    padding-bottom: 0.5em;
+    padding-right: 1em;
+    border-bottom: 1px solid ${theme.primary};
+  }
+
+  & > p {
+    font-size: 14px;
+    margin: 1em 0;
+  }
+
+  & > a {
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  & > a:visited {
+    text-decoration: none;
+    color: ${theme.primary};
+  }
+`;
+
+const Article = ({ article }) => {
   const { title, description, url, imgUrl } = article;
   return (
-    <div className="article flex column">
-      <img className="article-image" src={imgUrl} alt="" />
-      <div className="article-inner flex column">
-        <h3 className="article-title">{title}</h3>
-        <div className="article-summary">{description}</div>
-        <div className="article-button primary">
-          <a href={url} target="_blank" rel="noopener noreferrer">
-            Read full article
-          </a>
-        </div>
-      </div>
-    </div>
+    <ArticleWrapper>
+      <Image src={imgUrl} alt="" />
+      <ArticleInner>
+        <h3>{title}</h3>
+        <p>{description}</p>
+        <a href={url} target="_blank" rel="noopener noreferrer">
+          Read full article
+        </a>
+      </ArticleInner>
+    </ArticleWrapper>
   );
 };
 
 export const Writing = () => {
   return (
     <VSSection anchor="writing">
-      <div className="section">
-        <h2 className="section-heading">Writing</h2>
-        <div className="articles flex row">
-          <Post article={articles[0]} />
-          <Post article={articles[1]} />
-          <Post article={articles[2]} />
-          <Post article={articles[3]} />
-        </div>
-      </div>
+      <SectionHeading>Writing</SectionHeading>
+      <Articles>
+        <Article article={articles[0]} />
+        <Article article={articles[1]} />
+        <Article article={articles[2]} />
+        <Article article={articles[3]} />
+      </Articles>
     </VSSection>
   );
 };

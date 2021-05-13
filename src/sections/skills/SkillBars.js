@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Border, FlexRow, JustifyContent, theme, Transition } from "../components";
+import { Border, FlexRow, JustifyContent, theme, Transition } from "../../components";
 
 const Wrapper = styled(FlexRow)`
   margin: 0.75em 0;

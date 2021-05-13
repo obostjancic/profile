@@ -4,41 +4,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import styled from "styled-components";
 import { Divider, FlexRow, SectionHeading, FlexColumn } from "../components";
 import { VSSection } from "../components/VSSection";
-
-const image = id => ({
-  id,
-  src: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80",
-  description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut mi tincidunt, faucibus augue vehicula, rutrum orci. Cras dapibus urna turpis, ac viverra velit ornare non. Donec vitae purus sit amet massa porttitor consectetur. Nam viverra nunc tellus, id finibus. ${id}`,
-});
-
-const images = () => [0, 1, 2, 3].map(id => image(id));
-
-const projects = {
-  1: {
-    id: "1",
-    name: "Team 8",
-    description: "Collaboration and HR management app",
-    images: images(),
-  },
-  2: {
-    id: "2",
-    name: "Viktor",
-    description: "Automated crypto currency trading bot",
-    images: images(),
-  },
-  3: {
-    id: "3",
-    name: "Superchager",
-    description: "Nest.js REST API starter kit",
-    images: images(),
-  },
-  4: {
-    id: "4",
-    name: "Project 4",
-    description: "Lorem ipsum dolor sit amet",
-    images: images(),
-  },
-};
+import { projects } from "./data";
 
 const ProjectHeading = styled.div`
   min-width: 5em;
@@ -108,6 +74,8 @@ const ProjectInner = styled(FlexColumn)`
   @media only screen and (max-width: 992px) {
     & {
       margin: 10% 0;
+      text-align: center;
+      align-items: center;
     }
   }
 `;

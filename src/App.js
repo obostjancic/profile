@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import { Experience } from "./sections/Experience";
-import { Skills } from "./skills/Skills";
+import { Skills } from "./sections/skills/Skills";
 import { Intro } from "./sections/intro/Intro";
 import { Projects } from "./sections/Projects";
 import { Writing } from "./sections/Writing";

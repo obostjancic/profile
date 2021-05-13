@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { FlexRow, SectionHeading } from "../components";
-import { VSSection } from "../components/VSSection";
+import { FlexRow, SectionHeading, VSSection } from "../../components";
 import { SkillBars } from "./SkillBars";
 
 const Wrapper = styled.div`

@@ -15,7 +15,7 @@ const IntroWrapper = styled.div`
   max-width: 600px;
   margin: 0 auto;
   padding-top: 10em;
-  min-height: 100vh;
+  min-height: 80vh;
   opacity: 1;
 
   @media only screen and (max-width: 600px) {

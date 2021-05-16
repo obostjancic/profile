@@ -35,6 +35,8 @@ const ArticleInner = styled(FlexColumn)`
   -ms-flex: 1;
   flex: 1;
   padding: 1em;
+  background-color: ${theme.backgroundDark};
+  border-radius: 5px;
   ${JustifyContent("space-between")};
 
   & > h3 {

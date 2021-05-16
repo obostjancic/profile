@@ -46,7 +46,7 @@ const BarWrapper = styled(FlexRow)`
 
 const Bar = styled.div`
   width: 0;
-  background-color: ${theme.primaryLight};
+  background-color: ${theme.primary}df;
   height: 100%;
   border-radius: 2px;
   ${Transition({ duration: 0.5, scope: "width", delay: "0.25" })}

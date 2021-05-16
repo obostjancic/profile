@@ -1,13 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { VSSection, theme } from "../../components";
-import cv from "../../icons/cv.svg";
-import git from "../../icons/github.svg";
-import linkedin from "../../icons/linkedin.svg";
-import medium from "../../icons/medium.svg";
+import { theme, VSSection } from "../../components";
 import { isMobile } from "../../utils";
 import { Canvas } from "./Canvas";
-import { Icon, Icons } from "./Icons";
+import { Icons } from "./icons/Icons";
 import { Photo } from "./Photo";
 
 const IntroWrapper = styled.div`
@@ -66,12 +62,7 @@ export const Intro = () => {
         in Computer Science, and I am studying a Master Degree in Computer Science. Contact me, take a look at some of
         my code or check my resume here: */}
           </Summary>
-          <Icons>
-            <Icon src={linkedin} href={"https://www.linkedin.com/in/obostjancic/"} />
-            <Icon src={git} href={"https://gitlab.com/obostjancic/"} />
-            <Icon src={medium} href={"mailto:ognjen.bostjancic@gmail.com"} />
-            <Icon src={cv} href={"./ognjen-bostjancic-cv.pdf"} />
-          </Icons>
+          <Icons />
         </IntroWrapper>
       </VSSection>
     </>

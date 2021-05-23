@@ -40,10 +40,14 @@ const NavItem = styled.a`
 `;
 
 export const Navbar = () => (
-  <NavbarWrapper id="navbar">
-    <NavItem href="#skills">Skills</NavItem>
-    <NavItem href="#projects">Projects</NavItem>
-    <NavItem href="#experience">Experience</NavItem>
-    <NavItem href="#writing">Writing</NavItem>
-  </NavbarWrapper>
+  <header>
+    <navbar>
+      <NavbarWrapper id="navbar">
+        <NavItem href="#skills">Skills</NavItem>
+        <NavItem href="#projects">Projects</NavItem>
+        <NavItem href="#experience">Experience</NavItem>
+        <NavItem href="#writing">Writing</NavItem>
+      </NavbarWrapper>
+    </navbar>
+  </header>
 );

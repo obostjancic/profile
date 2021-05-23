@@ -35,7 +35,7 @@ export const Skills = () => {
   };
 
   return (
-    <VSSection anchor={"skills"} handleChange={handleChange}>
+    <VSSection anchor="skills" handleChange={handleChange}>
       <Wrapper>
         <SectionHeading>Skills & Interests</SectionHeading>
         <ColumnWrap>

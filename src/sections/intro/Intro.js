@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { theme, VSSection } from "../../components";
 import { isMobile } from "../../utils";
 import { Canvas } from "./Canvas";
-import { Icons } from "./icons/Icons";
+import { Icons } from "../../components/Icons";
 import { Photo } from "./Photo";
 
 const IntroWrapper = styled.div`
@@ -36,7 +36,7 @@ const Subheading = styled.h3`
   color: ${theme.primary};
 `;
 
-const Summary = styled.div`
+const Summary = styled.summary`
   margin: 3em auto;
   line-height: 2;
   background-color: #eeeeee25;
@@ -49,8 +49,10 @@ export const Intro = () => {
       <VSSection intro>
         <IntroWrapper>
           <Photo />
-          <Heading>Ognjen Bostjancic</Heading>
-          <Subheading>Software developer</Subheading>
+          <hgroup>
+            <Heading>Ognjen Bostjancic</Heading>
+            <Subheading>Software developer</Subheading>
+          </hgroup>
           <Summary>
             Computer science student and software developer currently focused on web development, but interested in
             pretty much everything that ends up compiled or interpreted. Currently, I am working as a web developer for

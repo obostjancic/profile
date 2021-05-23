@@ -15,6 +15,7 @@ const ArticleWrapper = styled(FlexColumn)`
   min-width: 250px;
   max-width: 400px;
   ${JustifyContent("flex-start")};
+  background-color: ${theme.backgroundDark};
   text-align: left;
   margin: 1em 0.75em;
   border-radius: 5px;
@@ -35,7 +36,6 @@ const ArticleInner = styled(FlexColumn)`
   -ms-flex: 1;
   flex: 1;
   padding: 1em;
-  background-color: ${theme.backgroundDark};
   border-radius: 5px;
   ${JustifyContent("space-between")};
 
@@ -67,14 +67,16 @@ const Article = ({ article }) => {
   const { title, description, url, imgUrl } = article;
   return (
     <ArticleWrapper>
-      <Image src={imgUrl} alt="" />
-      <ArticleInner>
-        <h3>{title}</h3>
-        <p>{description}</p>
-        <a href={url} target="_blank" rel="noopener noreferrer">
-          Read full article
-        </a>
-      </ArticleInner>
+      <article>
+        <Image src={imgUrl} alt="Article image" />
+        <ArticleInner>
+          <h3>{title}</h3>
+          <p>{description}</p>
+          <a href={url} target="_blank" rel="noopener noreferrer">
+            Read full article
+          </a>
+        </ArticleInner>
+      </article>
     </ArticleWrapper>
   );
 };

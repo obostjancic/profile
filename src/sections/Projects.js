@@ -99,7 +99,7 @@ const Project = ({ project, right }) => {
           }}
         >
           {images.map(img => (
-            <img key={img.id} src={img.src} alt="" />
+            <img key={img.id} src={img.src} alt="Project images" />
           ))}
         </Carousel>
       </ProjectImage>

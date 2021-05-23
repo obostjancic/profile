@@ -18,5 +18,5 @@ const PhotoWrapper = styled.div`
 `;
 
 export const Photo = () => (
-  <PhotoWrapper className="border" style={{ background: "url(profile-photo-square.jpg)", backgroundSize: "contain" }} />
+  <PhotoWrapper style={{ background: "url(profile-photo-square.jpg)", backgroundSize: "contain" }} />
 );

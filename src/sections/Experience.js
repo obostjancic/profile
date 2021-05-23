@@ -1,9 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { theme } from "../components";
-import { VSSection } from "../components/VSSection";
+import { theme, SectionHeading, VSSection } from "../components";
 
-const ExperienceWrapper = styled.div`
+const Wrapper = styled.div`
   max-width: 600px;
   margin: 0 auto;
 `;
@@ -18,12 +17,13 @@ const JobWrapper = styled.div`
     margin: 0;
     color: ${theme.primary};
   }
-  & > p {
+  & > h4 {
     margin-top: 0;
     font-size: 0.8em;
     line-height: 1.5;
+    font-weight: normal;
   }
-  & > div {
+  & > p {
     background-color: #f5f7fb;
     line-height: 1.5;
   }
@@ -33,15 +33,15 @@ const Job = ({ company, position, duration, children }) => (
   <JobWrapper>
     <h2>{company}</h2>
     <h3>{position}</h3>
-    <p>{duration}</p>
-    <div>{children}</div>
+    <h4>{duration}</h4>
+    <p>{children}</p>
   </JobWrapper>
 );
 
 export const Experience = () => (
   <VSSection anchor="experience">
-    <ExperienceWrapper>
-      <h2 className="section-heading">Experience</h2>
+    <Wrapper>
+      <SectionHeading>Experience</SectionHeading>
 
       <Job company="Anyline GmbH, Vienna" position="Web developer" duration={"February 2020 - Present"}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis pellentesque felis. Nam cursus justo tortor, id
@@ -58,6 +58,6 @@ export const Experience = () => (
         dignissim lacus viverra at. Curabitur pulvinar est nec lectus sagittis egestas. Sed porttitor orci eu nisl
         bibendum ultrices. Etiam in nisi sit amet.
       </Job>
-    </ExperienceWrapper>
+    </Wrapper>
   </VSSection>
 );

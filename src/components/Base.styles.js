@@ -6,21 +6,13 @@ export const theme = {
   primaryDark: "#a6c3cf",
   backgroundDark: "#f2f6f8",
   backgroundCanvas: "#f5f7fb00",
-  backgroundOverlay: "#eeeeee55",
+  backgroundOverlay: "#eeeeeeaa",
 };
 
 export const Flex = css`
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-`;
-
-export const AlignItemsSpaceAround = css`
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
-  -webkit-box-align: baseline;
-  -ms-flex-align: baseline;
-  align-items: baseline;
 `;
 
 export const JustifyContentStart = css`

@@ -25,7 +25,7 @@ export const FlexColumn = styled.div`
   flex-direction: column;
 `;
 
-export const Section = styled.div`
+export const Section = styled.section`
   max-width: 1000px;
   padding: 0 50px;
   margin: 0 auto 7.5em auto;

@@ -1,10 +1,10 @@
-import React from "react";
-import styled from "styled-components";
-import { theme, VSSection } from "../../components";
-import { isMobile } from "../../utils";
-import { Canvas } from "./Canvas";
-import { Icons } from "../../components/Icons";
-import { Photo } from "./Photo";
+import React from 'react';
+import styled from 'styled-components';
+import { theme, VSSection } from '../../components';
+import { isMobile } from '../../utils';
+import { Canvas } from './Canvas';
+import { Icons } from '../../components/Icons';
+import { Photo } from './Photo';
 
 const IntroWrapper = styled.div`
   padding: 0 50px;
@@ -54,10 +54,11 @@ export const Intro = () => {
             <Subheading>Software developer</Subheading>
           </hgroup>
           <Summary>
-            Computer science student and software developer currently focused on web development, but interested in
-            pretty much everything that ends up compiled or interpreted. Currently, I am working as a web developer for
-            Anyline GmbH, where I am mostly commited to development of a cloud infrastructure used to automate Machine
-            learning and Computer vision processes. Colleagues know me as motivated, communicative and a creative
+            Computer science student and software developer currently focused on web development,
+            but interested in pretty much everything that ends up compiled or interpreted.
+            Currently, I am working as a web developer for Anyline GmbH, where I am mostly commited
+            to development of a cloud infrastructure used to automate Machine learning and Computer
+            vision processes. Colleagues know me as motivated, communicative and a creative
             developer who likes to help others, and who can be trusted to come up with a solution.
             {/* I welcome individual responsibility, and I
         can work well alone, but I’m at my best collaborating with others. Parallel to work I graduated with a Bachelor

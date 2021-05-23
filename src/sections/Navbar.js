@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { FlexRow, theme, Transition } from "../components";
+import React from 'react';
+import styled from 'styled-components';
+import { FlexRow, theme, Transition } from '../components';
 
 const NavbarWrapper = styled(FlexRow)`
   position: absolute;

@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { Flex, theme, Transition } from "./Base.styles";
+import styled from 'styled-components';
+import { Flex, theme, Transition } from './Base.styles';
 
 export const FlexRow = styled.div`
   ${Flex}
@@ -29,8 +29,8 @@ export const Section = styled.section`
   max-width: 1000px;
   padding: 0 50px;
   margin: 0 auto 7.5em auto;
-  pointer-events: ${({ intro }) => (intro ? "none" : "auto")};
-  ${({ active }) => (active ? Transition({ duration: 1 }) : "opacity: 0")}
+  pointer-events: ${({ intro }) => (intro ? 'none' : 'auto')};
+  ${({ active }) => (active ? Transition({ duration: 1 }) : 'opacity: 0')}
 `;
 
 export const SectionHeading = styled.h2`

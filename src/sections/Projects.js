@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import styled from "styled-components";
-import { Divider, FlexRow, SectionHeading, FlexColumn } from "../components";
-import { VSSection } from "../components/VSSection";
-import { projects } from "./data";
+import React, { useState } from 'react';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import styled from 'styled-components';
+import { Divider, FlexRow, SectionHeading, FlexColumn } from '../components';
+import { VSSection } from '../components/VSSection';
+import { projects } from './data';
 
 const ProjectHeading = styled.div`
   min-width: 5em;
@@ -51,7 +51,7 @@ const ProjectWrapper = styled(FlexRow)`
   & > .project-inner {
     margin: 0 10% 0 0;
   }`
-      : ""}
+      : ''}
 
   @media only screen and (max-width: 992px) {
     & {
@@ -87,18 +87,18 @@ const Summary = styled.div`
 const Project = ({ project, right }) => {
   const [selectedId, setSelectedId] = useState(0);
   const { name, description, images } = project;
-  const summary = images.find(img => img.id === selectedId).description;
+  const summary = images.find((img) => img.id === selectedId).description;
   return (
     <ProjectWrapper right={right}>
       <ProjectImage>
         <Carousel
           showThumbs={false}
           showStatus={false}
-          onChange={id => {
+          onChange={(id) => {
             setSelectedId(id);
           }}
         >
-          {images.map(img => (
+          {images.map((img) => (
             <img key={img.id} src={img.src} alt="Project images" />
           ))}
         </Carousel>

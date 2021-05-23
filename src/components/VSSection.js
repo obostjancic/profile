@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import VisibilitySensor from "react-visibility-sensor";
-import { Section } from "./Wrappers";
+import React, { useState } from 'react';
+import VisibilitySensor from 'react-visibility-sensor';
+import { Section } from './Wrappers';
 
 export const VSSection = ({ children, intro, anchor, handleChange = () => {} }) => {
   const [active, setActive] = useState(false);
@@ -9,7 +9,7 @@ export const VSSection = ({ children, intro, anchor, handleChange = () => {} }) 
     <VisibilitySensor
       partialVisibility={true}
       offset={{ top: 500 }}
-      onChange={isVisible => {
+      onChange={(isVisible) => {
         setActive(isVisible || active);
         handleChange(isVisible || active);
       }}

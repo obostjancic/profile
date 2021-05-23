@@ -1,20 +1,20 @@
-import React from "react";
-import { VSSection } from "../components/VSSection";
-import { FlexColumn, FlexRow, JustifyContent, SectionHeading, theme } from "../components";
-import styled from "styled-components";
-import { articles } from "./data";
+import React from 'react';
+import { VSSection } from '../components/VSSection';
+import { FlexColumn, FlexRow, JustifyContent, SectionHeading, theme } from '../components';
+import styled from 'styled-components';
+import { articles } from './data';
 
 const Articles = styled(FlexRow)`
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  ${JustifyContent("center")}
+  ${JustifyContent('center')}
   margin-bottom: 2em;
 `;
 
 const ArticleWrapper = styled(FlexColumn)`
   min-width: 250px;
   max-width: 400px;
-  ${JustifyContent("flex-start")};
+  ${JustifyContent('flex-start')};
   background-color: ${theme.backgroundDark};
   text-align: left;
   margin: 1em 0.75em;
@@ -37,7 +37,7 @@ const ArticleInner = styled(FlexColumn)`
   flex: 1;
   padding: 1em;
   border-radius: 5px;
-  ${JustifyContent("space-between")};
+  ${JustifyContent('space-between')};
 
   & > h3 {
     display: inline-block;

@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { Border, FlexRow, JustifyContent, theme, Transition } from "../../components";
+import React from 'react';
+import styled from 'styled-components';
+import { Border, FlexRow, JustifyContent, theme, Transition } from '../../components';
 
 const Wrapper = styled(FlexRow)`
   margin: 0.75em 0;
@@ -25,7 +25,7 @@ const Label = styled.div`
   padding: 0.25em 0.75em;
   font-weight: bold;
   color: ${theme.primary};
-  ${Border({ size: 1, radius: "100px 0 0 100px" })};
+  ${Border({ size: 1, radius: '100px 0 0 100px' })};
 
   @media only screen and (max-width: 600px) {
     & {
@@ -39,8 +39,8 @@ const BarWrapper = styled(FlexRow)`
   line-height: 1.5;
   width: 80%;
   padding: 2px 2px;
-  ${JustifyContent("space-between")}
-  ${Border({ size: 1, radius: "0 100px 100px 0" })};
+  ${JustifyContent('space-between')}
+  ${Border({ size: 1, radius: '0 100px 100px 0' })};
   border-left: 0;
 `;
 
@@ -49,7 +49,7 @@ const Bar = styled.div`
   background-color: ${theme.primary}df;
   height: 100%;
   border-radius: 2px;
-  ${Transition({ duration: 0.5, scope: "width", delay: "0.25" })}
+  ${Transition({ duration: 0.5, scope: 'width', delay: '0.25' })}
   width: ${({ width, visible }) => `${visible ? width - 3 : 0}%`}
 `;
 

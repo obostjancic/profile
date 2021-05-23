@@ -1,9 +1,9 @@
-import { CanvasSpace, Circle, Const, Line } from "pts";
-import React from "react";
-import { PtsCanvas } from "react-pts-canvas";
-import styled from "styled-components";
-import { theme } from "../../components";
-import { randomPoints } from "../../utils";
+import { CanvasSpace, Circle, Const, Line } from 'pts';
+import React from 'react';
+import { PtsCanvas } from 'react-pts-canvas';
+import styled from 'styled-components';
+import { theme } from '../../components';
+import { randomPoints } from '../../utils';
 
 const CanvasWrapper = styled.div`
   position: absolute;
@@ -52,10 +52,10 @@ export class Canvas extends PtsCanvas {
 
   render() {
     return (
-      <CanvasWrapper className={this.props.name || ""} style={this.props.style}>
+      <CanvasWrapper className={this.props.name || ''} style={this.props.style}>
         <canvas
-          className={this.props.name ? this.props.name + "-canvas" : ""}
-          ref={c => (this.canvRef = c)}
+          className={this.props.name ? this.props.name + '-canvas' : ''}
+          ref={(c) => (this.canvRef = c)}
           style={this.props.canvasStyle}
         ></canvas>
       </CanvasWrapper>

@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { Transition, Border, theme } from "../../components";
+import React from 'react';
+import styled from 'styled-components';
+import { Transition, Border, theme } from '../../components';
 
 const PhotoWrapper = styled.div`
   ${Transition({ duration: 0.3 })}
@@ -18,5 +18,7 @@ const PhotoWrapper = styled.div`
 `;
 
 export const Photo = () => (
-  <PhotoWrapper style={{ background: "url(profile-photo-square.jpg)", backgroundSize: "contain" }} />
+  <PhotoWrapper
+    style={{ background: 'url(profile-photo-square.jpg)', backgroundSize: 'contain' }}
+  />
 );

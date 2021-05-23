@@ -1,12 +1,12 @@
-import { css } from "styled-components";
+import { css } from 'styled-components';
 
 export const theme = {
-  primary: "#0077b2",
-  primaryLight: "#0077b2df",
-  primaryDark: "#a6c3cf",
-  backgroundDark: "#f2f6f8",
-  backgroundCanvas: "#f5f7fb00",
-  backgroundOverlay: "#eeeeeeaa",
+  primary: '#0077b2',
+  primaryLight: '#0077b2df',
+  primaryDark: '#a6c3cf',
+  backgroundDark: '#f2f6f8',
+  backgroundCanvas: '#f5f7fb00',
+  backgroundOverlay: '#eeeeeeaa',
 };
 
 export const Flex = css`
@@ -35,18 +35,23 @@ export const JustifyContentCenter = css`
   justify-content: center;
 `;
 
-export const JustifyContent = direction => {
-  if (direction === "space-between") return JustifyContentSpaceBetween;
-  else if (direction === "center") return JustifyContentCenter;
+export const JustifyContent = (direction) => {
+  if (direction === 'space-between') return JustifyContentSpaceBetween;
+  else if (direction === 'center') return JustifyContentCenter;
   else return JustifyContentStart;
 };
 
-export const Border = ({ size, radius = "0" }) => css`
+export const Border = ({ size, radius = '0' }) => css`
   border: ${size}px solid ${theme.primary};
   border-radius: ${radius};
 `;
 
-export const Transition = ({ duration, scope = "all", animation = "ease-in-out", delay = "0" }) => css`
+export const Transition = ({
+  duration,
+  scope = 'all',
+  animation = 'ease-in-out',
+  delay = '0',
+}) => css`
   -moz-transition: ${scope} ${duration}s ${animation};
   -o-transition: ${scope} ${duration}s ${animation};
   -webkit-transition: ${scope} ${duration}s ${animation};

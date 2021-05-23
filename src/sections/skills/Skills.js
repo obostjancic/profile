@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import { FlexRow, SectionHeading, VSSection } from "../../components";
-import { SkillBars } from "./SkillBars";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { FlexRow, SectionHeading, VSSection } from '../../components';
+import { SkillBars } from './SkillBars';
 
 const Wrapper = styled.div`
   max-width: 1024px;
@@ -30,7 +30,7 @@ const Summary = styled.div`
 export const Skills = () => {
   const [visible, setVisible] = useState(false);
 
-  const handleChange = visible => {
+  const handleChange = (visible) => {
     setVisible(visible);
   };
 
@@ -41,12 +41,13 @@ export const Skills = () => {
         <ColumnWrap>
           <Summary>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis pellentesque felis. Nam cursus justo
-              tortor, id dignissim lacus viverra at. Curabitur pulvinar est nec lectus sagittis egestas. Sed porttitor
-              orci eu nisl bibendum ultrices. Etiam in nisi sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Ut quis pellentesque felis. Nam cursus justo tortor, id dignissim lacus viverra at. Curabitur
-              pulvinar est nec lectus sagittis egestas. Sed porttitor orci eu nisl bibendum ultrices. Etiam in nisi sit
-              amet.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis pellentesque felis.
+              Nam cursus justo tortor, id dignissim lacus viverra at. Curabitur pulvinar est nec
+              lectus sagittis egestas. Sed porttitor orci eu nisl bibendum ultrices. Etiam in nisi
+              sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis
+              pellentesque felis. Nam cursus justo tortor, id dignissim lacus viverra at. Curabitur
+              pulvinar est nec lectus sagittis egestas. Sed porttitor orci eu nisl bibendum
+              ultrices. Etiam in nisi sit amet.
             </p>
           </Summary>
           <SkillBars visible={visible} />

@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import { SectionHeading, theme } from "../components";
-import { ArrowUpIcon } from "../components/Icons";
+import React from 'react';
+import styled from 'styled-components';
+import { SectionHeading, theme } from '../components';
+import { ArrowUpIcon } from '../components/Icons';
 
 const FooterWrapper = styled.footer`
   padding: 1em;
@@ -39,18 +39,18 @@ export const Footer = () => (
   <FooterWrapper>
     <SectionHeading>Get in touch</SectionHeading>
     <ContactMe>
-      I always open to new opportunities and projects. If you're looking for development help or have any queries at
-      all, dont hesitate to contact me.
+      I always open to new opportunities and projects. If you're looking for development help or
+      have any queries at all, dont hesitate to contact me.
     </ContactMe>
     <FooterIconWrapper>
       <ArrowUpIcon />
     </FooterIconWrapper>
     <FooterLinksWrapper>
       Built with&nbsp;
-      <FooterLink href={"https://reactjs.org/"}>React</FooterLink>,&nbsp;
-      <FooterLink href={"https://ptsjs.org/"}>Pts</FooterLink>
+      <FooterLink href={'https://reactjs.org/'}>React</FooterLink>,&nbsp;
+      <FooterLink href={'https://ptsjs.org/'}>Pts</FooterLink>
       &nbsp;and&nbsp;
-      <FooterLink href={"https://styled-components.com/"}>Styled components</FooterLink>
+      <FooterLink href={'https://styled-components.com/'}>Styled components</FooterLink>
     </FooterLinksWrapper>
   </FooterWrapper>
 );

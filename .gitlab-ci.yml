@@ -6,7 +6,7 @@ build:
     - yarn build
   artifacts:
     paths:
-      - public
+      - build
 
 deploy:
   stage: deploy
@@ -16,4 +16,4 @@ deploy:
   script:
     - aws --version
     - aws s3 rm s3://$S3_BUCKET --recursive
-    - aws s3 cp public s3://$S3_BUCKET --recursive --acl public-read
+    - aws s3 cp build s3://$S3_BUCKET --recursive --acl public-read

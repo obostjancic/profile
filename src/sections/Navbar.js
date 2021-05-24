@@ -10,7 +10,7 @@ const NavbarWrapper = styled(FlexRow)`
 
   @media only screen and (max-width: 600px) {
     & {
-      top: -5em;
+      // top: -5em;
       left: 0;
       background-color: #eeeeee05;
     }

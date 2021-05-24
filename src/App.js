@@ -13,7 +13,8 @@ const Main = styled.main`
   text-align: center;
   z-index: 11;
   position: relative;
-  min-width: 380px;
+  min-width: 320px;
+  margin: 0 auto;
 `;
 
 function App() {

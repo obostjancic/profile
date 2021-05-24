@@ -60,6 +60,10 @@ const ProjectWrapper = styled(FlexRow)`
       -ms-flex-direction: column;
       flex-direction: column;
     }
+
+    & > .project-inner {
+      margin: 0.5em 0 0 0;
+    }
   }
 `;
 

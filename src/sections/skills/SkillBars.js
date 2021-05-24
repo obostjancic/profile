@@ -49,7 +49,12 @@ const Bar = styled.div`
   background-color: ${theme.primary}df;
   height: 100%;
   border-radius: 2px;
-  ${Transition({ duration: 0.5, scope: 'width', delay: '0.25' })}
+  ${Transition({
+    duration: 0.75,
+    scope: 'width',
+    delay: 0.4,
+    animation: 'cubic-bezier(0.39, 0.58, 0.57, 1)',
+  })}
   width: ${({ width, visible }) => `${visible ? width - 3 : 0}%`}
 `;
 

@@ -36,6 +36,7 @@ export const Section = styled.section`
 export const SectionHeading = styled.h2`
   text-transform: uppercase;
   margin-bottom: 2em;
+  font-size: 26px;
 `;
 
 export const Divider = styled.div`

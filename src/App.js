@@ -7,7 +7,7 @@ import { Intro } from './sections/intro/Intro';
 import { Navbar } from './sections/Navbar';
 import { Projects } from './sections/Projects';
 import { Skills } from './sections/skills/Skills';
-import { Writing } from './sections/Writing';
+import { Articles } from './sections/Articles';
 
 const Main = styled.main`
   text-align: center;
@@ -27,7 +27,7 @@ function App() {
         <Skills />
         <Projects />
         <Experience />
-        <Writing />
+        <Articles />
         <Footer />
       </Main>
     </>

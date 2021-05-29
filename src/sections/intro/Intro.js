@@ -37,9 +37,14 @@ const Subheading = styled.h3`
 `;
 
 const Summary = styled.summary`
-  margin: 3em auto;
+  margin: 3em auto 1em auto;
   line-height: 2;
   background-color: #eeeeee25;
+`;
+
+const EmphasizedSummary = styled.p`
+  font-size: 18px;
+  padding-bottom: 1em;
 `;
 
 export const Intro = () => {
@@ -54,10 +59,12 @@ export const Intro = () => {
             <Subheading>Software developer</Subheading>
           </hgroup>
           <Summary>
-            Computer science student and software developer currently focused on web development,
-            but interested in pretty much everything that ends up compiled or interpreted.
-            Currently, I am working as a web developer for Anyline GmbH, where I am mostly commited
-            to development of a cloud infrastructure used to automate Machine learning and Computer
+            <EmphasizedSummary>
+              Computer science student and software developer currently focused on web development,
+              but interested in pretty much everything that ends up compiled or interpreted.
+            </EmphasizedSummary>
+            Currently, I am working as a web developer for Anyline, where I am mostly commited to
+            development of a cloud infrastructure used to automate Machine learning and Computer
             vision processes. Colleagues know me as motivated, communicative and a creative
             developer who likes to help others, and who can be trusted to come up with a solution.
             {/* I welcome individual responsibility, and I

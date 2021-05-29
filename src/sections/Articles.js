@@ -4,7 +4,7 @@ import { FlexColumn, FlexRow, JustifyContent, SectionHeading, theme } from '../c
 import styled from 'styled-components';
 import { articles } from './data';
 
-const Articles = styled(FlexRow)`
+const ArticlesWrapper = styled(FlexRow)`
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   ${JustifyContent('center')}
@@ -81,16 +81,16 @@ const Article = ({ article }) => {
   );
 };
 
-export const Writing = () => {
+export const Articles = () => {
   return (
-    <VSSection anchor="writing">
-      <SectionHeading>Writing</SectionHeading>
-      <Articles>
+    <VSSection anchor="articles">
+      <SectionHeading>Articles</SectionHeading>
+      <ArticlesWrapper>
         <Article article={articles[0]} />
         <Article article={articles[1]} />
         <Article article={articles[2]} />
         <Article article={articles[3]} />
-      </Articles>
+      </ArticlesWrapper>
     </VSSection>
   );
 };

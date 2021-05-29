@@ -12,6 +12,7 @@ const ProjectHeading = styled.div`
   padding-bottom: 0.5em;
 
   & > h2 {
+    font-size: 23px;
     margin-top: 0.25em;
     margin-bottom: 0.25em;
   }

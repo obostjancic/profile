@@ -28,14 +28,15 @@ export class Canvas extends PtsCanvas {
     space.background = theme.backgroundCanvas;
     const max = Math.max(space.size.x, space.size.y);
     this.points.forEach(({ point, angle }) => {
-      point.rotate2D(Const.one_degree / 30, space.center);
+      point.rotate2D(Const.one_degree / 50, space.center);
       const dot = Circle.fromCenter(point, 2);
       const line = Line.fromAngle(point, angle, 2000);
       const dist = Line.distanceFromPt(line, space.pointer);
       const opacity = Math.max((max - dist * 5) / max - 0.65, 0.075);
       const opacityHex = (opacity * 256).toString(16).substring(0, 2);
-      form.stroke(`${theme.primary}${opacityHex}`).line(line);
-      form.fillOnly(`${theme.primary}${opacityHex}`).circle(dot);
+      const strokeColor = `${theme.primary}${opacityHex}`;
+      form.stroke(strokeColor).line(line);
+      form.fillOnly(strokeColor).circle(dot);
     });
   }
 

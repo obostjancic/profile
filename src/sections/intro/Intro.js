@@ -10,7 +10,7 @@ const IntroWrapper = styled.div`
   padding: 0 50px;
   max-width: 600px;
   margin: 0 auto;
-  padding-top: 10em;
+  padding-top: 6em;
   min-height: 80vh;
   opacity: 1;
 
@@ -47,6 +47,16 @@ const EmphasizedSummary = styled.p`
   padding-bottom: 1em;
 `;
 
+const IntroLink = styled.a`
+  text-decoration: none;
+  font-weight: bold;
+  color: ${theme.primary};
+  pointer-events: auto;
+  &::visited {
+    color: ${theme.primary};
+  }
+`;
+
 export const Intro = () => {
   return (
     <>
@@ -60,17 +70,19 @@ export const Intro = () => {
           </hgroup>
           <Summary>
             <EmphasizedSummary>
-              Computer science student and software developer currently focused on web development,
-              but interested in pretty much everything that ends up compiled or interpreted.
+              Hello, I'm Ogi - A software developer focused on the Web apps. Using React and Node.js
+              with Typescript daily.
             </EmphasizedSummary>
-            Currently, I am working as a web developer for Anyline, where I am mostly commited to
-            development of a cloud infrastructure used to automate Machine learning and Computer
-            vision processes. Colleagues know me as motivated, communicative and a creative
-            developer who likes to help others, and who can be trusted to come up with a solution.
-            {/* I welcome individual responsibility, and I
-        can work well alone, but I’m at my best collaborating with others. Parallel to work I graduated with a Bachelor
-        in Computer Science, and I am studying a Master Degree in Computer Science. Contact me, take a look at some of
-        my code or check my resume here: */}
+            Currently, I work as a Web developer for{' '}
+            <IntroLink href="https://anyline.com/" target="_blank" rel="noopener noreferrer">
+              Anyline
+            </IntroLink>
+            , where I am committed to the creation of a cloud infrastructure that is used for
+            automation of Machine Learning and Computer Vision processes. When I am not rolling out
+            new features I spend my time improving code quality by refactoring, introducing design
+            patterns or writing additional tests. Colleagues know me as a motivated and
+            communicative team member who is enthusiastic about taking the development process to
+            the next level.
           </Summary>
           <Icons />
         </IntroWrapper>

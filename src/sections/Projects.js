@@ -24,29 +24,28 @@ const ProjectHeading = styled.div`
 `;
 
 const ProjectImage = styled.div`
-  width: 100%;
-  min-width: 35%;
+  max-height: 14em;
+  overflow: hidden;
   border-radius: 10px;
-  background-repeat: no-repeat;
-  background-size: cover;
 
-  & img {
-    border-radius: 5px;
+  max-width: 100%;
+  display: flex;
+  align-items: center; /* vertical */
+  justify-content: center; /* horizontal */
+  @media only screen and (max-width: 992px) {
+    & {
+      max-height: 24em;
+    }
   }
 `;
 
 const ProjectWrapper = styled(FlexRow)`
-  margin: 3em 0;
-  -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
+  margin: 3em 0 5em 0;
   transition: 0.3s;
 
   ${({ right }) =>
     right
       ? `  
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-  -ms-flex-direction: row-reverse;
   flex-direction: row-reverse;
 
   & > .project-inner {
@@ -56,9 +55,6 @@ const ProjectWrapper = styled(FlexRow)`
 
   @media only screen and (max-width: 992px) {
     & {
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: column;
       flex-direction: column;
     }
 
@@ -70,8 +66,6 @@ const ProjectWrapper = styled(FlexRow)`
 
 const ProjectInner = styled(FlexColumn)`
   margin: 0 0 0 10%;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
   min-width: 45%;
   text-align: left;
@@ -86,7 +80,9 @@ const ProjectInner = styled(FlexColumn)`
 `;
 
 const Summary = styled.div`
-  line-height: 1.5;
+  line-height: 1.75em;
+  height: 7em;
+  max-width: 500px;
 `;
 
 const Project = ({ project, right }) => {
@@ -99,6 +95,7 @@ const Project = ({ project, right }) => {
         <Carousel
           showThumbs={false}
           showStatus={false}
+          showIndicators={false}
           onChange={(id) => {
             setSelectedId(id);
           }}
@@ -111,7 +108,9 @@ const Project = ({ project, right }) => {
       <ProjectInner className="project-inner">
         <ProjectHeading>
           <h2>{name}</h2>
-          <p>{description}</p>
+          <p>
+            <b>{description}</b>
+          </p>
         </ProjectHeading>
         <Divider />
         <Summary>{summary}</Summary>
@@ -125,10 +124,10 @@ export const Projects = () => {
     <VSSection anchor="projects">
       <SectionHeading>Projects</SectionHeading>
       <div>
-        <Project project={projects[1]} />
-        <Project project={projects[2]} right />
-        <Project project={projects[3]} />
-        <Project project={projects[4]} right />
+        <Project project={projects.team8} />
+        <Project project={projects.viktor} right />
+        <Project project={projects.supercharger} />
+        <Project project={projects.stock} right />
       </div>
     </VSSection>
   );

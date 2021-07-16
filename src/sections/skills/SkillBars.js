@@ -89,11 +89,11 @@ const Skill = ({ label, width, visible }) => (
 export const SkillBars = ({ visible }) => (
   <Bars>
     <Skill label="Node.js" visible={visible} width="90" />
-    <Skill label="React" visible={visible} width="80" />
-    <Skill label="Typescript" visible={visible} width="85" />
-    <Skill label="Javascript" visible={visible} width="75" />
-    <Skill label="Nest.js" visible={visible} width="80" />
-    <Skill label="Django" visible={visible} width="65" />
-    <Skill label="Spring" visible={visible} width="90" />
+    <Skill label="React" visible={visible} width="85" />
+    <Skill label="JavaScript" visible={visible} width="85" />
+    <Skill label="TypeScript" visible={visible} width="80" />
+    <Skill label="Nest.js" visible={visible} width="75" />
+    <Skill label="Spring" visible={visible} width="80" />
+    <Skill label="Django" visible={visible} width="60" />
   </Bars>
 );

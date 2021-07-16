@@ -41,13 +41,15 @@ export const Skills = () => {
         <ColumnWrap>
           <Summary>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis pellentesque felis.
-              Nam cursus justo tortor, id dignissim lacus viverra at. Curabitur pulvinar est nec
-              lectus sagittis egestas. Sed porttitor orci eu nisl bibendum ultrices. Etiam in nisi
-              sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis
-              pellentesque felis. Nam cursus justo tortor, id dignissim lacus viverra at. Curabitur
-              pulvinar est nec lectus sagittis egestas. Sed porttitor orci eu nisl bibendum
-              ultrices. Etiam in nisi sit amet.
+              Apart from end to end development and maintenance of stable and scalable RESTful Web
+              Applications, I have taken on myself a series of other responsibilities. Some of them
+              include: Migration from JavaScript to TypeScript, Ownership of private NPM packages
+              and UI kit libraries, writing extensive Database Migration scripts, as well as
+              integration of monitoring and error tracking services.
+            </p>
+            <p>
+              Outside of work, I am frequently working on my side projects, or going through the
+              backlog of Medium articles I gathered over the years.
             </p>
           </Summary>
           <SkillBars visible={visible} />

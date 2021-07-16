@@ -1,35 +1,65 @@
-const image = (id) => ({
-  id,
-  src: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80',
-  description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut mi tincidunt, faucibus augue vehicula, rutrum orci. Cras dapibus urna turpis, ac viverra velit ornare non. Donec vitae purus sit amet massa porttitor consectetur. Nam viverra nunc tellus, id finibus. ${id}`,
-});
-
-const images = () => [0, 1, 2, 3].map((id) => image(id));
-
 export const projects = {
-  1: {
-    id: '1',
+  team8: {
+    id: 'team8',
     name: 'Team 8',
     description: 'Collaboration and HR management app',
-    images: images(),
+    images: [
+      {
+        id: 0,
+        src: 'images/projects/team8/team8.png',
+        description:
+          "Team8 is a work management software that aims to be a 'one-stop shop'. Your email inbox, calendar, chat, absence requests, attendance tracking and a kanban board, All in one browser tab, under one account. Built with React and Express.js",
+      },
+      {
+        id: 1,
+        src: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80',
+        description: `It's modular design allows customers to pick only the parts that they want to use, while import functionality make the transition process easy.`,
+      },
+      {
+        id: 2,
+        src: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80',
+        description: `Running in cloud, secured by Oauth2, with fine-grained access control. Flexible hierarchy models makes it applicable to all organizations, regardless of the size.`,
+      },
+    ],
   },
-  2: {
-    id: '2',
+  viktor: {
+    id: 'viktor',
     name: 'Viktor',
-    description: 'Automated crypto currency trading bot',
-    images: images(),
+    description: 'Automated cryptocurrency trading bot',
+    images: [
+      {
+        id: 0,
+        src: 'images/projects/viktor/viktor.png',
+        description:
+          'Constantly gathering price data and running configurable Technical analysis. Sends webhook based alerts and can even execute orders automatically. Built with NestJS and Semantic  UI React.',
+      },
+    ],
   },
-  3: {
-    id: '3',
+  supercharger: {
+    id: 'supercharger',
     name: 'Superchager',
     description: 'Nest.js REST API starter kit',
-    images: images(),
+    images: [
+      {
+        id: 0,
+        src: 'images/projects/supercharger/supercharger.jpg',
+        description:
+          'Get your REST API up and running in no time! Built by combining a couple of awesome pakages from NestJS ecosystem. Comes preconfigured with CRUD routes, Access control, Oauth2, Unit test support and Database Introspection',
+      },
+    ],
   },
-  4: {
-    id: '4',
-    name: 'Project 4',
-    description: 'Lorem ipsum dolor sit amet',
-    images: images(),
+  stock: {
+    id: 'stock',
+    name: 'Stock',
+    description: 'Inventory management app',
+    images: [
+      {
+        id: 0,
+        src: 'images/projects/stock/stock.png',
+        description:
+          'Simple mobile app that allows tracking food stocks currently in the fridge. Built with React Native and NestJS. Data input via integrated barcode scanner. Implemented after countless food throwing incidents.',
+      },
+    ],
   },
 };
 

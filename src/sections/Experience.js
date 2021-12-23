@@ -37,11 +37,27 @@ const JobWrapper = styled.div`
   }
 `;
 
-const Job = ({ company, position, duration, children }) => (
+const Badge = styled.span`
+  display: inline-block;
+  margin: 0 0.5em 0 0;
+  padding: 0.25em 0.5em;
+  border-radius: 6px;
+  box-shadow: 2px 2px 10px #ddd;
+  font-weight: bold;
+  font-size: 0.85em;
+  background-color: ${theme.primary};
+  color: ${theme.backgroundDark};
+  opacity: 1;
+}`;
+
+const Job = ({ company, position, duration, children, badges }) => (
   <JobWrapper>
     <h2>{company}</h2>
     <h3>{position}</h3>
     <h4>{duration}</h4>
+    {badges?.map((badge) => (
+      <Badge key={badge}>{badge}</Badge>
+    ))}
     <p>{children}</p>
   </JobWrapper>
 );
@@ -55,28 +71,33 @@ export const Experience = () => (
         company="Anyline, Vienna"
         position="Full stack web developer"
         duration={'February 2020 - Present'}
+        badges={['Node.js', 'Typescript', 'React', 'Electron', 'Google Cloud']}
       >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis pellentesque felis. Nam
-        cursus justo tortor, id dignissim lacus viverra at. Curabitur pulvinar est nec lectus
-        sagittis egestas. Sed porttitor orci eu nisl bibendum ultrices. Etiam in nisi sit amet.
+        As a full stack web developer, I am responsible for the development of a couple of
+        microservices inside the cloud based ecosystem, as well as their frontend clients. Apart
+        from that I also took ownership of an internal IDE product, which is used to develop various
+        OCR products.
       </Job>
       <Job
         company="Workflow EDV, Vienna"
         position="Backend web developer"
         duration={'May 2018 - Jan 2020'}
+        badges={['Java', 'Spring', 'Hibernate', 'Vue.js', 'Typescript']}
       >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis pellentesque felis. Nam
-        cursus justo tortor, id dignissim lacus viverra at. Curabitur pulvinar est nec lectus
-        sagittis egestas. Sed porttitor orci eu nisl bibendum ultrices. Etiam in nisi sit amet.
+        Starting out as an intern, I transitioned into a developer position. I developed new REST
+        API as a part of the existing codebase using Spring framework. I also briefly worked with a
+        Vue.js frontend application that consumed the API.
       </Job>
       <Job
         company="IT Services, Sarajevo"
         position="Backend web developer"
         duration={'Mar 2017 - May 2018'}
+        badges={['Java', 'Spring', 'Hibernate', 'JasperReports']}
       >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis pellentesque felis. Nam
-        cursus justo tortor, id dignissim lacus viverra at. Curabitur pulvinar est nec lectus
-        sagittis egestas. Sed porttitor orci eu nisl bibendum ultrices. Etiam in nisi sit amet.
+        Focus of my work was on developing a REST API backend for the new Student management system.
+        I worked mostly with Java and Spring. That included requirement analysis, design,
+        implementation, testing and deployment. Additionally I developed and maintained a couple of
+        smaller applications used to facilitate internal processes.
       </Job>
     </Wrapper>
   </VSSection>

@@ -22,42 +22,16 @@ export const projects = {
       },
     ],
   },
-  viktor: {
-    id: 'viktor',
-    name: 'Viktor',
-    description: 'Automated cryptocurrency trading bot',
+  kolorkross: {
+    id: 'kolorkross',
+    name: 'Kolor Kross',
+    description: 'VS Code extension that allows fast & colorful access to multiple workspaces',
     images: [
       {
         id: 0,
-        src: 'images/projects/viktor/viktor.png',
+        src: 'images/projects/kolorkross/kolorkross.png',
         description:
-          'Constantly gathering price data and running configurable Technical analysis. Sends webhook based alerts and can even execute orders automatically. Built with NestJS and Semantic  UI React.',
-      },
-    ],
-  },
-  supercharger: {
-    id: 'supercharger',
-    name: 'Superchager',
-    description: 'Nest.js REST API starter kit',
-    images: [
-      {
-        id: 0,
-        src: 'images/projects/supercharger/supercharger.jpg',
-        description:
-          'Get your REST API up and running in no time! Comes preconfigured with CRUD routes, Access control, Oauth2, Typescript API client, Unit test support and Database Introspection. Built by combining a couple of awesome pakages from NestJS ecosystem. ',
-      },
-    ],
-  },
-  stock: {
-    id: 'stock',
-    name: 'Stock',
-    description: 'Inventory management app',
-    images: [
-      {
-        id: 0,
-        src: 'images/projects/stock/stock.png',
-        description:
-          'Simple mobile app that allows tracking food stocks currently in the fridge. Built with React Native and NestJS. Data input via integrated barcode scanner. Implemented after countless food throwing incidents.',
+          'Kolor Kross organizes projects (workspaces) in flexible groups. Every project is asssigned to a color, and VS Code window of that project is colored with that color. This allows users to develop mental maps when working across multiple projects. Dasboard offers a quick overview and organization of all projects and their color codes. It also allows users to quickly jump to a project.',
       },
     ],
   },

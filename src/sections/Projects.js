@@ -24,7 +24,7 @@ const ProjectHeading = styled.div`
 `;
 
 const ProjectImage = styled.div`
-  max-height: 14em;
+  min-height: 15em;
   overflow: hidden;
   border-radius: 10px;
 
@@ -123,9 +123,7 @@ export const Projects = () => {
       <SectionHeading>Projects</SectionHeading>
       <div>
         <Project project={projects.team8} />
-        <Project project={projects.viktor} right />
-        <Project project={projects.supercharger} />
-        <Project project={projects.stock} right />
+        <Project project={projects.kolorkross} right />
       </div>
     </VSSection>
   );

@@ -13,7 +13,7 @@ const ProjectHeading = styled.div`
 
   & > h2 {
     font-size: 23px;
-    margin-top: 0.25em;
+    margin-top: -0.25em;
     margin-bottom: 0.25em;
   }
 
@@ -40,7 +40,7 @@ const ProjectImage = styled.div`
 `;
 
 const ProjectWrapper = styled(FlexRow)`
-  margin: 3em 0 5em 0;
+  margin: 3em 0 7em 0;
   transition: 0.3s;
 
   ${({ right }) =>
@@ -72,9 +72,7 @@ const ProjectInner = styled(FlexColumn)`
 
   @media only screen and (max-width: 992px) {
     & {
-      margin: 10% 0;
-      text-align: center;
-      align-items: center;
+      margin: 10em 0;
     }
   }
 `;

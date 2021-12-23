@@ -29,6 +29,12 @@ const JobWrapper = styled.div`
     background-color: #f5f7fb;
     line-height: 1.5;
   }
+
+  @media only screen and (max-width: 992px) {
+    & {
+      text-align: left;
+    }
+  }
 `;
 
 const Job = ({ company, position, duration, children }) => (

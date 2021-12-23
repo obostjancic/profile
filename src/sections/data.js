@@ -13,7 +13,7 @@ export const projects = {
       {
         id: 1,
         src: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80',
-        description: `It's modular design allows customers to pick only the parts that they want to use, while import functionality make the transition process easy.`,
+        description: `Its modular design allows customers to pick only the parts that they want to use, while import functionality make the transition process easy.`,
       },
       {
         id: 2,
@@ -44,7 +44,7 @@ export const projects = {
         id: 0,
         src: 'images/projects/supercharger/supercharger.jpg',
         description:
-          'Get your REST API up and running in no time! Built by combining a couple of awesome pakages from NestJS ecosystem. Comes preconfigured with CRUD routes, Access control, Oauth2, Unit test support and Database Introspection',
+          'Get your REST API up and running in no time! Comes preconfigured with CRUD routes, Access control, Oauth2, Typescript API client, Unit test support and Database Introspection. Built by combining a couple of awesome pakages from NestJS ecosystem. ',
       },
     ],
   },

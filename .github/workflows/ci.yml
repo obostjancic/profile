@@ -35,10 +35,21 @@ jobs:
       - name: Build
         run: yarn build
 
+      - uses: actions/upload-artifact@master
+        with:
+          name: build
+          path: ./build
+
   deploy:
     runs-on: ubuntu-latest
+    needs: build
     container: amazon/aws-cli
     steps:
+      - uses: actions/download-artifact@master
+        with:
+          name: build
+          path: ./build
+
       - name: Set AWS Creds
         uses: aws-actions/configure-aws-credentials@v1
         with:

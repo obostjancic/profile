@@ -28,7 +28,8 @@ const Heading = styled.h1`
   font-weight: bold;
 `;
 
-const Subheading = styled.h3`
+const Subheading = styled.h2`
+  font-size: 1.17em;
   margin-top: 0.5em;
   margin-bottom: 0;
   background-color: #eeeeee25;

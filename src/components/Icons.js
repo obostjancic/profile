@@ -13,6 +13,20 @@ const IconWrapper = styled.a`
   &:hover {
     transform: scale(1.2);
   }
+
+  .sr-only {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    margin: -1px !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    white-space: nowrap !important;
+  }
 `;
 
 export const IconsWrapper = styled.div`
@@ -35,21 +49,30 @@ const paths = {
     'M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm143.6 28.9l72.4-75.5V392c0 13.3 10.7 24 24 24h16c13.3 0 24-10.7 24-24V209.4l72.4 75.5c9.3 9.7 24.8 9.9 34.3.4l10.9-11c9.4-9.4 9.4-24.6 0-33.9L273 107.7c-9.4-9.4-24.6-9.4-33.9 0L106.3 240.4c-9.4 9.4-9.4 24.6 0 33.9l10.9 11c9.6 9.5 25.1 9.3 34.4-.4z',
 };
 
-export const Icon = ({ path, href, newTab }) => (
+export const Icon = ({ name, path, href, newTab }) => (
   <IconWrapper href={href} target={newTab ? '_blank' : ''} rel="noopener noreferrer">
     <svg aria-hidden="true" focusable="false" role="img" viewBox="0 0 512 512">
       <path fill={theme.primary} d={path}></path>
     </svg>
+
+    <span className="sr-only">{name}</span>
   </IconWrapper>
 );
 
-export const ArrowUpIcon = () => <Icon path={paths.arrowUp} href={'#navbar'} newTab={false} />;
+export const ArrowUpIcon = () => (
+  <Icon name="Back to top" path={paths.arrowUp} href={'#navbar'} newTab={false} />
+);
 
 export const Icons = () => (
   <IconsWrapper>
-    <Icon path={paths.linkedin} href={'https://www.linkedin.com/in/obostjancic/'} newTab />
-    <Icon path={paths.github} href={'https://gitlab.com/obostjancic/'} newTab />
-    <Icon path={paths.medium} href={'mailto:ognjen.bostjancic@gmail.com'} newTab />
-    <Icon path={paths.cv} href={'./ognjen-bostjancic-CV.pdf'} newTab />
+    <Icon
+      name="Linkedin"
+      path={paths.linkedin}
+      href={'https://www.linkedin.com/in/obostjancic/'}
+      newTab
+    />
+    <Icon name="Github" path={paths.github} href={'https://gitlab.com/obostjancic/'} newTab />
+    <Icon name="Medium" path={paths.medium} href={'mailto:ognjen.bostjancic@gmail.com'} newTab />
+    <Icon name="CV" path={paths.cv} href={'./ognjen-bostjancic-CV.pdf'} newTab />
   </IconsWrapper>
 );

@@ -44,13 +44,13 @@ const NavItem = styled.a`
 
 export const Navbar = () => (
   <header>
-    <navbar>
+    <nav>
       <NavbarWrapper id="navbar">
         <NavItem href="#skills">Skills</NavItem>
         <NavItem href="#projects">Projects</NavItem>
         <NavItem href="#experience">Experience</NavItem>
         {/* <NavItem href="#articles">Articles</NavItem> */}
       </NavbarWrapper>
-    </navbar>
+    </nav>
   </header>
 );

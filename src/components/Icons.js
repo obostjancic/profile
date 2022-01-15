@@ -36,7 +36,7 @@ const paths = {
 };
 
 export const Icon = ({ path, href, newTab }) => (
-  <IconWrapper href={href} target={newTab && '_blank'} rel="noopener noreferrer">
+  <IconWrapper href={href} target={newTab ? '_blank' : ''} rel="noopener noreferrer">
     <svg aria-hidden="true" focusable="false" role="img" viewBox="0 0 512 512">
       <path fill={theme.primary} d={path}></path>
     </svg>

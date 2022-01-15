@@ -1,14 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Border, FlexRow, JustifyContent, theme, Transition } from '../../components';
+import { theme } from '../../components';
 
-const Wrapper = styled(FlexRow)`
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+
   margin: 0.75em 0;
-  ${Transition({ duration: 0.3 })}
+  transition: all 0.3s ease-in-out;
   border-radius: 100px;
 
   &:hover {
-    -webkit-box-shadow: 0 0 5px ${theme.primary};
     box-shadow: 0 0 5px ${theme.primary};
   }
 
@@ -25,7 +27,8 @@ const Label = styled.div`
   padding: 0.25em 0.75em;
   font-weight: bold;
   color: ${theme.primary};
-  ${Border({ size: 1, radius: '100px 0 0 100px' })};
+  border: 1px solid ${theme.primary};
+  border-radius: 100px 0 0 100px;
 
   @media only screen and (max-width: 600px) {
     & {
@@ -34,13 +37,17 @@ const Label = styled.div`
   }
 `;
 
-const BarWrapper = styled(FlexRow)`
+const BarWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+
   font-weight: 600;
   line-height: 1.5;
   width: 80%;
   padding: 2px 2px;
-  ${JustifyContent('space-between')}
-  ${Border({ size: 1, radius: '0 100px 100px 0' })};
+  justify-content: space-between;
+  border: 1px solid ${theme.primary};
+  border-radius: 0 100px 100px 0;
   border-left: 0;
 `;
 
@@ -49,13 +56,10 @@ const Bar = styled.div`
   background-color: ${theme.primary}df;
   height: 100%;
   border-radius: 2px;
-  ${Transition({
-    duration: 0.75,
-    scope: 'width',
-    delay: 0.4,
-    animation: 'cubic-bezier(0.39, 0.58, 0.57, 1)',
-  })}
-  width: ${({ width, visible }) => `${visible ? width - 3 : 0}%`}
+  transition: width 0.75s cubic-bezier(0.39, 0.58, 0.57, 1);
+  transition-delay: 0.4s;
+
+  width: ${({ width, visible }) => `${visible ? width - 3 : 0}%`};
 `;
 
 const BarPercent = styled.div`

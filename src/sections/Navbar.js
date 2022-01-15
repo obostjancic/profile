@@ -1,8 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FlexRow, theme, Transition } from '../components';
+import { theme } from '../components';
 
-const NavbarWrapper = styled(FlexRow)`
+const NavbarWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+
   position: absolute;
   top: 0;
   left: 0;
@@ -18,7 +21,7 @@ const NavbarWrapper = styled(FlexRow)`
 `;
 
 const NavItem = styled.a`
-  ${Transition({ duration: 0.3 })};
+  transition: all 0.3s ease-in-out;
 
   font-size: 15px;
   color: #818181 !important;

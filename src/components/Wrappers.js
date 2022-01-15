@@ -1,28 +1,5 @@
 import styled from 'styled-components';
-import { Flex, theme, Transition } from './Base.styles';
-
-export const FlexRow = styled.div`
-  ${Flex}
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-`;
-
-export const Reverse = styled.div`
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-  -ms-flex-direction: row-reverse;
-  flex-direction: row-reverse;
-`;
-
-export const FlexColumn = styled.div`
-  ${Flex}
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-`;
+import { theme } from './Base.styles';
 
 export const Section = styled.section`
   max-width: 1000px;
@@ -30,7 +7,7 @@ export const Section = styled.section`
   padding-top: 1em;
   margin: 0 auto 5em auto;
   pointer-events: ${({ intro }) => (intro ? 'none' : 'auto')};
-  ${({ active }) => (active ? Transition({ duration: 1 }) : 'opacity: 0')}
+  ${({ active }) => (active ? '  transition: all 1s ease-in-out' : 'opacity: 0')}
 `;
 
 export const SectionHeading = styled.h2`

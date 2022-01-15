@@ -7,7 +7,6 @@ const FooterWrapper = styled.footer`
   padding: 1em 0 0.25em 0;
   background-color: ${theme.backgroundDark};
 
-  -webkit-box-shadow: inset 0px 0px 10px ${theme.primaryDark};
 
   box-shadow: inset 0px 0px 10px ${theme.primaryDark};
 

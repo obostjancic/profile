@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import styled from 'styled-components';
-import { Divider, FlexRow, SectionHeading, FlexColumn } from '../components';
+import { Divider, SectionHeading } from '../components';
 import { VSSection } from '../components/VSSection';
 import { projects } from './data';
 
@@ -39,7 +39,10 @@ const ProjectImage = styled.div`
   }
 `;
 
-const ProjectWrapper = styled(FlexRow)`
+const ProjectWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+
   margin: 3em 0 7em 0;
   transition: 0.3s;
 
@@ -64,7 +67,9 @@ const ProjectWrapper = styled(FlexRow)`
   }
 `;
 
-const ProjectInner = styled(FlexColumn)`
+const ProjectInner = styled.div`
+  display: flex;
+  flex-direction: column;
   margin: 0 0 0 10%;
   justify-content: flex-start;
   min-width: 45%;

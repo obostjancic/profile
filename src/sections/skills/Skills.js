@@ -1,27 +1,24 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { FlexRow, SectionHeading, VSSection } from '../../components';
+import { SectionHeading, VSSection } from '../../components';
 import { SkillBars } from './SkillBars';
 
 const Wrapper = styled.div`
   max-width: 1024px;
 `;
 
-const ColumnWrap = styled(FlexRow)`
+const ColumnWrap = styled.div`
+  display: flex;
+  flex-direction: row;
   @media only screen and (max-width: 992px) {
     & {
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: column;
       flex-direction: column;
-      -ms-flex-wrap: wrap;
       flex-wrap: wrap;
     }
   }
 `;
 
 const Summary = styled.div`
-  -ms-flex-preferred-size: 100%;
   flex-basis: 100%;
   text-align: left;
   margin: 0 1em;

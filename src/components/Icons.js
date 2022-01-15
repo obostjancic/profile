@@ -1,21 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
-import { JustifyContentSpaceBetween, FlexRow, Scale, theme, Transition } from '.';
+import { theme } from '.';
 
 const IconWrapper = styled.a`
-  ${Transition({ duration: 0.3 })}
+  transition: all 0.3s ease-in-out;
+
   max-height: 2.5em;
   min-width: 2.5em;
   cursor: pointer;
   opacity: 0.95;
   padding: 2em 0;
   &:hover {
-    ${Scale({ amount: 1.2 })}
+    transform: scale(1.2);
   }
 `;
 
-export const IconsWrapper = styled(FlexRow)`
-  ${JustifyContentSpaceBetween}
+export const IconsWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   padding: 0 10%;
   pointer-events: auto;
 `;

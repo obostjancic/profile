@@ -1,25 +1,29 @@
 import React from 'react';
 import { VSSection } from '../components/VSSection';
-import { FlexColumn, FlexRow, JustifyContent, SectionHeading, theme } from '../components';
+import { SectionHeading, theme } from '../components';
 import styled from 'styled-components';
 import { articles } from './data';
 
-const ArticlesWrapper = styled(FlexRow)`
+const ArticlesWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  ${JustifyContent('center')}
+  justify-content: center;
   margin-bottom: 2em;
 `;
 
-const ArticleWrapper = styled(FlexColumn)`
+const ArticleWrapper = styled.div`
   min-width: 250px;
   max-width: 400px;
-  ${JustifyContent('flex-start')};
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   background-color: ${theme.backgroundDark};
   text-align: left;
   margin: 1em 0.75em;
   border-radius: 5px;
-  -webkit-box-shadow: 2px 2px 10px #ddd;
   box-shadow: 2px 2px 10px #ddd;
 `;
 
@@ -31,13 +35,14 @@ const Image = styled.img`
   border-top-right-radius: 5px;
 `;
 
-const ArticleInner = styled(FlexColumn)`
-  -webkit-box-flex: 1;
+const ArticleInner = styled.div`
   -ms-flex: 1;
   flex: 1;
   padding: 1em;
   border-radius: 5px;
-  ${JustifyContent('space-between')};
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   & > h3 {
     display: inline-block;

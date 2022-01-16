@@ -14,6 +14,9 @@ const ColumnWrap = styled.div`
     & {
       flex-direction: column;
       flex-wrap: wrap;
+      && > div {
+        margin: 0;
+      }
     }
   }
 `;
@@ -46,7 +49,7 @@ export const Skills = () => {
             </p>
             <p>
               Outside of work, I am frequently working on my side projects, or going through the
-              backlog of Medium articles I gathered over the years.
+              articles and blog posts from my reading list.
             </p>
           </Summary>
           <SkillBars visible={visible} />

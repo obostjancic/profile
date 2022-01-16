@@ -39,9 +39,9 @@ const JobWrapper = styled.div`
 
 const Badge = styled.span`
   display: inline-block;
-  margin: 0 0.5em 0 0;
-  padding: 0.25em 0.5em;
-  border-radius: 6px;
+  margin: 0.25em 0.5em 0.25em 0;
+  padding: 0.25em 0.75em;
+  border-radius: 5px;
   box-shadow: 2px 2px 10px #ddd;
   font-weight: bold;
   font-size: 0.85em;
@@ -73,10 +73,10 @@ export const Experience = () => (
         duration={'February 2020 - Present'}
         badges={['Node.js', 'Typescript', 'React', 'Electron', 'Google Cloud']}
       >
-        As a full stack web developer, I am responsible for the development of a couple of
+        As a full stack web developer, I am responsible for the development of multiple of
         microservices inside the cloud based ecosystem, as well as their frontend clients. Apart
-        from that I also took ownership of an internal IDE product, which is used to develop various
-        OCR products.
+        from that I also took ownership of an internal IDE, which is used to develop various OCR
+        products.
       </Job>
       <Job
         company="Workflow EDV, Vienna"
@@ -95,9 +95,9 @@ export const Experience = () => (
         badges={['Java', 'Spring', 'Hibernate', 'JasperReports']}
       >
         Focus of my work was on developing a REST API backend for the new Student management system.
-        I worked mostly with Java and Spring. That included requirement analysis, design,
-        implementation, testing and deployment. Additionally I developed and maintained a couple of
-        smaller applications used to facilitate internal processes.
+        I worked mostly with Java and Spring. My Responsibilities included requirement gathering and
+        analysis, design, implementation, testing and deployment. Additionally I developed and
+        maintained a couple of smaller applications used to facilitate internal processes.
       </Job>
     </Wrapper>
   </VSSection>

@@ -1,5 +1,3 @@
-import { Pt } from 'pts';
-
 export const isMobile = () => {
   let check = false;
   (function (a) {
@@ -17,11 +15,11 @@ export const isMobile = () => {
   return check;
 };
 
-const randInt = (min = 0, max = 100) => Math.floor(Math.random() * (max - min) + min);
+// const randInt = (min = 0, max = 100) => Math.floor(Math.random() * (max - min) + min);
 
-const randAngle = () => Math.PI * (randInt(35, 85) / 100 + 1);
+// const randAngle = () => Math.PI * (randInt(35, 85) / 100 + 1);
 
-export const randomPoints = (max = 100, amount = 100) =>
-  new Array(amount)
-    .fill(0)
-    .map(() => ({ point: new Pt(randInt(0, max), randInt(0, max)), angle: randAngle() }));
+// export const randomPoints = (max = 100, amount = 100) =>
+//   new Array(amount)
+//     .fill(0)
+//     .map(() => ({ point: new Pt(randInt(0, max), randInt(0, max)), angle: randAngle() }));

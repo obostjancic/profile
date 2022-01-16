@@ -20,7 +20,7 @@ const Main = styled.main`
 function App() {
   return (
     <>
-      <div className="background-shape" />
+      <div id="background" className="background-shape" />
       <Main>
         <Navbar />
         <Intro />

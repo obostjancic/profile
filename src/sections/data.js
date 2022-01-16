@@ -35,7 +35,7 @@ export const projects = {
         height: '1348',
         src: 'images/projects/kolorkross/kolorkross.avif',
         description:
-          'Kolor Kross organizes projects (workspaces) in flexible groups. Every project is asssigned to a color, and VS Code window of that project is colored with that color. This allows users to develop mental maps when working across multiple projects. Dasboard offers a quick overview and organization of all projects and their color codes. It also allows users to quickly jump to a project.',
+          'Kolor Kross organizes projects (workspaces) in flexible groups. Every project is asssigned to a color, and VS Code window of that project is colored with that color. This allows users to develop mental maps when working across multiple projects. ',
       },
     ],
   },

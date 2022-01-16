@@ -28,12 +28,11 @@ const ProjectImage = styled.div`
   overflow: hidden;
   border-radius: 10px;
 
-  max-width: 100%;
-  display: flex;
-  align-items: center; /* vertical */
-  justify-content: center; /* horizontal */
+  width: 50%;
+
   @media only screen and (max-width: 992px) {
     & {
+      width: 100%;
       max-height: 24em;
     }
   }
@@ -45,16 +44,6 @@ const ProjectWrapper = styled.div`
 
   margin: 3em 0 7em 0;
   transition: 0.3s;
-
-  ${({ right }) =>
-    right
-      ? `  
-  flex-direction: row-reverse;
-
-  & > .project-inner {
-    margin: 0 10% 0 0;
-  }`
-      : ''}
 
   @media only screen and (max-width: 992px) {
     & {
@@ -70,13 +59,14 @@ const ProjectWrapper = styled.div`
 const ProjectInner = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 0 0 0 10%;
+  margin: 0 1em;
   justify-content: flex-start;
-  min-width: 45%;
+  width: 50%;
   text-align: left;
 
   @media only screen and (max-width: 992px) {
     & {
+      width: 100%;
       margin: 10em 0;
     }
   }
@@ -128,7 +118,7 @@ export const Projects = () => {
       <SectionHeading>Projects</SectionHeading>
       <div>
         <Project project={projects.team8} />
-        <Project project={projects.kolorkross} right />
+        <Project project={projects.kolorkross} />
       </div>
     </VSSection>
   );

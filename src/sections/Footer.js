@@ -7,10 +7,9 @@ const FooterWrapper = styled.footer`
   padding: 1em 0 0.25em 0;
   background-color: ${theme.backgroundDark};
 
-
   box-shadow: inset 0px 0px 10px ${theme.primaryDark};
 
-  &  a {
+  & a {
     text-decoration: none;
     color: ${theme.primary};
   }
@@ -37,8 +36,9 @@ export const Footer = () => (
   <FooterWrapper>
     <SectionHeading>Get in touch</SectionHeading>
     <p>
-      I always open to new opportunities and projects. <br /> 
-      If you're looking for development help or have any queries at all, <br /> don't hesitate to <FooterLink href="mailto:ognjen.bostjancic@gmail.com">contact me</FooterLink>.
+      I'm always open to new opportunities and projects. <br />
+      If you're looking for development help or have any queries at all, <br /> don't hesitate to{' '}
+      <FooterLink href="mailto:ognjen.bostjancic@gmail.com">contact me</FooterLink>.
     </p>
     <FooterIconWrapper>
       <ArrowUpIcon />
@@ -46,7 +46,7 @@ export const Footer = () => (
     <FooterLinksWrapper>
       Crafted with&nbsp;
       <FooterLink href={'https://reactjs.org/'}>React</FooterLink>,&nbsp;
-      <FooterLink href={'https://ptsjs.org/'}>Pts</FooterLink>
+      <FooterLink href={'https://vantajs.com/'}>Vanta.js</FooterLink>
       &nbsp;and&nbsp;
       <FooterLink href={'https://styled-components.com/'}>Styled components</FooterLink>
     </FooterLinksWrapper>

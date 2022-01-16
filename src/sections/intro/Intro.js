@@ -1,11 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { theme, VSSection } from '../../components';
-import { isMobile } from '../../utils';
-import { Canvas } from './Canvas';
 import { Icons } from '../../components/Icons';
 import { Photo } from './Photo';
-
+import { Vanta } from './Vanta';
+import { isMobile } from './../../utils';
 const IntroWrapper = styled.div`
   padding: 0 50px;
   max-width: 600px;
@@ -40,12 +39,16 @@ const Subheading = styled.h2`
 const Summary = styled.summary`
   margin: 3em auto 1em auto;
   line-height: 2;
-  background-color: #eeeeee25;
+  background-color: #f2f6f8aa;
+  border-radius: 20px;
+  box-shadow: 0px 0px 50px #f2f6f8ff;
 `;
 
 const EmphasizedSummary = styled.p`
   font-size: 18px;
   padding-bottom: 1em;
+  font-weight: bold;
+  opacity: 0.9;
 `;
 
 const IntroLink = styled.a`
@@ -61,7 +64,8 @@ const IntroLink = styled.a`
 export const Intro = () => {
   return (
     <>
-      {!isMobile() && <Canvas />}
+      {/* {!isMobile() && <Canvas />} */}
+      {!isMobile() && <Vanta />}
       <VSSection intro>
         <IntroWrapper>
           <Photo />

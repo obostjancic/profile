@@ -48,7 +48,7 @@ const EmphasizedSummary = styled.p`
   font-size: 18px;
   padding-bottom: 1em;
   font-weight: bold;
-  opacity: 0.9;
+  opacity: 0.85;
 `;
 
 const IntroLink = styled.a`

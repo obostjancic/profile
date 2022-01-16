@@ -4,6 +4,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import styled from 'styled-components';
 import { Divider, SectionHeading } from '../components';
 import { VSSection } from '../components/VSSection';
+import { srcSet } from '../utils';
 import { projects } from './data';
 
 const ProjectHeading = styled.div`
@@ -82,6 +83,7 @@ const Project = ({ project, right }) => {
   const [selectedId, setSelectedId] = useState(0);
   const { name, description, images } = project;
   const summary = images.find((img) => img.id === selectedId).description;
+
   return (
     <ProjectWrapper right={right}>
       <ProjectImage>
@@ -94,7 +96,7 @@ const Project = ({ project, right }) => {
           }}
         >
           {images.map((img) => (
-            <img key={img.id} src={img.src} alt="Project images" />
+            <img key={img.id} src={img.src} alt="Project images" srcSet={srcSet(img.src)} />
           ))}
         </Carousel>
       </ProjectImage>

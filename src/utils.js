@@ -15,11 +15,10 @@ export const isMobile = () => {
   return check;
 };
 
-// const randInt = (min = 0, max = 100) => Math.floor(Math.random() * (max - min) + min);
+export const srcSet = (image) => {
+  const [path, extension] = image.split('.');
+  const large = `${path}-large.${extension}`;
+  const small = `${path}-small.${extension}`;
 
-// const randAngle = () => Math.PI * (randInt(35, 85) / 100 + 1);
-
-// export const randomPoints = (max = 100, amount = 100) =>
-//   new Array(amount)
-//     .fill(0)
-//     .map(() => ({ point: new Pt(randInt(0, max), randInt(0, max)), angle: randAngle() }));
+  return `${large} 800w, ${small} 400w`;
+};

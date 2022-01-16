@@ -20,5 +20,5 @@ export const srcSet = (image) => {
   const large = `${path}-large.${extension}`;
   const small = `${path}-small.${extension}`;
 
-  return `${large} 800w, ${small} 400w`;
+  return `${large} 600w, ${small} 300w`;
 };

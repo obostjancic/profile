@@ -74,6 +74,6 @@ export const Icons = () => (
     />
     <Icon name="Github" path={paths.github} href={'https://github.com/obostjancic/'} newTab />
     <Icon name="Blog" path={paths.blog} href={'https://cherrypick.hashnode.dev/'} newTab />
-    <Icon name="CV" path={paths.cv} href={'./ognjen-bostjancic-CV.pdf'} newTab />
+    <Icon name="CV" path={paths.cv} href={'./ognjen-bostjancic-cv.pdf'} newTab />
   </IconsWrapper>
 );

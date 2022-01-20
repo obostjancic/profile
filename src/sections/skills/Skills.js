@@ -41,15 +41,15 @@ export const Skills = () => {
         <ColumnWrap>
           <Summary>
             <p>
-              Apart from end to end development and maintenance of stable and scalable RESTful Web
-              Applications, I have taken on myself a series of other responsibilities. Some of them
-              include: Migration from JavaScript to TypeScript, Ownership of private NPM packages
-              and UI kit libraries, writing extensive Database Migration scripts, as well as
-              integration of monitoring and error tracking services.
+              Apart from end-to-end development and maintenance of stable and scalable RESTful web
+              applications, I have taken on myself a series of other responsibilities. Some of them
+              include: migration from JavaScript to TypeScript, ownership of private NPM packages
+              and UI kit libraries, writing extensive database migration scripts, and integration of
+              monitoring and error tracking services.
             </p>
             <p>
-              Outside of work, I am frequently working on my side projects, or going through the
-              articles and blog posts from my reading list.
+              Outside of work, I am frequently working on my side projects or going through the
+              articles and blog posts on my reading list.
             </p>
           </Summary>
           <SkillBars visible={visible} />

@@ -8,6 +8,7 @@ const PhotoWrapper = styled.div`
   border: 1px solid ${theme.primary};
   border-radius: 100px 0 0 100px;
   min-height: 128px;
+  min-width: 128px;
   max-width: 128px;
   margin: 0 auto;
   border-radius: 50%;

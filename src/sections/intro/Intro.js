@@ -5,13 +5,16 @@ import { Icons } from '../../components/Icons';
 import { Photo } from './Photo';
 import { Vanta } from './Vanta';
 import { isMobile } from './../../utils';
+
 const IntroWrapper = styled.div`
-  padding: 0 50px;
   max-width: 600px;
   margin: 0 auto;
-  padding-top: 6em;
-  min-height: 80vh;
+  min-height: 100vh;
   opacity: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   @media only screen and (max-width: 600px) {
     & {
@@ -64,7 +67,6 @@ const IntroLink = styled.a`
 export const Intro = () => {
   return (
     <>
-      {/* {!isMobile() && <Canvas />} */}
       {!isMobile() && <Vanta />}
       <VSSection intro>
         <IntroWrapper>
@@ -75,17 +77,17 @@ export const Intro = () => {
           </hgroup>
           <Summary>
             <EmphasizedSummary>
-              Hello, I'm Ogi - A software developer focused on the Web apps. Using React and Node.js
-              with Typescript daily.
+              Hello, I'm Ogi, a software developer focused on Web apps. I use React and Node.js with
+              Typescript daily.
             </EmphasizedSummary>
             Currently, I work as a Web developer for{' '}
             <IntroLink href="https://anyline.com/" target="_blank" rel="noopener noreferrer">
               Anyline
             </IntroLink>
-            , where I am committed to the creation of a cloud infrastructure that is used for
-            automation of Machine Learning and Computer Vision processes. When I am not rolling out
-            new features I spend my time improving code quality by refactoring, introducing design
-            patterns or writing additional tests. Colleagues know me as a motivated and
+            , where I am committed to the creation of a cloud infrastructure that is used for the
+            automation of machine learning and computer vision processes. When I am not rolling out
+            new features, I spend my time improving code quality by refactoring, introducing design
+            patterns, or writing additional tests. Coworkers know me as a motivated and
             communicative team member who is enthusiastic about taking the development process to
             the next level.
           </Summary>

@@ -9,13 +9,13 @@ const NavbarWrapper = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #eeeeee55;
+  // background-color: #eeeeee55;
 
   @media only screen and (max-width: 600px) {
     & {
       // top: -5em;
       left: 0;
-      background-color: #eeeeee05;
+      // background-color: #eeeeee05;
     }
   }
 `;

@@ -73,9 +73,9 @@ export const Experience = () => (
         duration={'February 2020 - Present'}
         badges={['Node.js', 'Typescript', 'React', 'Electron', 'Google Cloud']}
       >
-        As a full stack web developer, I am responsible for the development of multiple of
-        microservices inside the cloud based ecosystem, as well as their frontend clients. Apart
-        from that I also took ownership of an internal IDE, which is used to develop various OCR
+        As a full-stack web developer, I am responsible for the development of multiple
+        microservices inside the cloud-based ecosystem, as well as their frontend clients. Apart
+        from that, I also took ownership of an internal IDE, which is used to develop various OCR
         products.
       </Job>
       <Job
@@ -84,9 +84,9 @@ export const Experience = () => (
         duration={'May 2018 - Jan 2020'}
         badges={['Java', 'Spring', 'Hibernate', 'Vue.js', 'Typescript']}
       >
-        Starting out as an intern, I transitioned into a developer position. I developed new REST
-        API as a part of the existing codebase using Spring framework. I also briefly worked with a
-        Vue.js frontend application that consumed the API.
+        Starting out as an intern, I transitioned into a developer position. I developed a new REST
+        API as a part of the existing codebase using the Spring framework. I also briefly worked on
+        an a Vue.js frontend application that consumed the API.
       </Job>
       <Job
         company="IT Services, Sarajevo"
@@ -94,10 +94,11 @@ export const Experience = () => (
         duration={'Mar 2017 - May 2018'}
         badges={['Java', 'Spring', 'Hibernate', 'JasperReports']}
       >
-        Focus of my work was on developing a REST API backend for the new Student management system.
-        I worked mostly with Java and Spring. My Responsibilities included requirement gathering and
-        analysis, design, implementation, testing and deployment. Additionally I developed and
-        maintained a couple of smaller applications used to facilitate internal processes.
+        The focus of my work was on developing a REST API backend for the new student management
+        system. I worked mostly with Java and Spring. My responsibilities included requirement
+        gathering and analysis, design, implementation, testing, and deployment. Additionally, I
+        developed and maintained a couple of smaller applications used to facilitate internal
+        processes.
       </Job>
     </Wrapper>
   </VSSection>

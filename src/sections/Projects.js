@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import styled from 'styled-components';
-import { Divider, SectionHeading } from '../components';
+import { Divider, SectionHeading, theme } from '../components';
 import { VSSection } from '../components/VSSection';
 import { srcSet } from '../utils';
 import { projects } from './data';
@@ -79,9 +79,25 @@ const Summary = styled.div`
   max-width: 500px;
 `;
 
+const Link = styled.a`
+  text-decoration: none;
+  font-weight: bold;
+  color: ${theme.primary};
+  pointer-events: auto;
+  &::visited {
+    color: ${theme.primary};
+  }
+`;
+
+const ProjectLink = ({ children, href }) => (
+  <Link href={href} target="_blank" rel="noopener noreferrer">
+    {children}
+  </Link>
+);
+
 const Project = ({ project, right }) => {
   const [selectedId, setSelectedId] = useState(0);
-  const { name, description, images } = project;
+  const { name, description, images, url } = project;
   const summary = images.find((img) => img.id === selectedId).description;
 
   return (
@@ -102,7 +118,9 @@ const Project = ({ project, right }) => {
       </ProjectImage>
       <ProjectInner className="project-inner">
         <ProjectHeading>
-          <h2>{name}</h2>
+          <h2>
+            <ProjectLink href={url}>{name}</ProjectLink>
+          </h2>
           <p>
             <b>{description}</b>
           </p>
@@ -119,8 +137,8 @@ export const Projects = () => {
     <VSSection anchor="projects">
       <SectionHeading>Projects</SectionHeading>
       <div>
-        <Project project={projects.team8} />
         <Project project={projects.kolorkross} />
+        <Project project={projects.team8} />
       </div>
     </VSSection>
   );

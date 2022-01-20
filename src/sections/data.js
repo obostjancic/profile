@@ -3,6 +3,7 @@ export const projects = {
     id: 'team8',
     name: 'Team 8',
     description: 'Collaboration and HR management app',
+    url: '#',
     images: [
       {
         id: 0,
@@ -27,7 +28,8 @@ export const projects = {
   kolorkross: {
     id: 'kolorkross',
     name: 'Kolor Kross',
-    description: 'VS Code extension that allows fast & colorful access to multiple workspaces',
+    url: 'https://github.com/obostjancic/kolorkross',
+    description: 'A VS Code extension that allows fast & colorful access to multiple workspaces',
     images: [
       {
         id: 0,

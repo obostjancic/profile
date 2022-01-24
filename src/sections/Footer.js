@@ -4,7 +4,7 @@ import { SectionHeading, theme } from '../components';
 import { ArrowUpIcon } from '../components/Icons';
 
 const FooterWrapper = styled.footer`
-  padding: 1em 0 0.25em 0;
+  padding: 1em 0.5em 0.25em 0.5em;
   background-color: ${theme.backgroundDark};
 
   box-shadow: inset 0px 0px 10px ${theme.primaryDark};

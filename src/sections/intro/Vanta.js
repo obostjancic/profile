@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import NET from 'vanta/dist/vanta.net.min';
 import { theme } from '../../components';
+import * as THREE from 'three';
 
 const CanvasWrapper = styled.div`
   position: absolute;
@@ -35,6 +36,7 @@ export const Vanta = () => {
           spacing: 20.0,
           color: theme.primary,
           backgroundColor: theme.backgroundDark,
+          THREE: THREE,
         })
       );
     }

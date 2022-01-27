@@ -54,6 +54,10 @@ const EmphasizedSummary = styled.p`
   opacity: 0.85;
 `;
 
+const ParagraphSummary = styled.p`
+  line-height: 2;
+`;
+
 const IntroLink = styled.a`
   text-decoration: none;
   font-weight: bold;
@@ -80,16 +84,18 @@ export const Intro = () => {
               Hello, I'm Ogi, a software developer focused on Web apps. I use React and Node.js with
               Typescript daily.
             </EmphasizedSummary>
-            Currently, I work as a Web developer for{' '}
-            <IntroLink href="https://anyline.com/" target="_blank" rel="noopener noreferrer">
-              Anyline
-            </IntroLink>
-            , where I am committed to the creation of a cloud infrastructure that is used for the
-            automation of machine learning and computer vision processes. When I am not rolling out
-            new features, I spend my time improving code quality by refactoring, introducing design
-            patterns, or writing additional tests. Coworkers know me as a motivated and
-            communicative team member who is enthusiastic about taking the development process to
-            the next level.
+            <ParagraphSummary>
+              Currently, I work as a Web developer for{' '}
+              <IntroLink href="https://anyline.com/" target="_blank" rel="noopener noreferrer">
+                Anyline
+              </IntroLink>
+              , where I am committed to the creation of a cloud infrastructure that is used for the
+              automation of machine learning and computer vision processes. When I am not rolling
+              out new features, I spend my time improving code quality by refactoring, introducing
+              design patterns, or writing additional tests. Coworkers know me as a motivated and
+              communicative team member who is enthusiastic about taking the development process to
+              the next level.
+            </ParagraphSummary>
           </Summary>
           <Icons />
         </IntroWrapper>

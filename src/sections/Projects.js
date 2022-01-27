@@ -112,7 +112,13 @@ const Project = ({ project, right }) => {
           }}
         >
           {images.map((img) => (
-            <img key={img.id} src={img.src} alt="Project images" srcSet={srcSet(img.src)} />
+            <img
+              key={img.id}
+              src={img.srcPng}
+              alt="Project images"
+              // srcSet={srcSet(img.src)}
+              // onerror={`this.onerror=null; this.src='/images/${img.src}'`}
+            />
           ))}
         </Carousel>
       </ProjectImage>

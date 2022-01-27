@@ -8,6 +8,7 @@ export const projects = {
       {
         id: 0,
         src: 'images/projects/team8/team8.avif',
+        srcPng: 'images/projects/team8/team8.png',
         wdith: '221',
         height: '134',
         description:
@@ -36,6 +37,7 @@ export const projects = {
         wdith: '2214',
         height: '1348',
         src: 'images/projects/kolorkross/kolorkross.avif',
+        srcPng: 'images/projects/kolorkross/kolorkross.png',
         description:
           'Kolor Kross organizes projects (workspaces) into flexible groups. Every project is assigned a color, and the VS Code window of that project is colored with that color. This allows users to develop mental maps when working across multiple projects.',
       },

@@ -5,28 +5,39 @@ import { theme } from '.';
 const IconWrapper = styled.a`
   transition: all 0.3s ease-in-out;
 
-  max-height: 2.5em;
-  min-width: 2.5em;
+  max-height: 2em;
+  width: 1.75em;
   cursor: pointer;
   opacity: 0.95;
-  padding: 2em 0;
+  padding: 2em 0 0.75em 0;
+
   &:hover {
     transform: scale(1.2);
   }
 
-  .sr-only {
-    border: 0 !important;
-    clip: rect(1px, 1px, 1px, 1px) !important;
-    -webkit-clip-path: inset(50%) !important;
-    clip-path: inset(50%) !important;
-    height: 1px !important;
-    overflow: hidden !important;
-    margin: -1px !important;
-    padding: 0 !important;
-    position: absolute !important;
-    width: 1px !important;
-    white-space: nowrap !important;
-  }
+  // .sr-only {
+  //   border: 0 !important;
+  //   clip: rect(1px, 1px, 1px, 1px) !important;
+  //   -webkit-clip-path: inset(50%) !important;
+  //   clip-path: inset(50%) !important;
+  //   height: 1px !important;
+  //   overflow: hidden !important;
+  //   margin: -1px !important;
+  //   padding: 0 !important;
+  //   position: absolute !important;
+  //   width: 1px !important;
+  //   white-space: nowrap !important;
+  // }
+`;
+
+export const IconNameWrapper = styled.a`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
+  color: ${theme.primary};
+  text-decoration: none;
+  padding-bottom: 0.75em;
 `;
 
 export const IconsWrapper = styled.div`
@@ -51,18 +62,17 @@ const paths = {
 };
 
 export const Icon = ({ name, path, href, newTab }) => (
-  <IconWrapper href={href} target={newTab ? '_blank' : ''} rel="noopener noreferrer">
-    <svg aria-hidden="true" focusable="false" role="img" viewBox="0 0 512 512">
-      <path fill={theme.primary} d={path}></path>
-    </svg>
-
-    <span className="sr-only">{name}</span>
-  </IconWrapper>
+  <IconNameWrapper href={href} target={newTab ? '_blank' : ''} rel="noopener noreferrer">
+    <IconWrapper>
+      <svg aria-hidden="true" focusable="false" role="img" viewBox="0 0 512 512">
+        <path fill={theme.primary} d={path}></path>
+      </svg>
+    </IconWrapper>
+    <span className="">{name}</span>
+  </IconNameWrapper>
 );
 
-export const ArrowUpIcon = () => (
-  <Icon name="Back to top" path={paths.arrowUp} href={'#navbar'} newTab={false} />
-);
+export const ArrowUpIcon = () => <Icon path={paths.arrowUp} href={'#navbar'} newTab={false} />;
 
 export const Icons = () => (
   <IconsWrapper>
@@ -74,6 +84,6 @@ export const Icons = () => (
     />
     <Icon name="Github" path={paths.github} href={'https://github.com/obostjancic/'} newTab />
     <Icon name="Blog" path={paths.blog} href={'https://cherrypick.hashnode.dev/'} newTab />
-    <Icon name="CV" path={paths.cv} href={'./ognjen-bostjancic-cv.pdf'} newTab />
+    <Icon name="Resume" path={paths.cv} href={'./ognjen-bostjancic-cv.pdf'} newTab />
   </IconsWrapper>
 );

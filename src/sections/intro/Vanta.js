@@ -14,6 +14,7 @@ const CanvasWrapper = styled.div`
   background-color: ${theme.backgroundOverlay};
   z-index: -1;
   box-shadow: inset 0px 0px 100px #a6c3cf;
+  pointer-events: none;
 `;
 
 export const Vanta = () => {

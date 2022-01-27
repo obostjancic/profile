@@ -63,6 +63,7 @@ const Bar = styled.div`
 `;
 
 const BarPercent = styled.div`
+  display: none;
   height: 100%;
   padding: 0 0.5em;
   color: ${theme.primary};

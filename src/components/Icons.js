@@ -37,7 +37,8 @@ export const IconNameWrapper = styled.a`
   font-weight: bold;
   color: ${theme.primary};
   text-decoration: none;
-  padding-bottom: 0.75em;
+
+  padding: 0 0.2em 0.75em 0.2em;
 `;
 
 export const IconsWrapper = styled.div`

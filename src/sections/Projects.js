@@ -4,7 +4,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import styled from 'styled-components';
 import { Divider, SectionHeading, theme } from '../components';
 import { VSSection } from '../components/VSSection';
-import { srcSet } from '../utils';
+// import { srcSet } from '../utils';
 import { projects } from './data';
 
 const ProjectHeading = styled.div`

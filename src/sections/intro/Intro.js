@@ -81,8 +81,8 @@ export const Intro = () => {
           </hgroup>
           <Summary>
             <EmphasizedSummary>
-              Hello, I'm Ogi, a software developer focused on Web apps. I use React and Node.js with
-              Typescript daily.
+              Hello, I'm Ogi, a software developer focused on Web apps. I use TypeScript with React
+              and Node.js daily.
             </EmphasizedSummary>
             <ParagraphSummary>
               Currently, I work as a Web developer for{' '}

@@ -51,7 +51,7 @@ const BarWrapper = styled.div`
   border-left: 0;
 `;
 
-const Bar = styled.div`
+const Bar = styled.div<BarProps>`
   width: 0;
   background-color: ${theme.primary}df;
   height: 100%;
@@ -59,7 +59,7 @@ const Bar = styled.div`
   transition: width 0.75s cubic-bezier(0.39, 0.58, 0.57, 1);
   transition-delay: 0.4s;
 
-  width: ${({ width, visible }) => `${visible ? width - 3 : 0}%`};
+  width: ${({ width, visible }) => `${visible ? Number(width) - 3 : 0}%`};
 `;
 
 const BarPercent = styled.div`
@@ -81,7 +81,15 @@ const Bars = styled.div`
   margin: 0 1em;
 `;
 
-const Skill = ({ label, width, visible }) => (
+interface BarProps {
+  width: string;
+  visible: boolean;
+}
+interface SkillProps extends BarProps {
+  label: string;
+}
+
+const Skill = ({ label, width, visible }: SkillProps) => (
   <Wrapper>
     <Label>{label}</Label>
     <BarWrapper>
@@ -91,7 +99,7 @@ const Skill = ({ label, width, visible }) => (
   </Wrapper>
 );
 
-export const SkillBars = ({ visible }) => (
+export const SkillBars = ({ visible }: { visible: boolean }) => (
   <Bars>
     <Skill label="Node.js" visible={visible} width="90" />
     <Skill label="React" visible={visible} width="85" />

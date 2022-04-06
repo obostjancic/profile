@@ -50,13 +50,25 @@ const Badge = styled.span`
   opacity: 1;
 }`;
 
-const Job = ({ company, position, duration, children, badges }) => (
+interface Job {
+  company: string;
+  position: string;
+  duration: string;
+  badgeNames: string[];
+}
+
+interface JobCardProps {
+  job: Job;
+  children: React.ReactNode;
+}
+
+const JobCard = ({ job, children }: JobCardProps) => (
   <JobWrapper>
-    <h2>{company}</h2>
-    <h3>{position}</h3>
-    <h4>{duration}</h4>
-    {badges?.map((badge) => (
-      <Badge key={badge}>{badge}</Badge>
+    <h2>{job.company}</h2>
+    <h3>{job.position}</h3>
+    <h4>{job.duration}</h4>
+    {job.badgeNames.map((name: string) => (
+      <Badge key={name}>{name}</Badge>
     ))}
     <p>{children}</p>
   </JobWrapper>
@@ -66,40 +78,45 @@ export const Experience = () => (
   <VSSection anchor="experience">
     <Wrapper>
       <SectionHeading>Experience</SectionHeading>
-
-      <Job
-        company="Anyline, Vienna"
-        position="Full stack web developer"
-        duration={'February 2020 - Present'}
-        badges={['Node.js', 'Typescript', 'React', 'Electron', 'Google Cloud']}
+      <JobCard
+        job={{
+          company: 'Anyline, Vienna',
+          position: 'Full stack web developer',
+          duration: 'February 2020 - Present',
+          badgeNames: ['Node.js', 'Typescript', 'React', 'Electron', 'Google Cloud'],
+        }}
       >
         As a full-stack web developer, I am responsible for the development of multiple
         microservices inside the cloud-based ecosystem, as well as their frontend clients. Apart
         from that, I also took ownership of an internal IDE, which is used to develop various OCR
         products.
-      </Job>
-      <Job
-        company="Workflow EDV, Vienna"
-        position="Backend web developer"
-        duration={'May 2018 - Jan 2020'}
-        badges={['Java', 'Spring', 'Hibernate', 'Vue.js', 'Typescript']}
+      </JobCard>
+      <JobCard
+        job={{
+          company: 'Workflow EDV, Vienna',
+          position: 'Backend web developer',
+          duration: 'May 2018 - Jan 2020',
+          badgeNames: ['Java', 'Spring', 'Hibernate', 'Vue.js', 'Typescript'],
+        }}
       >
         Starting out as an intern, I transitioned into a developer position. I developed a new REST
         API as a part of the existing codebase using the Spring framework. I also briefly worked on
         an a Vue.js frontend application that consumed the API.
-      </Job>
-      <Job
-        company="IT Services, Sarajevo"
-        position="Backend web developer"
-        duration={'Mar 2017 - May 2018'}
-        badges={['Java', 'Spring', 'Hibernate', 'JasperReports']}
+      </JobCard>
+      <JobCard
+        job={{
+          company: 'IT Services, Sarajevo',
+          position: 'Backend web developer',
+          duration: 'Mar 2017 - May 2018',
+          badgeNames: ['Java', 'Spring', 'Hibernate', 'JasperReports'],
+        }}
       >
         The focus of my work was on developing a REST API backend for the new student management
         system. I worked mostly with Java and Spring. My responsibilities included requirement
         gathering and analysis, design, implementation, testing, and deployment. Additionally, I
         developed and maintained a couple of smaller applications used to facilitate internal
         processes.
-      </Job>
+      </JobCard>
     </Wrapper>
   </VSSection>
 );

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { theme } from './Base.styles';
 
-export const Section = styled.section`
+export const Section = styled.section<{ active: boolean; intro?: boolean }>`
   max-width: 1000px;
   padding: 0 50px;
   padding-top: 1em;

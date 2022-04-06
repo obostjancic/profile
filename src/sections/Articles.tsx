@@ -3,6 +3,7 @@ import { VSSection } from '../components/VSSection';
 import { SectionHeading, theme } from '../components';
 import styled from 'styled-components';
 import { articles } from './data';
+import { Article } from '../types';
 
 const ArticlesWrapper = styled.div`
   display: flex;
@@ -68,7 +69,7 @@ const ArticleInner = styled.div`
   }
 `;
 
-const Article = ({ article }) => {
+const ArticleCard = ({ article }: { article: Article }) => {
   const { title, description, url, imgUrl } = article;
   return (
     <ArticleWrapper>
@@ -91,10 +92,10 @@ export const Articles = () => {
     <VSSection anchor="articles">
       <SectionHeading>Articles</SectionHeading>
       <ArticlesWrapper>
-        <Article article={articles[0]} />
-        <Article article={articles[1]} />
-        <Article article={articles[2]} />
-        <Article article={articles[3]} />
+        <ArticleCard article={articles[0]} />
+        <ArticleCard article={articles[1]} />
+        <ArticleCard article={articles[2]} />
+        <ArticleCard article={articles[3]} />
       </ArticlesWrapper>
     </VSSection>
   );

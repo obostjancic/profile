@@ -2,7 +2,14 @@ import React, { useState } from 'react';
 import VisibilitySensor from 'react-visibility-sensor';
 import { Section } from './Wrappers';
 
-export const VSSection = ({ children, intro, anchor, handleChange = () => {} }) => {
+export interface VSSectionProps {
+  children: React.ReactNode;
+  intro?: boolean;
+  anchor?: string;
+  handleChange?: (visible: boolean) => void;
+}
+
+export const VSSection = ({ children, intro, anchor, handleChange = () => {} }: VSSectionProps) => {
   const [active, setActive] = useState(false);
 
   return (

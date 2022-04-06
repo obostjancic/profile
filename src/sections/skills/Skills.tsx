@@ -30,7 +30,7 @@ const Summary = styled.div`
 export const Skills = () => {
   const [visible, setVisible] = useState(false);
 
-  const handleChange = (visible) => {
+  const handleChange = (visible: boolean) => {
     setVisible(visible);
   };
 

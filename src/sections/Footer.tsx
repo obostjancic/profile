@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { SectionHeading, theme } from '../components';
 import { ArrowUpIcon } from '../components/Icons';
+import { LinkProps } from '../types';
 
 const FooterWrapper = styled.footer`
   padding: 1em 0.5em 0.25em 0.5em;
@@ -26,7 +27,7 @@ const FooterLinksWrapper = styled.p`
   font-size: 12px;
 `;
 
-const FooterLink = ({ children, href }) => (
+const FooterLink = ({ children, href }: LinkProps) => (
   <a href={href} target="_blank" rel="noopener noreferrer">
     {children}
   </a>

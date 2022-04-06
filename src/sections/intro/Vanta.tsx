@@ -1,7 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
+//@ts-expect-error
 import NET from 'vanta/dist/vanta.net.min';
 import { theme } from '../../components';
+//@ts-expect-error
 import * as THREE from 'three';
 
 const CanvasWrapper = styled.div`
@@ -42,6 +44,7 @@ export const Vanta = () => {
       );
     }
     return () => {
+      //@ts-expect-error
       if (vantaEffect) vantaEffect.destroy();
     };
   }, [vantaEffect]);

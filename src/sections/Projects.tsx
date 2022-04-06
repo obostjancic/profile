@@ -4,6 +4,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import styled from 'styled-components';
 import { Divider, SectionHeading, theme } from '../components';
 import { VSSection } from '../components/VSSection';
+import { Image, LinkProps, Project } from '../types';
 // import { srcSet } from '../utils';
 import { projects } from './data';
 
@@ -89,29 +90,33 @@ const Link = styled.a`
   }
 `;
 
-const ProjectLink = ({ children, href }) => (
+const ProjectLink = ({ children, href }: LinkProps) => (
   <Link href={href} target="_blank" rel="noopener noreferrer">
     {children}
   </Link>
 );
 
-const Project = ({ project, right }) => {
-  const [selectedId, setSelectedId] = useState(0);
+interface ProjectProps {
+  project: Project;
+}
+
+const ProjectCard = ({ project }: ProjectProps) => {
+  const [selectedId, setSelectedId] = useState('0');
   const { name, description, images, url } = project;
-  const summary = images.find((img) => img.id === selectedId).description;
+  const summary = images.find((img: Image) => img.id === selectedId)?.description;
 
   return (
-    <ProjectWrapper right={right}>
+    <ProjectWrapper>
       <ProjectImage>
         <Carousel
           showThumbs={false}
           showStatus={false}
           showIndicators={false}
           onChange={(id) => {
-            setSelectedId(id);
+            setSelectedId(JSON.stringify(id));
           }}
         >
-          {images.map((img) => (
+          {images.map((img: Image) => (
             <img
               key={img.id}
               src={img.srcPng}
@@ -143,8 +148,8 @@ export const Projects = () => {
     <VSSection anchor="projects">
       <SectionHeading>Projects</SectionHeading>
       <div>
-        <Project project={projects.kolorkross} />
-        <Project project={projects.team8} />
+        <ProjectCard project={projects.kolorkross} />
+        <ProjectCard project={projects.team8} />
       </div>
     </VSSection>
   );

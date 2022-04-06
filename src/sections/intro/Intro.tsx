@@ -4,7 +4,7 @@ import { theme, VSSection } from '../../components';
 import { Icons } from '../../components/Icons';
 import { Photo } from './Photo';
 import { Vanta } from './Vanta';
-import { isMobile } from './../../utils';
+import { isMobile } from '../../utils';
 
 const IntroWrapper = styled.div`
   max-width: 600px;

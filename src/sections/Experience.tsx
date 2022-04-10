@@ -80,15 +80,27 @@ export const Experience = () => (
       <SectionHeading>Experience</SectionHeading>
       <JobCard
         job={{
-          company: 'Anyline, Vienna',
-          position: 'Full stack web developer',
-          duration: 'February 2020 - Present',
-          badgeNames: ['Node.js', 'Typescript', 'React', 'Electron', 'Google Cloud'],
+          company: 'Bitmovin, Vienna',
+          position: 'Software engineer',
+          duration: 'February 2022 - Present',
+          badgeNames: ['NestJS', 'Typescript', 'React'],
         }}
       >
-        As a full-stack web developer, I am responsible for the development of multiple
-        microservices inside the cloud-based ecosystem, as well as their frontend clients. Apart
-        from that, I also took ownership of an internal IDE, which is used to develop various OCR
+        I am a part of the test automation team that develops and maintains a number of services
+        used to orchestrate automated tests of the Bitmovin video player across a wide range of
+        smart devices.
+      </JobCard>
+      <JobCard
+        job={{
+          company: 'Anyline, Vienna',
+          position: 'Full stack web developer',
+          duration: 'February 2020 - January 2022',
+          badgeNames: ['NestJS', 'Typescript', 'React', 'Electron', 'Google Cloud'],
+        }}
+      >
+        As a full-stack web developer, I was responsible for the development of multiple
+        microservices inside the cloud-based system, as well as their frontend clients. Apart from
+        that, I also took ownership of an internal IDE, which is used to develop various OCR
         products.
       </JobCard>
       <JobCard

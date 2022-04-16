@@ -1,55 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
-import { theme, SectionHeading, VSSection } from '../components';
-
-const Wrapper = styled.div`
-  max-width: 600px;
-  margin: 0 auto;
-`;
-
-const JobWrapper = styled.div`
-  margin: 4em auto;
-
-  & > h2 {
-    font-size: 23px;
-    margin-bottom: 0.25em;
-  }
-  & > h3 {
-    font-size: 18px;
-    margin: 0;
-    color: ${theme.primary};
-  }
-  & > h4 {
-    margin-top: 0;
-    font-size: 0.8em;
-    line-height: 1.5;
-    font-weight: normal;
-  }
-  & > p {
-    background-color: #f5f7fb;
-    line-height: 1.5;
-  }
-
-  @media only screen and (max-width: 992px) {
-    & {
-      text-align: left;
-    }
-  }
-`;
-
-const Badge = styled.span`
-  display: inline-block;
-  margin: 0.25em 0.5em 0.25em 0;
-  padding: 0.25em 0.75em;
-  border-radius: 5px;
-  box-shadow: 2px 2px 10px #ddd;
-  font-weight: bold;
-  font-size: 0.85em;
-  background-color: ${theme.primary};
-  color: ${theme.backgroundDark};
-  opacity: 1;
-}`;
-
+import { Section } from '../components/Section';
+import { Badge } from '../components/Badge';
 interface Job {
   company: string;
   position: string;
@@ -63,21 +14,23 @@ interface JobCardProps {
 }
 
 const JobCard = ({ job, children }: JobCardProps) => (
-  <JobWrapper>
-    <h2>{job.company}</h2>
-    <h3>{job.position}</h3>
-    <h4>{job.duration}</h4>
+  <div className="mx-8 pb-8 md:text-center sm:text-left">
+    <h2 className="text-2xl mb-1">{job.company}</h2>
+    <h3 className="text-xl  text-transparent bg-clip-text bg-gradient-to-br from-prim-light to-prim-dark">
+      {job.position}
+    </h3>
+    <h4 className="leading-6">{job.duration}</h4>
     {job.badgeNames.map((name: string) => (
-      <Badge key={name}>{name}</Badge>
+      <Badge name={name} key={name} />
     ))}
-    <p>{children}</p>
-  </JobWrapper>
+    <p className="leading-6">{children}</p>
+  </div>
 );
 
 export const Experience = () => (
-  <VSSection anchor="experience">
-    <Wrapper>
-      <SectionHeading>Experience</SectionHeading>
+  <Section anchor="experience">
+    <div className="max-w-2xl mx-auto">
+      <h2 className="text-center uppercase mb-8 text-3xl">Experience</h2>
       <JobCard
         job={{
           company: 'Bitmovin, Vienna',
@@ -129,6 +82,6 @@ export const Experience = () => (
         developed and maintained a couple of smaller applications used to facilitate internal
         processes.
       </JobCard>
-    </Wrapper>
-  </VSSection>
+    </div>
+  </Section>
 );

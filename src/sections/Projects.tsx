@@ -1,113 +1,31 @@
 import React, { useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import styled from 'styled-components';
-import { Divider, SectionHeading, theme } from '../components';
-import { VSSection } from '../components/VSSection';
+import { Section } from '../components/Section';
 import { Image, LinkProps, Project } from '../types';
-// import { srcSet } from '../utils';
 import { projects } from './data';
 
-const ProjectHeading = styled.div`
-  min-width: 5em;
-  margin: 0.25em 0 0.5em 0;
-  padding-bottom: 0.5em;
+export const Projects = () => {
+  return (
+    <Section anchor="projects">
+      <h2 className="text-center uppercase mb-8 text-3xl">Projects</h2>
 
-  & > h2 {
-    font-size: 23px;
-    margin-top: -0.25em;
-    margin-bottom: 0.25em;
-  }
+      <div>
+        <ProjectCard project={projects.kolorkross} />
+        <ProjectCard project={projects.team8} />
+      </div>
+    </Section>
+  );
+};
 
-  & > p {
-    margin-top: 0;
-    margin-bottom: 0.5em;
-  }
-`;
-
-const ProjectImage = styled.div`
-  min-height: 15em;
-  overflow: hidden;
-  border-radius: 10px;
-
-  width: 50%;
-
-  @media only screen and (max-width: 992px) {
-    & {
-      width: 100%;
-      max-height: 24em;
-    }
-  }
-`;
-
-const ProjectWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-
-  margin: 3em 0 7em 0;
-  transition: 0.3s;
-
-  @media only screen and (max-width: 992px) {
-    & {
-      flex-direction: column;
-    }
-
-    & > .project-inner {
-      margin: 0.5em 0 0 0;
-    }
-  }
-`;
-
-const ProjectInner = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 0 1em;
-  justify-content: flex-start;
-  width: 50%;
-  text-align: left;
-
-  @media only screen and (max-width: 992px) {
-    & {
-      width: 100%;
-      margin: 10em 0;
-    }
-  }
-`;
-
-const Summary = styled.div`
-  line-height: 1.75em;
-  height: 7em;
-  max-width: 500px;
-`;
-
-const Link = styled.a`
-  text-decoration: none;
-  font-weight: bold;
-  color: ${theme.primary};
-  pointer-events: auto;
-  &::visited {
-    color: ${theme.primary};
-  }
-`;
-
-const ProjectLink = ({ children, href }: LinkProps) => (
-  <Link href={href} target="_blank" rel="noopener noreferrer">
-    {children}
-  </Link>
-);
-
-interface ProjectProps {
-  project: Project;
-}
-
-const ProjectCard = ({ project }: ProjectProps) => {
+const ProjectCard = ({ project }: { project: Project }) => {
   const [selectedId, setSelectedId] = useState('0');
   const { name, description, images, url } = project;
   const summary = images.find((img: Image) => img.id === selectedId)?.description;
 
   return (
-    <ProjectWrapper>
-      <ProjectImage>
+    <div className="project-wrapper md:flex xs:flex-col mx-8 mt-6 mb-24 transition-all">
+      <div className="project-image w-1/2 min-w-[14em] mr-8 mb-4">
         <Carousel
           showThumbs={false}
           showStatus={false}
@@ -126,31 +44,31 @@ const ProjectCard = ({ project }: ProjectProps) => {
             />
           ))}
         </Carousel>
-      </ProjectImage>
-      <ProjectInner className="project-inner">
-        <ProjectHeading>
-          <h2>
+      </div>
+      <div className="flex-col justify-start min-w-1/2 text-left">
+        <div className="min-w-[5em] mb-2 pb-2">
+          <h2 className="text-2xl mb-1">
             <ProjectLink href={url}>{name}</ProjectLink>
           </h2>
-          <p>
+          <p className="mb-1">
             <b>{description}</b>
           </p>
-        </ProjectHeading>
-        <Divider />
-        <Summary>{summary}</Summary>
-      </ProjectInner>
-    </ProjectWrapper>
+        </div>
+        {/* <Divider /> */}
+        <div className="divider w-16 bg-prim-light border-2 border-prim-light rounded-r-sm mb-2" />
+        <p>{summary}</p>
+      </div>
+    </div>
   );
 };
 
-export const Projects = () => {
-  return (
-    <VSSection anchor="projects">
-      <SectionHeading>Projects</SectionHeading>
-      <div>
-        <ProjectCard project={projects.kolorkross} />
-        <ProjectCard project={projects.team8} />
-      </div>
-    </VSSection>
-  );
-};
+const ProjectLink = ({ children, href }: LinkProps) => (
+  <a
+    className="font-bold  text-transparent bg-clip-text bg-gradient-to-br from-prim-light to-prim-dark"
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    {children}
+  </a>
+);

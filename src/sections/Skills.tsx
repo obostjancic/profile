@@ -1,31 +1,14 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
-import { SectionHeading, VSSection } from '../../components';
-import { SkillBars } from './SkillBars';
+import { Section } from '../components/Section';
+import { Badge } from '../components/Badge';
 
-const Wrapper = styled.div`
-  max-width: 1024px;
-`;
-
-const ColumnWrap = styled.div`
-  display: flex;
-  flex-direction: row;
-  @media only screen and (max-width: 992px) {
-    & {
-      flex-direction: column;
-      flex-wrap: wrap;
-      && > div {
-        margin: 0;
-      }
-    }
-  }
-`;
-
-const Summary = styled.div`
-  flex-basis: 100%;
-  text-align: left;
-  margin: 0 1em;
-`;
+export const SkillBadges = ({ visible }: { visible: boolean }) => (
+  <div className="text-left mx-4">
+    {['Node.js', 'React', 'JavaScript', 'TypeScript', 'NestJS', 'Spring', 'Django'].map((skill) => (
+      <Badge name={skill} key={skill} />
+    ))}
+  </div>
+);
 
 export const Skills = () => {
   const [visible, setVisible] = useState(false);
@@ -35,11 +18,11 @@ export const Skills = () => {
   };
 
   return (
-    <VSSection anchor="skills" handleChange={handleChange}>
-      <Wrapper>
-        <SectionHeading>Skills & Interests</SectionHeading>
-        <ColumnWrap>
-          <Summary>
+    <Section anchor="skills" handleChange={handleChange}>
+      <div>
+        <h2 className="text-center uppercase mb-8 text-3xl">Skills & interests</h2>
+        <div className="grid lg:grid-cols-2 md:grid-cols-1">
+          <div className="text-left mx-4">
             <p>
               Apart from end-to-end development and maintenance of stable and scalable RESTful web
               applications, I have taken on myself a series of other responsibilities. Some of them
@@ -51,10 +34,11 @@ export const Skills = () => {
               Outside of work, I am frequently working on my side projects or going through the
               articles and blog posts on my reading list.
             </p>
-          </Summary>
-          <SkillBars visible={visible} />
-        </ColumnWrap>
-      </Wrapper>
-    </VSSection>
+          </div>
+
+          <SkillBadges visible={visible} />
+        </div>
+      </div>
+    </Section>
   );
 };

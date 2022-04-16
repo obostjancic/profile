@@ -1,39 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
-import { theme } from '.';
-
-const IconWrapper = styled.a`
-  transition: all 0.3s ease-in-out;
-
-  max-height: 2em;
-  width: 1.75em;
-  cursor: pointer;
-  opacity: 0.95;
-  padding: 2em 0 0.75em 0;
-
-  &:hover {
-    transform: scale(1.2);
-  }
-`;
-
-export const IconNameWrapper = styled.a`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-weight: bold;
-  color: ${theme.primary};
-  text-decoration: none;
-
-  padding: 0 0.2em 0.75em 0.2em;
-`;
-
-export const IconsWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 0 10%;
-  pointer-events: auto;
-`;
 
 const paths = {
   linkedin:
@@ -56,20 +21,31 @@ interface IconProps {
 }
 
 export const Icon = ({ name, path, href, newTab }: IconProps) => (
-  <IconNameWrapper href={href} target={newTab ? '_blank' : ''} rel="noopener noreferrer">
-    <IconWrapper>
-      <svg aria-hidden="true" focusable="false" role="img" viewBox="0 0 512 512">
-        <path fill={theme.primary} d={path}></path>
+  <a
+    className="flex-col items-center font-bold text-transparent bg-clip-text bg-gradient-to-br from-prim-light to-prim-dark"
+    href={href}
+    target={newTab ? '_blank' : ''}
+    rel="noopener noreferrer"
+  >
+    <a>
+      <svg
+        className="w-8 mx-auto fill-prim-light"
+        aria-hidden="true"
+        focusable="false"
+        role="img"
+        viewBox="0 0 512 512"
+      >
+        <path d={path}></path>
       </svg>
-    </IconWrapper>
-    <span className="">{name}</span>
-  </IconNameWrapper>
+    </a>
+    {name && <span className="mt-2">{name}</span>}
+  </a>
 );
 
 export const ArrowUpIcon = () => <Icon path={paths.arrowUp} href={'#navbar'} newTab={false} />;
 
 export const Icons = () => (
-  <IconsWrapper>
+  <div className="flex justify-between p-8 pointer-events-auto">
     <Icon
       name="Linkedin"
       path={paths.linkedin}
@@ -79,5 +55,5 @@ export const Icons = () => (
     <Icon name="Github" path={paths.github} href={'https://github.com/obostjancic/'} newTab />
     <Icon name="Blog" path={paths.blog} href={'https://cherrypick.hashnode.dev/'} newTab />
     <Icon name="Resume" path={paths.cv} href={'./ognjen-bostjancic-cv.pdf'} newTab />
-  </IconsWrapper>
+  </div>
 );

@@ -5,22 +5,14 @@ import { Footer } from './sections/Footer';
 import { Intro } from './sections/intro/Intro';
 import { Navbar } from './sections/Navbar';
 import { Projects } from './sections/Projects';
-import { Skills } from './sections/skills/Skills';
+import { Skills } from './sections/Skills';
 import { Articles } from './sections/Articles';
-
-const Main = styled.main`
-  text-align: center;
-  z-index: 11;
-  position: relative;
-  min-width: 320px;
-  margin: 0 auto;
-`;
 
 function App() {
   return (
     <>
-      <div id="background" className="background-shape" />
-      <Main>
+      {/* <div id="background" className="background-shape" /> */}
+      <main>
         <Navbar />
         <Intro />
         <Skills />
@@ -28,7 +20,7 @@ function App() {
         <Experience />
         <Articles />
         <Footer />
-      </Main>
+      </main>
     </>
   );
 }

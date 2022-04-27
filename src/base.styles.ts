@@ -1,4 +1,4 @@
-export const theme = {
+export default {
   primary: '#0077b2',
   primaryLight: '#0077b2df',
   primaryDark: '#a6c3cf',

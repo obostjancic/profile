@@ -1,23 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
-import styled from 'styled-components';
+// @ts-expect-error
 import NET from 'vanta/dist/vanta.net.min';
-import { theme } from '../../components';
+// @ts-expect-error
 import * as THREE from 'three';
+import theme from '../../base.styles';
 
-const CanvasWrapper = styled.div`
-  position: absolute;
-  left: 0;
-  top: 0;
-  min-height: 100vh;
-  max-height: 100vh;
-  width: 100%;
-  background-color: ${theme.backgroundOverlay};
-  z-index: -1;
-  box-shadow: inset 0px 0px 100px #a6c3cf;
-  pointer-events: none;
-`;
-
-export const Vanta = () => {
+export default function Vanta() {
   const [vantaEffect, setVantaEffect] = useState(0);
   const myRef = useRef(null);
 
@@ -33,18 +21,27 @@ export const Vanta = () => {
           minWidth: 200.0,
           scale: 1.0,
           scaleMobile: 1.0,
-          maxDistance: 30.0,
-          spacing: 20.0,
+          points: 15.0,
+          maxDistance: 35,
+          spacing: 25,
+
           color: theme.primary,
-          backgroundColor: theme.backgroundDark,
-          THREE: THREE,
-        })
+          backgroundColor: 'white',
+          THREE,
+        }),
       );
     }
     return () => {
+      // @ts-expect-error
       if (vantaEffect) vantaEffect.destroy();
     };
   }, [vantaEffect]);
 
-  return <CanvasWrapper ref={myRef} style={{ opacity: 0.35 }}></CanvasWrapper>;
-};
+  return (
+    <div
+      className="absolute left-0 top-0 min-h-screen min-w-full w-full z-[-1] shadow-inner pointer-events-none"
+      ref={myRef}
+      style={{ opacity: 0.35 }}
+    />
+  );
+}

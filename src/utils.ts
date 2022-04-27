@@ -11,11 +11,12 @@ export const isMobile = () => {
       )
     )
       check = true;
+    //@ts-expect-error
   })(navigator.userAgent || navigator.vendor || window.opera);
   return check;
 };
 
-export const srcSet = (image) => {
+export const srcSet = (image: string) => {
   const [path, extension] = image.split('.');
   const large = `${path}-large.${extension}`;
   const small = `${path}-small.${extension}`;

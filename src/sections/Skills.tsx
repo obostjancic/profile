@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Section } from '../components/Section';
+import React from 'react';
+import arrowStraight from '/images/vectors/arrow-straight.svg';
 import Badge from '../components/Badge';
-import arrowStraight from '../../assets/images/vectors/arrow-straight.svg';
+import { Section } from '../components/Section';
 
 function SkillBadges() {
   return (

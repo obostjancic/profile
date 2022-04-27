@@ -9,8 +9,8 @@ export const projects: Record<string, Project> = {
     images: [
       {
         id: '0',
-        src: './assets/images/projects/team8/team8.avif',
-        srcPng: './assets/images/projects/team8/team8.png',
+        src: './images/projects/team8/team8.avif',
+        srcPng: './images/projects/team8/team8.png',
         wdith: '221',
         height: '134',
         description:
@@ -40,8 +40,8 @@ export const projects: Record<string, Project> = {
         id: '0',
         wdith: '2214',
         height: '1348',
-        src: './assets/images/projects/kolorkross/kolorkross.avif',
-        srcPng: './assets/images/projects/kolorkross/kolorkross.png',
+        src: './images/projects/kolorkross/kolorkross.avif',
+        srcPng: './images/projects/kolorkross/kolorkross.png',
         description:
           'Kolor Kross organizes projects (workspaces) into flexible groups. Every project is assigned a color, and the VS Code window of that project is colored with that color. This allows users to develop mental maps when working across multiple projects.',
       },

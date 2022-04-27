@@ -14,7 +14,7 @@ export default function Intro() {
             <div
               className="m-auto border border-prim-light rounded-full pointer-events-auto hover:shadow-[0_0_10px] hover:shadow-prim-light transition-all"
               style={{
-                background: 'url(assets/images/profile-photo-square.jpg)',
+                background: 'url(/images/profile-photo-square.jpg)',
                 backgroundSize: 'contain',
                 minHeight: '128px',
                 minWidth: '128px',

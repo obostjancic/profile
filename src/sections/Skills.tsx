@@ -37,11 +37,11 @@ function SkillGroup({
   skills: string[];
 }) {
   return (
-    <div className="flex p-1 px-2 mb-2 border border-gray-300 rounded-xl ">
-      <div className="items-center hidden ml-1 font-bold w-28 text-md text-gradient sm:flex">
+    <div className="flex p-1 px-2 mb-2 leading-10 border border-gray-300 rounded-xl ">
+      <div className="items-center hidden ml-1 font-bold align-middle w-28 text-md text-gradient sm:inline ">
         {title}
       </div>
-      <div className="flex items-center w-6 mr-1 font-bold text-md text-gradient sm:hidden">
+      <div className="items-center inline w-6 mr-1 font-bold text-md text-gradient sm:hidden">
         {abbreviation}:
       </div>
       {skills.map((skill) => (

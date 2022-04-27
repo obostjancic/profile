@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Section } from '../components/Section';
 import { Image, LinkProps, Project } from '../types';
 import { projects } from './data';
@@ -21,24 +19,13 @@ function ProjectCard({ project }: { project: Project }) {
   return (
     <div className="mx-4 mt-6 mb-24 transition-all project-wrapper md:flex xs:flex-col">
       <div className="project-image w-1/2 min-w-[18em] mr-8 mb-4">
-        <Carousel
-          showThumbs={false}
-          showStatus={false}
-          showIndicators={false}
-          onChange={(id) => {
-            setSelectedId(JSON.stringify(id));
-          }}
-        >
-          {images.map((img: Image) => (
-            <img
-              key={img.id}
-              src={img.srcPng}
-              alt="Project images"
-              // srcSet={srcSet(img.src)}
-              // onerror={`this.onerror=null; this.src='/images/${img.src}'`}
-            />
-          ))}
-        </Carousel>
+        <img
+          key={images[0].id}
+          src={images[0].srcPng}
+          alt="Project images"
+          // srcSet={srcSet(img.src)}
+          // onerror={`this.onerror=null; this.src='/images/${img.src}'`}
+        />
       </div>
       <div className="justify-start text-left min-w-1/2">
         <div className="min-w-[5em] mb-2 pb-2">

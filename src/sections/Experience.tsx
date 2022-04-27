@@ -15,7 +15,7 @@ interface JobCardProps {
 
 function JobCard({ job, children }: JobCardProps) {
   return (
-    <div className="pb-8 mx-8 md:text-center sm:text-left">
+    <div className="pb-8 mx-4 md:mx-8 md:text-center sm:text-left">
       <h2 className="mb-1 text-2xl ">{job.company}</h2>
       <h3 className="text-xl text-gradient">{job.position}</h3>
       <h4 className="font-semibold leading-6 text-gray-500">{job.duration}</h4>

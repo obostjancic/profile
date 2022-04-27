@@ -12,7 +12,7 @@ export default function Intro() {
         <div className="flex min-h-screen mt-8 text-center md:mt-0 ">
           <div className="max-w-screen-sm m-auto mt">
             <div
-              className="m-auto border border-prim-light rounded-full pointer-events-auto hover:shadow-[0_0_10px] hover:shadow-prim-light transition-all"
+              className="m-auto mt-8 md:mt-0 border border-prim-light rounded-full pointer-events-auto hover:shadow-[0_0_10px] hover:shadow-prim-light transition-all"
               style={{
                 background: 'url(/images/profile-photo-square.jpg)',
                 backgroundSize: 'contain',

@@ -20,40 +20,51 @@ interface IconProps {
   newTab: boolean;
 }
 
-export const Icon = ({ name, path, href, newTab }: IconProps) => (
-  <a
-    className="flex-col items-center font-bold text-transparent bg-clip-text bg-gradient-to-br from-prim-light to-prim-dark"
-    href={href}
-    target={newTab ? '_blank' : ''}
-    rel="noopener noreferrer"
-  >
-    <a>
+export function Icon({ name, path, href, newTab }: IconProps) {
+  return (
+    <a
+      className="font-bold text-gradient hover:text-prim-dark transition-all"
+      href={href}
+      target={newTab ? '_blank' : ''}
+      rel="noopener noreferrer"
+    >
       <svg
-        className="w-8 mx-auto fill-prim-light"
+        className="w-6 mb-1 mx-auto hover:fill-prim-dark"
         aria-hidden="true"
         focusable="false"
         role="img"
         viewBox="0 0 512 512"
       >
-        <path d={path}></path>
+        <defs>
+          <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style={{ stopColor: '#00A6ED', strokeOpacity: 1 }} />
+            <stop offset="100%" style={{ stopColor: '#0077B2', strokeOpacity: 1 }} />
+          </linearGradient>
+        </defs>
+        <path fill="url(#grad)" d={path} />
       </svg>
+
+      {name && <span className="mt-2">{name}</span>}
     </a>
-    {name && <span className="mt-2">{name}</span>}
-  </a>
-);
+  );
+}
 
-export const ArrowUpIcon = () => <Icon path={paths.arrowUp} href={'#navbar'} newTab={false} />;
+export function ArrowUpIcon() {
+  return <Icon path={paths.arrowUp} href="#navbar" newTab={false} />;
+}
 
-export const Icons = () => (
-  <div className="flex justify-between p-8 pointer-events-auto">
-    <Icon
-      name="Linkedin"
-      path={paths.linkedin}
-      href={'https://www.linkedin.com/in/obostjancic/'}
-      newTab
-    />
-    <Icon name="Github" path={paths.github} href={'https://github.com/obostjancic/'} newTab />
-    <Icon name="Blog" path={paths.blog} href={'https://cherrypick.hashnode.dev/'} newTab />
-    <Icon name="Resume" path={paths.cv} href={'./ognjen-bostjancic-cv.pdf'} newTab />
-  </div>
-);
+export function Icons() {
+  return (
+    <div className="flex justify-between p-8 pointer-events-auto">
+      <Icon
+        name="Linkedin"
+        path={paths.linkedin}
+        href="https://www.linkedin.com/in/obostjancic/"
+        newTab
+      />
+      <Icon name="Github" path={paths.github} href="https://github.com/obostjancic/" newTab />
+      <Icon name="Blog" path={paths.blog} href="https://cherrypick.hashnode.dev/" newTab />
+      <Icon name="Resume" path={paths.cv} href="./ognjen-bostjancic-cv.pdf" newTab />
+    </div>
+  );
+}

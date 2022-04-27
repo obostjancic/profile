@@ -19,12 +19,14 @@ export const projects: Record<string, Project> = {
       {
         id: '1',
         src: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80',
-        description: `Its modular design allows customers to pick only the parts that they want to use, while importing functionality makes the transition process easy.`,
+        description:
+          'Its modular design allows customers to pick only the parts that they want to use, while importing functionality makes the transition process easy.',
       },
       {
         id: '2',
         src: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80',
-        description: `Running in the cloud, secured by Oauth2, with fine-grained access control. Flexible hierarchy models make it applicable to all organizations, regardless of size.`,
+        description:
+          'Running in the cloud, secured by Oauth2, with fine-grained access control. Flexible hierarchy models make it applicable to all organizations, regardless of size.',
       },
     ],
   },

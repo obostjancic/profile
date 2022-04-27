@@ -5,24 +5,26 @@ interface NavItemProps {
   children: React.ReactNode;
 }
 
-const NavItem = ({ href, children }: NavItemProps) => {
+function NavItem({ href, children }: NavItemProps) {
   return (
     <a
-      className="uppercase text-sm font-bold m-3 text-[#818181] hover: text-transparent bg-clip-text bg-gradient-to-br from-prim-light to-prim-dark transition-all"
+      className="uppercase font-bold my-3 mx-2 sm:mx-4 text-base text-gradient hover:text-prim-dark transition-all"
       href={href}
     >
       {children}
     </a>
   );
-};
+}
 
-export const Navbar = () => (
-  <header>
-    <nav id="navbar" className="flex absolute top-0 left-0">
-      <NavItem href="#skills">Skills</NavItem>
-      <NavItem href="#projects">Projects</NavItem>
-      <NavItem href="#experience">Experience</NavItem>
-      {/* <NavItem href="#articles">Articles</NavItem> */}
-    </nav>
-  </header>
-);
+export default function Navbar() {
+  return (
+    <header>
+      <nav id="navbar" className="flex absolute top-0 left-0">
+        <NavItem href="#skills">Skills</NavItem>
+        <NavItem href="#projects">Projects</NavItem>
+        <NavItem href="#experience">Experience</NavItem>
+        {/* <NavItem href="#articles">Articles</NavItem> */}
+      </nav>
+    </header>
+  );
+}

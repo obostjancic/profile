@@ -3,37 +3,35 @@ import { Section } from '../components/Section';
 import { articles } from './data';
 import { Article } from '../types';
 
-const ArticleCard = ({ article }: { article: Article }) => {
+function ArticleCard({ article }: { article: Article }) {
   const { title, description, url, imgUrl } = article;
   return (
-    <div className="flex-col justify-start m-4 shadow-md border rounded-md ">
-      <article>
-        <img
-          className="min-h-[128px] w-full mx-auto border-0 rounded-t-md"
-          src={imgUrl}
-          alt="Article image"
-        />
-        <div className="flex-col justify-between flex-1 p-4 border rounded">
-          <h3 className="inline-blox pb-2 pr-4 border-b border-prim-light">{title}</h3>
-          <p className="text-sm my-4 leading-6">{description}</p>
-          <a
-            className="text-sm font-bold  text-transparent bg-clip-text bg-gradient-to-br from-prim-light to-prim-dark"
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read full article
-          </a>
-        </div>
-      </article>
-    </div>
+    <article className="flex flex-col justify-between m-4 shadow-md border rounded-md ">
+      <img
+        className="min-h-[128px] w-full mx-auto border-0 rounded-t-md"
+        src={imgUrl}
+        alt="Article"
+      />
+      <div className="flex flex-col flex-1 justify-between p-4 rounded">
+        <h3 className="pb-2 pr-4 border-b border-prim-light">{title}</h3>
+        <p className="text-sm my-4 flex-1 leading-6">{description}</p>
+        <a
+          className="text-sm font-bold  text-gradient"
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Read full article
+        </a>
+      </div>
+    </article>
   );
-};
+}
 
-export const Articles = () => {
+export default function Articles() {
   return (
     <Section anchor="articles">
-      <h2 className="text-center uppercase mb-8 text-3xl">Articles</h2>
+      <h2 className="text-center uppercase p-8 mb-8 text-3xl">Articles</h2>
       <div className="grid grid-cols-1 2xl:grid-cols-4 md:grid-cols-2">
         <ArticleCard article={articles[0]} />
         <ArticleCard article={articles[1]} />
@@ -42,4 +40,4 @@ export const Articles = () => {
       </div>
     </Section>
   );
-};
+}

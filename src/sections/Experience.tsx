@@ -16,13 +16,13 @@ interface JobCardProps {
 function JobCard({ job, children }: JobCardProps) {
   return (
     <div className="pb-8 mx-4 md:mx-8 md:text-center sm:text-left">
-      <h2 className="mb-1 text-2xl ">{job.company}</h2>
-      <h3 className="text-xl text-gradient">{job.position}</h3>
-      <h4 className="font-semibold leading-6 text-gray-500">{job.duration}</h4>
+      <h2 className="text-2xl">{job.position}</h2>
+      <h3 className="text-xl text-gradient">{job.company}</h3>
+      <h4 className="font-semibold leading-6 text-gray-500 mb-2">{job.duration}</h4>
       {job.badgeNames.map((name: string) => (
         <Badge name={name} key={name} />
       ))}
-      <p className="leading-6">{children}</p>
+      <p className="leading-6 mt-2">{children}</p>
     </div>
   );
 }

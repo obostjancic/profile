@@ -39,7 +39,7 @@ export default function Vanta() {
 
   return (
     <div
-      className="absolute left-0 top-0 min-h-screen min-w-full w-full z-[-1] shadow-inner pointer-events-none"
+      className="absolute left-0 top-0 min-h-screen min-w-full w-full -z-1 shadow-inner pointer-events-none"
       ref={myRef}
       style={{ opacity: 0.35 }}
     />

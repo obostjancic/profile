@@ -22,7 +22,7 @@ function JobCard({ job, children }: JobCardProps) {
       {job.badgeNames.map((name: string) => (
         <Badge name={name} key={name} />
       ))}
-      <p className="leading-6 mt-2">{children}</p>
+      <p className="leading-8 mt-2">{children}</p>
     </div>
   );
 }

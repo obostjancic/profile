@@ -14,7 +14,7 @@ function ArticleCard({ article }: { article: Article }) {
       />
       <div className="flex flex-col justify-between flex-1 p-4 rounded">
         <h3 className="pb-2 pr-4 border-b border-prim-light">{title}</h3>
-        <p className="flex-1 my-4 text-sm leading-6">{description}</p>
+        <p className="flex-1 my-4 text-sm leading-8">{description}</p>
         <a
           className="text-sm font-bold text-gradient"
           href={url}

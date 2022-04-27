@@ -33,7 +33,7 @@ export default function Intro() {
               <p className="my-4 leading-8">
                 Currently, I work as a Software engineer for{' '}
                 <a
-                  className="font-semibold pointer-events-auto text-gradient"
+                  className="font-semibold pointer-events-auto text-gradient hover:text-prim-dark transition-all"
                   href="https://bitmovin.com/"
                   target="_blank"
                   rel="noopener noreferrer"

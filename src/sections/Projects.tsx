@@ -18,7 +18,7 @@ function ProjectCard({ project }: { project: Project }) {
 
   return (
     <div className="mx-4 mt-6 mb-24 transition-all project-wrapper md:flex xs:flex-col">
-      <div className="project-image w-1/2 min-w-[18em] mr-8 mb-4">
+      <div className="project-image w-1/2 min-w- min-w-[18em] mr-8 mb-4">
         <img
           key={images[0].id}
           src={images[0].srcPng}
@@ -32,12 +32,12 @@ function ProjectCard({ project }: { project: Project }) {
           <h2 className="mb-1 text-2xl">
             <ProjectLink href={url}>{name}</ProjectLink>
           </h2>
-          <p className="mb-1 text-gray-600">
+          <p className="mb-1 text-gray-600 lg:mr-12">
             <b>{description}</b>
           </p>
         </div>
         <div className="w-16 mb-2 border-2 rounded-r-sm divider bg-prim-light border-prim-light" />
-        <p>{summary}</p>
+        <p className="lg:mr-12">{summary}</p>
       </div>
     </div>
   );

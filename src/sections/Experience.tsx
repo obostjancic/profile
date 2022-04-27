@@ -15,10 +15,10 @@ interface JobCardProps {
 
 function JobCard({ job, children }: JobCardProps) {
   return (
-    <div className="mx-8 pb-8 md:text-center sm:text-left">
-      <h2 className="text-2xl mb-1 ">{job.company}</h2>
+    <div className="pb-8 mx-8 md:text-center sm:text-left">
+      <h2 className="mb-1 text-2xl ">{job.company}</h2>
       <h3 className="text-xl text-gradient">{job.position}</h3>
-      <h4 className="leading-6 text-gray-500 font-semibold">{job.duration}</h4>
+      <h4 className="font-semibold leading-6 text-gray-500">{job.duration}</h4>
       {job.badgeNames.map((name: string) => (
         <Badge name={name} key={name} />
       ))}
@@ -31,7 +31,7 @@ export default function Experience() {
   return (
     <Section anchor="experience">
       <div className="max-w-2xl mx-auto">
-        <h2 className="text-center uppercase mb-8 text-3xl">Experience</h2>
+        <h2 className="mb-8 text-3xl text-center uppercase">Experience</h2>
         <JobCard
           job={{
             company: 'Bitmovin, Vienna',

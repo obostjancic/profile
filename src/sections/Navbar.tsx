@@ -8,7 +8,7 @@ interface NavItemProps {
 function NavItem({ href, children }: NavItemProps) {
   return (
     <a
-      className="uppercase font-bold my-3 mx-2 sm:mx-4 text-base text-gradient hover:text-prim-dark transition-all"
+      className="mx-2 my-3 text-base font-bold uppercase transition-all sm:mx-4 text-gradient hover:text-prim-dark"
       href={href}
     >
       {children}
@@ -19,7 +19,7 @@ function NavItem({ href, children }: NavItemProps) {
 export default function Navbar() {
   return (
     <header>
-      <nav id="navbar" className="flex absolute top-0 left-0">
+      <nav id="navbar" className="absolute top-0 left-0 flex">
         <NavItem href="#skills">Skills</NavItem>
         <NavItem href="#projects">Projects</NavItem>
         <NavItem href="#experience">Experience</NavItem>

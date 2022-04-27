@@ -20,7 +20,7 @@ export function Section({ children, anchor, handleChange = () => {} }: VSSection
       }}
     >
       <section
-        className="max-w-7xl px-4 md:px-8 lg:px-12 pt-4 mx-auto mb-20 transition-all duration-700"
+        className="px-4 pt-4 mx-auto mb-20 transition-all duration-700 max-w-7xl md:px-8 lg:px-12"
         style={{ opacity: active ? 1 : 0 }}
         id={anchor}
       >

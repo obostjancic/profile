@@ -7,7 +7,7 @@ import { projects } from './data';
 
 function ProjectLink({ children, href }: LinkProps) {
   return (
-    <a className="font-bold  text-gradient" href={href} target="_blank" rel="noopener noreferrer">
+    <a className="font-bold text-gradient" href={href} target="_blank" rel="noopener noreferrer">
       {children}
     </a>
   );
@@ -19,7 +19,7 @@ function ProjectCard({ project }: { project: Project }) {
   const summary = images.find((img: Image) => img.id === selectedId)?.description;
 
   return (
-    <div className="project-wrapper md:flex xs:flex-col mx-4 mt-6 mb-24 transition-all">
+    <div className="mx-4 mt-6 mb-24 transition-all project-wrapper md:flex xs:flex-col">
       <div className="project-image w-1/2 min-w-[18em] mr-8 mb-4">
         <Carousel
           showThumbs={false}
@@ -40,16 +40,16 @@ function ProjectCard({ project }: { project: Project }) {
           ))}
         </Carousel>
       </div>
-      <div className="justify-start min-w-1/2 text-left">
+      <div className="justify-start text-left min-w-1/2">
         <div className="min-w-[5em] mb-2 pb-2">
-          <h2 className="text-2xl mb-1">
+          <h2 className="mb-1 text-2xl">
             <ProjectLink href={url}>{name}</ProjectLink>
           </h2>
           <p className="mb-1 text-gray-600">
             <b>{description}</b>
           </p>
         </div>
-        <div className="divider w-16 bg-prim-light border-2 border-prim-light rounded-r-sm mb-2" />
+        <div className="w-16 mb-2 border-2 rounded-r-sm divider bg-prim-light border-prim-light" />
         <p>{summary}</p>
       </div>
     </div>
@@ -59,7 +59,7 @@ function ProjectCard({ project }: { project: Project }) {
 export default function Projects() {
   return (
     <Section anchor="projects">
-      <h2 className="text-center uppercase mb-8 text-3xl">Projects</h2>
+      <h2 className="mb-8 text-3xl text-center uppercase">Projects</h2>
 
       <div>
         <ProjectCard project={projects.kolorkross} />

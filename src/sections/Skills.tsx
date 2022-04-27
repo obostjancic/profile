@@ -5,14 +5,14 @@ import { Section } from '../components/Section';
 
 function SkillBadges() {
   return (
-    <div className="mx-4 flex py-2 ">
+    <div className="flex py-2 mx-4 ">
       <div className="flex flex-col w-fit min-w-fit">
         <SkillGroup title="Frontend" abbreviation="FE" skills={['React', 'Svelte', 'Electron']} />
         <SkillGroup title="Backend" abbreviation="BE" skills={['NestJS', 'Express', 'Node.js']} />
         <SkillGroup title="Database" abbreviation="DB" skills={['PostgresSQL', 'Redis', 'MySQL']} />
         <SkillGroup title="Infrastructure" abbreviation="Inf" skills={['GCP', 'AWS', 'Vercel']} />
       </div>
-      <div className="hidden sm:flex lg:hidden xl:flex ml-2">
+      <div className="hidden ml-2 sm:flex lg:hidden xl:flex">
         <div className="w-16">
           <img src={arrowStraight} className="arrow-straight" />
           <img src={arrowStraight} className="arrow-down" />
@@ -37,11 +37,11 @@ function SkillGroup({
   skills: string[];
 }) {
   return (
-    <div className="border border-gray-300 rounded-xl p-1 px-2 mb-2 flex ">
-      <div className="w-28 font-bold text-md text-gradient items-center ml-1 hidden sm:flex">
+    <div className="flex p-1 px-2 mb-2 border border-gray-300 rounded-xl ">
+      <div className="items-center hidden ml-1 font-bold w-28 text-md text-gradient sm:flex">
         {title}
       </div>
-      <div className="w-6 font-bold text-md text-gradient items-center mr-1 sm:hidden flex">
+      <div className="flex items-center w-6 mr-1 font-bold text-md text-gradient sm:hidden">
         {abbreviation}:
       </div>
       {skills.map((skill) => (
@@ -55,9 +55,9 @@ export default function Skills() {
   return (
     <Section anchor="skills">
       <div>
-        <h2 className="text-center uppercase mb-8 text-3xl">Skills & interests</h2>
+        <h2 className="mb-8 text-3xl text-center uppercase">Skills & interests</h2>
         <div className="grid lg:grid-cols-2 md:grid-cols-1">
-          <div className="text-left mx-4 mb-6 lg:mb-0">
+          <div className="mx-4 mb-6 text-left lg:mb-0">
             <p>
               Apart from end-to-end development and maintenance of stable and scalable RESTful web
               applications, during the past years I have taken on myself a series of other

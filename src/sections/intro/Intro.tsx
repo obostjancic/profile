@@ -9,8 +9,8 @@ export default function Intro() {
     <>
       {!isMobile() && <Vanta />}
       <Section>
-        <div className="min-h-screen flex text-center mt-8 md:mt-0 ">
-          <div className="max-w-screen-sm mt m-auto">
+        <div className="flex min-h-screen mt-8 text-center md:mt-0 ">
+          <div className="max-w-screen-sm m-auto mt">
             <div
               className="m-auto border border-prim-light rounded-full pointer-events-auto hover:shadow-[0_0_10px] hover:shadow-prim-light transition-all"
               style={{
@@ -22,18 +22,18 @@ export default function Intro() {
               }}
             />
             <hgroup>
-              <h1 className="text-3xl mt-4 font-bold">Ognjen Bostjančić</h1>
-              <h2 className="text-xl mt-2 font-bold text-gradient">Software developer</h2>
+              <h1 className="mt-4 text-3xl font-bold">Ognjen Bostjančić</h1>
+              <h2 className="mt-2 text-xl font-bold text-gradient">Software developer</h2>
             </hgroup>
             <summary className="mx-6 mt-4 leading-8 ">
               <p className="p-4 text-lg opacity-70 font-semibold shadow-black shadow=[0_0_50]">
                 Hello, I&apos;m Ogi, a software developer focused on Web apps. Using TypeScript with
                 React and NestJS daily.
               </p>
-              <p className="leading-8 my-4">
+              <p className="my-4 leading-8">
                 Currently, I work as a Software engineer for{' '}
                 <a
-                  className="pointer-events-auto font-semibold text-gradient"
+                  className="font-semibold pointer-events-auto text-gradient"
                   href="https://bitmovin.com/"
                   target="_blank"
                   rel="noopener noreferrer"

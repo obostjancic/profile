@@ -23,13 +23,13 @@ interface IconProps {
 export function Icon({ name, path, href, newTab }: IconProps) {
   return (
     <a
-      className="font-bold text-gradient hover:text-prim-dark transition-all"
+      className="font-bold transition-all text-gradient hover:text-prim-dark"
       href={href}
       target={newTab ? '_blank' : ''}
       rel="noopener noreferrer"
     >
       <svg
-        className="w-6 mb-1 mx-auto hover:fill-prim-dark"
+        className="w-6 mx-auto mb-1 hover:fill-prim-dark"
         aria-hidden="true"
         focusable="false"
         role="img"

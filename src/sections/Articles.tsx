@@ -6,17 +6,17 @@ import { Article } from '../types';
 function ArticleCard({ article }: { article: Article }) {
   const { title, description, url, imgUrl } = article;
   return (
-    <article className="flex flex-col justify-between m-4 shadow-md border rounded-md ">
+    <article className="flex flex-col justify-between m-4 border rounded-md shadow-md ">
       <img
         className="min-h-[128px] w-full mx-auto border-0 rounded-t-md"
         src={imgUrl}
         alt="Article"
       />
-      <div className="flex flex-col flex-1 justify-between p-4 rounded">
+      <div className="flex flex-col justify-between flex-1 p-4 rounded">
         <h3 className="pb-2 pr-4 border-b border-prim-light">{title}</h3>
-        <p className="text-sm my-4 flex-1 leading-6">{description}</p>
+        <p className="flex-1 my-4 text-sm leading-6">{description}</p>
         <a
-          className="text-sm font-bold  text-gradient"
+          className="text-sm font-bold text-gradient"
           href={url}
           target="_blank"
           rel="noopener noreferrer"
@@ -31,7 +31,7 @@ function ArticleCard({ article }: { article: Article }) {
 export default function Articles() {
   return (
     <Section anchor="articles">
-      <h2 className="text-center uppercase p-8 mb-8 text-3xl">Articles</h2>
+      <h2 className="p-8 mb-8 text-3xl text-center uppercase">Articles</h2>
       <div className="grid grid-cols-1 2xl:grid-cols-4 md:grid-cols-2">
         <ArticleCard article={articles[0]} />
         <ArticleCard article={articles[1]} />

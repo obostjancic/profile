@@ -9,8 +9,8 @@ export default function Intro() {
     <>
       {!isMobile() && <Vanta />}
       <Section>
-        <div className="flex min-h-screen mt-8 text-center md:mt-0 ">
-          <div className="max-w-screen-sm m-auto mt">
+        <div className="flex min-h-screen mt-8 text-center md:mt-0">
+          <div className="z-10 max-w-screen-sm m-auto mt">
             <div
               className="m-auto mt-8 md:mt-0 border border-prim-light rounded-full pointer-events-auto hover:shadow-[0_0_10px] hover:shadow-prim-light transition-all"
               style={{
@@ -33,7 +33,7 @@ export default function Intro() {
               <p className="my-4 leading-8">
                 Currently, I work as a Software engineer for{' '}
                 <a
-                  className="font-semibold pointer-events-auto text-gradient hover:text-prim-dark transition-all"
+                  className="font-semibold transition-all pointer-events-auto text-gradient hover:text-prim-dark"
                   href="https://bitmovin.com/"
                   target="_blank"
                   rel="noopener noreferrer"

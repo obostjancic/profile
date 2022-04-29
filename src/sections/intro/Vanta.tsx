@@ -11,25 +11,27 @@ export default function Vanta() {
 
   useEffect(() => {
     if (!vantaEffect) {
-      setVantaEffect(
-        NET({
-          el: myRef.current,
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: false,
-          minHeight: 200.0,
-          minWidth: 200.0,
-          scale: 1.0,
-          scaleMobile: 1.0,
-          points: 15.0,
-          maxDistance: 35,
-          spacing: 25,
+      setTimeout(() => {
+        setVantaEffect(
+          NET({
+            el: myRef.current,
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.0,
+            minWidth: 200.0,
+            scale: 1.0,
+            scaleMobile: 1.0,
+            points: 15.0,
+            maxDistance: 35,
+            spacing: 25,
 
-          color: theme.primary,
-          backgroundColor: 'white',
-          THREE,
-        }),
-      );
+            color: theme.primary,
+            backgroundColor: 'white',
+            THREE,
+          }),
+        );
+      }, 50);
     }
     return () => {
       // @ts-expect-error
@@ -39,7 +41,7 @@ export default function Vanta() {
 
   return (
     <div
-      className="absolute left-0 top-0 min-h-screen min-w-full w-full -z-1 shadow-inner pointer-events-none"
+      className="absolute top-0 left-0 w-full min-w-full min-h-screen shadow-inner pointer-events-none -z-10"
       ref={myRef}
       style={{ opacity: 0.35 }}
     />

@@ -52,12 +52,12 @@ export const projects: Record<string, Project> = {
 export const articles: Article[] = [
   {
     id: '0',
-    title: 'Simple fetch retry policy',
+    title: 'What is the best Node.js logging library?',
     imgUrl:
-      'https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80',
-    url: 'https://www.w3schools.com/howto/howto_css_image_responsive.asp',
+      'https://ogi.hashnode.dev/_next/image?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Funsplash%2FUuX-Le3bfzc%2Fupload%2Fv1649197915819%2Fh2CJSzARC.jpeg%3Fw%3D1600%26h%3D840%26fit%3Dcrop%26crop%3Dentropy%26auto%3Dcompress%2Cformat%26format%3Dwebp&w=3840&q=75',
+    url: 'https://ogi.hashnode.dev/what-is-the-best-nodejs-logging-library',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed risus magna. quam ligula imperdiet neque, condimentum finibus erat orci vel velit. Donec molestiecondimentum augue a rutrum. Morbi quis nisl vel mauris lobortis accumsan.',
+      'Sooner or later in the lifespan of your project, it will grow to a stage where the humble console.log will stop being adequate for your needs. Maybe you will need to store the logs in multiple places, separated by levels or just print them formatted in a human-readable way...',
   },
   {
     id: '1',

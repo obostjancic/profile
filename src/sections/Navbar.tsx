@@ -23,7 +23,7 @@ export default function Navbar() {
         <NavItem href="#skills">Skills</NavItem>
         <NavItem href="#projects">Projects</NavItem>
         <NavItem href="#experience">Experience</NavItem>
-        {/* <NavItem href="#articles">Articles</NavItem> */}
+        <NavItem href="#articles">Articles</NavItem>
       </nav>
     </header>
   );

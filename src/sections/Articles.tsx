@@ -32,11 +32,11 @@ export default function Articles() {
   return (
     <Section anchor="articles">
       <h2 className="p-8 mb-8 text-3xl text-center uppercase">Articles</h2>
-      <div className="grid grid-cols-1 2xl:grid-cols-4 md:grid-cols-2">
+      <div className="grid grid-cols-1 2xl:grid-cols-1 md:grid-cols-1">
         <ArticleCard article={articles[0]} />
-        <ArticleCard article={articles[1]} />
+        {/* <ArticleCard article={articles[1]} />
         <ArticleCard article={articles[2]} />
-        <ArticleCard article={articles[3]} />
+        <ArticleCard article={articles[3]} /> */}
       </div>
     </Section>
   );

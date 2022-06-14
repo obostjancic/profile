@@ -18,11 +18,11 @@ function JobCard({ job, children }: JobCardProps) {
     <div className="pb-8 mx-4 md:mx-8 md:text-center sm:text-left">
       <h2 className="text-2xl">{job.position}</h2>
       <h3 className="text-xl text-gradient">{job.company}</h3>
-      <h4 className="font-semibold leading-6 text-gray-500 mb-2">{job.duration}</h4>
+      <h4 className="mb-2 font-semibold leading-6 text-gray-500">{job.duration}</h4>
       {job.badgeNames.map((name: string) => (
         <Badge name={name} key={name} />
       ))}
-      <p className="leading-8 mt-2">{children}</p>
+      <p className="mt-2 leading-8">{children}</p>
     </div>
   );
 }
@@ -40,9 +40,9 @@ export default function Experience() {
             badgeNames: ['NestJS', 'Typescript', 'React'],
           }}
         >
-          As a parto of the test automation team that develops and maintains a number of services
-          used to orchestrate automated tests of the Bitmovin video player across a wide range of
-          smart devices.
+          As a Software Engineer in the Test Automation team, I am responsible for development and
+          maintenance of a number of services used to orchestrate automated tests of the Bitmovin
+          video player across a wide range of smart devices.
         </JobCard>
         <JobCard
           job={{
@@ -79,7 +79,7 @@ export default function Experience() {
         >
           The focus of my work was on developing a REST API backend for the new student management
           system. I worked mostly with Java and Spring. My responsibilities included requirement
-          gathering and analysis, design and implementationt. Additionally, I developed and
+          gathering and analysis, design and implementation. Additionally, I developed and
           maintained a couple of smaller applications used to facilitate internal processes.
         </JobCard>
       </div>

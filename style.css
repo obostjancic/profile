@@ -76,12 +76,20 @@ a:hover {
   display: none;
 }
 
-#title #phonetic img {
-  height: 4rem;
+#title #phonetic h1 {
+  margin: 0.9rem 0;
+  font-size: 4rem;
+  line-height: 0.7;
+  padding: 0.55rem;
+  padding-bottom: 0.8rem;
 }
 
-#title #ogi,
-#phonetic h1 {
+#title #phonetic img {
+  margin-top: 0.5rem;
+  height: 2.5rem;
+}
+
+#title #ogi {
   margin: 0;
   font-size: 6rem;
   line-height: 0.7;
@@ -99,7 +107,7 @@ a:hover {
 
 #title:hover #phonetic {
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
   align-items: center;
   justify-content: center;
 }

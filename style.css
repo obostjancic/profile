@@ -165,14 +165,42 @@ a:hover {
 
 /* Menu button styles */
 #menu button {
+  background: none;
+  border: none;
   padding: var(--spacing-sm);
-  width: var(--menu-height);
-  height: var(--menu-height);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-all);
+  opacity: 0.8;
+  width: 48px;
+  height: 48px;
   border-radius: var(--border-radius);
 }
 
+#menu button img {
+  width: 24px;
+  height: 24px;
+}
+
 #menu button:hover {
+  opacity: 1;
   transform: scale(var(--interactive-scale));
+}
+
+#menu button:active {
+  transform: scale(var(--interactive-scale-active));
+}
+
+#menu button:focus {
+  outline: none;
+}
+
+#menu button:focus-visible {
+  outline: var(--focus-outline-width) solid var(--color-interactive);
+  outline-offset: var(--focus-outline-offset);
+  border-radius: var(--border-radius);
 }
 
 /* Phonetic button styles */
@@ -374,45 +402,6 @@ a:hover {
   background-color: var(--color-background);
   z-index: var(--z-menu);
   transition: var(--transition-all);
-}
-
-#menu button {
-  background: none;
-  border: none;
-  padding: var(--spacing-sm);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: var(--transition-all);
-  width: var(--menu-height);
-  height: var(--menu-height);
-  border-radius: var(--border-radius);
-  opacity: 0.8;
-}
-
-#menu button:hover {
-  opacity: 1;
-  transform: scale(var(--scale-hover));
-}
-
-#menu button:active {
-  transform: scale(var(--scale-active));
-}
-
-#menu button:focus {
-  outline: none;
-}
-
-#menu button:focus-visible {
-  outline: var(--focus-outline-width) solid var(--color-highlight);
-  outline-offset: var(--focus-outline-offset);
-  border-radius: var(--border-radius);
-}
-
-#menu img {
-  width: var(--icon-size-sm);
-  height: var(--icon-size-sm);
 }
 
 @media (max-width: 768px) {

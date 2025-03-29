@@ -36,6 +36,14 @@
     <!-- Load styles -->
     <link rel="stylesheet" type="text/css" href="style.css" />
 
+    <!-- Set theme before page load -->
+    <script>
+      (function () {
+        const theme = localStorage.getItem("theme") || "light";
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
+
     <!-- Structured data -->
     <script type="application/ld+json">
       {

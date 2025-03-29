@@ -5,13 +5,16 @@
   --color-highlight: #00a0dc;
   --color-highlight-dark: #0077b2;
   --color-sentry: #352d56;
+  --color-text-muted: #666666;
+  --color-border: rgba(0, 0, 0, 0.1);
+  --color-interactive: var(--color-highlight);
 
   /* Spacing */
-  --spacing-xs: 0.5rem;
-  --spacing-sm: 0.75rem;
-  --spacing-md: 1rem;
-  --spacing-lg: 1.5rem;
-  --spacing-xl: 2rem;
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 0.75rem;
+  --spacing-lg: 1rem;
+  --spacing-xl: 1.5rem;
 
   /* Typography */
   --font-size-base: 1rem;
@@ -19,11 +22,14 @@
   --font-size-xl: 4rem;
   --font-size-xxl: 6rem;
   --line-height-base: 0.7;
+  --letter-spacing-wide: 0.05em;
 
   /* Layout */
   --container-max-width: 800px;
   --menu-height: 3rem;
   --title-height: 6rem;
+  --content-width: 90%;
+  --content-max-width: 600px;
 
   /* Icons */
   --icon-size-sm: 1.5rem;
@@ -32,18 +38,44 @@
 
   /* Transitions */
   --transition-duration: 0.25s;
+  --transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-all: all var(--transition-duration) var(--transition-timing);
+
+  /* Animations */
+  --scale-hover: 1.1;
+  --scale-active: 0.95;
+  --translate-hover: -2px;
 
   /* Border radius */
   --border-radius: 4px;
+  --border-radius-lg: 8px;
 
   /* Focus outline */
   --focus-outline-width: 2px;
   --focus-outline-offset: 2px;
+
+  /* Z-index layers */
+  --z-menu: 1000;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+
+  /* Interactive elements */
+  --interactive-opacity: 0.8;
+  --interactive-opacity-hover: 1;
+  --interactive-scale: 1.1;
+  --interactive-scale-active: 0.95;
+  --interactive-translate: -2px;
 }
 
 [data-theme="dark"] {
   --color-text: #fafafa;
   --color-background: #0f0f0f;
+  --color-text-muted: #a0a0a0;
+  --color-border: rgba(255, 255, 255, 0.1);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
 }
 
 * {
@@ -71,14 +103,100 @@ img {
   filter: invert(100%);
 }
 
+/* Base interactive styles */
+button,
 a {
-  text-decoration: underline;
+  transition: var(--transition-all);
+  opacity: var(--interactive-opacity);
+}
+
+button:hover,
+a:hover {
+  opacity: var(--interactive-opacity-hover);
+}
+
+button:active,
+a:active {
+  transform: scale(var(--interactive-scale-active));
+}
+
+button:focus,
+a:focus {
+  outline: none;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: var(--focus-outline-width) solid var(--color-interactive);
+  outline-offset: var(--focus-outline-offset);
+  border-radius: var(--border-radius);
+}
+
+/* Remove default button styles */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+/* Link styles */
+a {
+  text-decoration: none;
   color: var(--color-text);
-  transition: color var(--transition-duration);
 }
 
 a:hover {
-  color: var(--color-sentry);
+  color: var(--color-interactive);
+}
+
+/* Icon link styles */
+#icons a {
+  padding: var(--spacing-xs);
+  border-radius: var(--border-radius);
+}
+
+#icons a:hover {
+  transform: translateY(var(--interactive-translate));
+}
+
+/* Menu button styles */
+#menu button {
+  padding: var(--spacing-sm);
+  width: var(--menu-height);
+  height: var(--menu-height);
+  border-radius: var(--border-radius);
+}
+
+#menu button:hover {
+  transform: scale(var(--interactive-scale));
+}
+
+/* Phonetic button styles */
+#title #phonetic button {
+  margin-top: var(--spacing-xs);
+}
+
+#title #phonetic button:hover {
+  transform: scale(var(--interactive-scale));
+}
+
+/* Remove duplicate styles */
+#title #phonetic button:focus,
+#menu button:focus,
+#icons a:focus {
+  outline: none;
+}
+
+#title #phonetic button:focus-visible,
+#menu button:focus-visible,
+#icons a:focus-visible {
+  outline: var(--focus-outline-width) solid var(--color-interactive);
+  outline-offset: var(--focus-outline-offset);
+  border-radius: var(--border-radius);
 }
 
 #main {
@@ -98,6 +216,9 @@ a:hover {
   gap: var(--spacing-md);
   max-width: var(--container-max-width);
   text-align: center;
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-sm);
 }
 
 #title {
@@ -107,28 +228,35 @@ a:hover {
   flex-direction: column;
   position: relative;
   height: var(--title-height);
+  margin-bottom: var(--spacing-md);
+  cursor: pointer;
 }
 
 #title #phonetic {
   position: absolute;
   opacity: 0;
-  visibility: hidden;
-  transition: opacity var(--transition-duration),
-    visibility var(--transition-duration);
+  transition: opacity var(--transition-duration);
   display: flex;
   gap: var(--spacing-xs);
   align-items: center;
   justify-content: center;
   width: 100%;
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius);
+  top: 0;
+  left: 0;
+  height: 100%;
 }
 
 #title #phonetic h1 {
-  margin: 0.9rem 0;
+  margin: 0.5rem 0;
   font-size: var(--font-size-xl);
   line-height: var(--line-height-base);
-  padding: 0.55rem;
-  padding-bottom: 0.8rem;
+  padding: 0.4rem;
+  padding-bottom: 0.6rem;
   white-space: nowrap;
+  color: var(--color-text);
+  letter-spacing: var(--letter-spacing-wide);
 }
 
 #title #phonetic img {
@@ -145,15 +273,17 @@ a:hover {
   align-items: center;
   justify-content: center;
   margin-top: var(--spacing-xs);
-  transition: transform var(--transition-duration);
+  transition: var(--transition-all);
+  opacity: 0.8;
 }
 
 #title #phonetic button:hover {
-  transform: scale(1.1);
+  opacity: 1;
+  transform: scale(var(--scale-hover));
 }
 
 #title #phonetic button:active {
-  transform: scale(0.95);
+  transform: scale(var(--scale-active));
 }
 
 #title #phonetic button:focus {
@@ -170,22 +300,28 @@ a:hover {
   margin: 0;
   font-size: var(--font-size-xxl);
   line-height: var(--line-height-base);
-  padding: 0.55rem;
-  padding-bottom: 1.3rem;
+  padding: 0.4rem;
+  padding-bottom: 1rem;
   opacity: 1;
-  visibility: visible;
-  transition: opacity var(--transition-duration),
-    visibility var(--transition-duration);
+  transition: opacity var(--transition-duration);
+  letter-spacing: var(--letter-spacing-wide);
+  text-shadow: var(--shadow-sm);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #title:hover #ogi {
   opacity: 0;
-  visibility: hidden;
 }
 
 #title:hover #phonetic {
   opacity: 1;
-  visibility: visible;
 }
 
 #hero h2 {
@@ -193,6 +329,8 @@ a:hover {
   margin: 0;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
+  color: var(--color-text-muted);
+  letter-spacing: var(--letter-spacing-wide);
 }
 
 #icons {
@@ -200,23 +338,31 @@ a:hover {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-md);
+  padding: var(--spacing-sm);
+  border-top: 1px solid var(--color-border);
+  margin-top: var(--spacing-sm);
 }
 
 #icons a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  padding: var(--spacing-xs);
+  border-radius: var(--border-radius);
+  transition: var(--transition-all);
+  opacity: 0.8;
+}
+
+#icons a:hover {
+  opacity: 1;
+  transform: translateY(var(--translate-hover));
 }
 
 #icons a img {
   width: var(--icon-size-md);
   height: var(--icon-size-md);
-  transition: transform var(--transition-duration);
-}
-
-#icons a:hover img {
-  transform: translateY(-2px);
+  transition: var(--transition-all);
 }
 
 #menu {
@@ -227,8 +373,9 @@ a:hover {
   display: flex;
   justify-content: flex-end;
   background-color: var(--color-background);
-  z-index: 1000;
-  transition: background-color var(--transition-duration);
+  z-index: var(--z-menu);
+  transition: var(--transition-all);
+  box-shadow: var(--shadow-sm);
 }
 
 #menu button {
@@ -239,17 +386,20 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform var(--transition-duration);
+  transition: var(--transition-all);
   width: var(--menu-height);
   height: var(--menu-height);
+  border-radius: var(--border-radius);
+  opacity: 0.8;
 }
 
 #menu button:hover {
-  transform: scale(1.1);
+  opacity: 1;
+  transform: scale(var(--scale-hover));
 }
 
 #menu button:active {
-  transform: scale(0.95);
+  transform: scale(var(--scale-active));
 }
 
 #menu button:focus {
@@ -285,17 +435,27 @@ a:hover {
   }
 }
 
-@media print {
-  #menu {
-    display: none;
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 
-  body {
-    background: white;
-    color: black;
+  #title #phonetic,
+  #title #ogi,
+  #icons a img,
+  #menu button,
+  #title #phonetic button {
+    transition: none !important;
   }
 
-  a {
-    text-decoration: underline;
+  #title:hover #ogi,
+  #title:hover #phonetic,
+  #icons a:hover img,
+  #menu button:hover,
+  #title #phonetic button:hover {
+    transform: none !important;
   }
 }

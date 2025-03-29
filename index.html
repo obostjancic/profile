@@ -1,20 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/src/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Software engineer @ Sentry" />
+    <meta
+      name="keywords"
+      content="ogi, ognjen, bostjancic, bostjančić, web, software, developer, portfolio, sentry, anyline, bitmovin, react, typescript, node, python, computer science, vienna, workflow, java, spring unsa, pmf"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/src/favicon.ico" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Software engineer @ Sentry" />
-  <meta name="keywords"
-    content="ogi, ognjen, bostjancic, bostjančić, web, software, developer, portfolio, sentry, anyline, bitmovin, react, typescript, node, python, computer science, vienna, workflow, java, spring unsa, pmf" />
-  <link rel="stylesheet" type="text/css" href="style.css" />
+    <!-- Preload critical assets -->
+    <link rel="preload" href="assets/sun.svg" as="image" type="image/svg+xml" />
+    <link
+      rel="preload"
+      href="assets/speaker.svg"
+      as="image"
+      type="image/svg+xml"
+    />
+    <link rel="preload" href="assets/ogi.mp3" as="audio" type="audio/mpeg" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@700&family=Roboto:wght@300;400&display=swap"
-    rel="stylesheet">
-  <script type="application/ld+json">
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://linkedin.com" />
+    <link rel="preconnect" href="https://github.com" />
+    <link rel="preconnect" href="https://bento.me" />
+
+    <!-- Load fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@700&family=Roboto:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Load styles -->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
       {
         "@context": "http://www.schema.org",
         "@type": "person",
@@ -36,75 +59,117 @@
       }
     </script>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : 'light'
+    <script>
+      // Preload audio
+      const audio = new Audio("assets/ogi.mp3");
+      audio.preload = "auto";
 
-      document.documentElement.setAttribute('data-theme', currentTheme)
+      document.addEventListener("DOMContentLoaded", () => {
+        // Theme handling
+        const currentTheme = localStorage.getItem("theme") || "light";
+        document.documentElement.setAttribute("data-theme", currentTheme);
 
-      const themeToggle = document.querySelector('#theme-toggle')
-      themeToggle.src = currentTheme === 'dark' ? 'assets/sun.svg' : 'assets/moon.svg'
+        const themeToggle = document.querySelector("#theme-toggle");
+        themeToggle.src =
+          currentTheme === "dark" ? "assets/sun.svg" : "assets/moon.svg";
 
-      themeToggle.addEventListener('click', () => {
-        console.log('clicked')
-        const currentTheme = document.documentElement.getAttribute('data-theme')
-        const targetTheme = currentTheme === 'dark' ? 'light' : 'dark'
+        themeToggle.addEventListener("click", () => {
+          const currentTheme =
+            document.documentElement.getAttribute("data-theme");
+          const targetTheme = currentTheme === "dark" ? "light" : "dark";
 
-        document.documentElement.setAttribute('data-theme', targetTheme)
-        localStorage.setItem('theme', targetTheme)
-      })
+          document.documentElement.setAttribute("data-theme", targetTheme);
+          localStorage.setItem("theme", targetTheme);
+          themeToggle.src =
+            targetTheme === "dark" ? "assets/sun.svg" : "assets/moon.svg";
+        });
 
-      const play = document.querySelector('#play')
-      // play sound on click
-      play.addEventListener('click', () => {
-        const audio = new Audio('assets/ogi.mp3')
-        audio.play()
-      })
+        // Audio handling
+        const play = document.querySelector("#play");
+        play.addEventListener("click", () => {
+          audio.currentTime = 0;
+          audio.play().catch((error) => {
+            console.warn("Audio playback failed:", error);
+          });
+        });
+      });
+    </script>
+    <title>Ogi</title>
+  </head>
 
-    })
-
-  </script>
-  <title>Ogi</title>
-</head>
-
-<body>
-  <div id="menu">
-    <img id="theme-toggle" src="assets/sun.svg" alt="LinkedIn" />
-  </div>
-  <div id="main">
-    <div id="hero">
-      <div id="title">
-        <h1 id="ogi">ogi</h1>
-        <div id="phonetic">
-          <img id="play" src="assets/speaker.svg" alt="Ogi" />
-          <h1>o-ghee</h1>
+  <body>
+    <nav id="menu" role="navigation" aria-label="Theme toggle">
+      <button id="theme-toggle" aria-label="Toggle dark mode">
+        <img src="assets/sun.svg" alt="Theme toggle" />
+      </button>
+    </nav>
+    <main id="main">
+      <section id="hero">
+        <div id="title">
+          <h1 id="ogi">ogi</h1>
+          <div id="phonetic">
+            <button id="play" aria-label="Play pronunciation">
+              <img src="assets/speaker.svg" alt="Speaker" />
+            </button>
+            <h1>o-ghee</h1>
+          </div>
         </div>
-      </div>
-      <h2>software engineer @ <a id="sentry" href="https://sentry.io" target="_blank"
-          rel="noopener noreferrer">sentry.io</a></h2>
-      <div id="icons">
-        <!-- Linkedin -->
-        <a id="linkedin" href="https://linkedin.com/in/obostjancic/" target="_blank" rel="noopener noreferrer">
-          <img src="assets/linkedin.svg" alt="LinkedIn" />
-        </a>
-        <!-- github -->
-        <a id="github" href="https://github.com/obostjancic" target="_blank" rel="noopener noreferrer">
-          <img src="assets/github.svg" alt="GitHub" />
-        </a>
-        <!-- email -->
-        <a id="email" href="mailto:ognjen.bostjancic@gmail.com">
-          <img src="assets/email.svg" alt="Email" />
-        </a>
-        <!-- resume -->
-        <a id="resume" href="./ogi.pdf" target="_blank" rel="noopener noreferrer">
-          <img src="assets/resume.svg" alt="Resume" />
-        </a>
-        <!-- bento -->
-        <a id="bento" href="https://bento.me/obostjancic" target="_blank" rel="noopener noreferrer">
-          <img src="assets/bento.svg" alt="Bento" />
-      </div>
-    </div>
-  </div>
-</body>
-
+        <h2>
+          software engineer @
+          <a
+            id="sentry"
+            href="https://sentry.io"
+            target="_blank"
+            rel="noopener noreferrer"
+            >sentry.io</a
+          >
+        </h2>
+        <div id="icons" role="list">
+          <a
+            id="linkedin"
+            href="https://linkedin.com/in/obostjancic/"
+            target="_blank"
+            rel="noopener noreferrer"
+            role="listitem"
+          >
+            <img src="assets/linkedin.svg" alt="LinkedIn" />
+          </a>
+          <a
+            id="github"
+            href="https://github.com/obostjancic"
+            target="_blank"
+            rel="noopener noreferrer"
+            role="listitem"
+          >
+            <img src="assets/github.svg" alt="GitHub" />
+          </a>
+          <a
+            id="email"
+            href="mailto:ognjen.bostjancic@gmail.com"
+            role="listitem"
+          >
+            <img src="assets/email.svg" alt="Email" />
+          </a>
+          <a
+            id="resume"
+            href="./ogi.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            role="listitem"
+          >
+            <img src="assets/resume.svg" alt="Resume" />
+          </a>
+          <a
+            id="bento"
+            href="https://bento.me/obostjancic"
+            target="_blank"
+            rel="noopener noreferrer"
+            role="listitem"
+          >
+            <img src="assets/bento.svg" alt="Bento" />
+          </a>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>

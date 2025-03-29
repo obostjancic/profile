@@ -218,7 +218,6 @@ a:hover {
   text-align: center;
   padding: var(--spacing-lg);
   border-radius: var(--border-radius-lg);
-  box-shadow: var(--shadow-sm);
 }
 
 #title {
@@ -375,7 +374,6 @@ a:hover {
   background-color: var(--color-background);
   z-index: var(--z-menu);
   transition: var(--transition-all);
-  box-shadow: var(--shadow-sm);
 }
 
 #menu button {

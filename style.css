@@ -89,14 +89,15 @@ body {
   background-color: var(--color-background);
   font-family: "BioRhyme", serif;
   line-height: 1.5;
-  transition: background-color var(--transition-duration),
-    color var(--transition-duration);
+  transition: background-color var(--transition-duration)
+      var(--transition-timing),
+    color var(--transition-duration) var(--transition-timing);
 }
 
 img {
   filter: invert(0%) sepia(13%) saturate(4428%) hue-rotate(222deg)
     brightness(87%) contrast(88%);
-  transition: filter var(--transition-duration);
+  transition: filter var(--transition-duration) var(--transition-timing);
 }
 
 [data-theme="dark"] img {
@@ -401,7 +402,8 @@ a:hover {
   justify-content: flex-end;
   background-color: var(--color-background);
   z-index: var(--z-menu);
-  transition: var(--transition-all);
+  transition: background-color var(--transition-duration)
+    var(--transition-timing);
 }
 
 @media (max-width: 768px) {

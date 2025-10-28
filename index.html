@@ -60,6 +60,9 @@
     <!-- Load styles -->
     <link rel="stylesheet" type="text/css" href="style.css" />
 
+    <!-- Load Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+
     <!-- Set theme before page load -->
     <script>
       (function () {
@@ -128,12 +131,12 @@
           });
         });
 
-        const thoughtsBtn = document.querySelector("#thoughts-btn");
+        const scribbleBtn = document.querySelector("#scribble-btn");
         const microBlog = document.querySelector("#micro-blog");
         const closeBlog = document.querySelector("#close-blog");
         const hero = document.querySelector("#hero");
 
-        thoughtsBtn.addEventListener("click", () => {
+        scribbleBtn.addEventListener("click", () => {
           hero.classList.add("blog-active");
           setTimeout(() => {
             hero.classList.add("hide-content");
@@ -147,6 +150,103 @@
             hero.classList.remove("hide-content");
             setTimeout(() => hero.classList.remove("blog-active"), 10);
           }, 200);
+        });
+
+        // Tooltip setup
+        const tooltip = document.querySelector("#tooltip");
+        const tooltipContent = tooltip.querySelector(".tooltip-content");
+        const buttonsWithTooltips = document.querySelectorAll("[data-tooltip]");
+
+        let popperInstance = null;
+        let currentButton = null;
+        let showTimeout = null;
+
+        const showTooltip = (button) => {
+          tooltipContent.textContent = button.getAttribute("data-tooltip");
+
+          // If switching to a different button, destroy and recreate
+          if (popperInstance && currentButton !== button) {
+            popperInstance.destroy();
+            popperInstance = null;
+          }
+
+          if (!popperInstance) {
+            popperInstance = Popper.createPopper(button, tooltip, {
+              placement: "top",
+              modifiers: [
+                {
+                  name: "offset",
+                  options: {
+                    offset: [0, 8],
+                  },
+                },
+                {
+                  name: "eventListeners",
+                  enabled: false,
+                },
+              ],
+            });
+            currentButton = button;
+          }
+
+          // Make the tooltip visible
+          tooltip.setAttribute("data-show", "");
+
+          // Enable the event listeners
+          popperInstance.setOptions((options) => ({
+            ...options,
+            modifiers: [
+              ...options.modifiers,
+              { name: "eventListeners", enabled: true },
+            ],
+          }));
+
+          // Update position
+          popperInstance.update();
+        };
+
+        const hideTooltip = () => {
+          // Clear the show timeout if tooltip hasn't appeared yet
+          if (showTimeout) {
+            clearTimeout(showTimeout);
+            showTimeout = null;
+          }
+
+          // Hide the tooltip
+          tooltip.removeAttribute("data-show");
+
+          // Disable the event listeners
+          if (popperInstance) {
+            popperInstance.setOptions((options) => ({
+              ...options,
+              modifiers: [
+                ...options.modifiers,
+                { name: "eventListeners", enabled: false },
+              ],
+            }));
+          }
+        };
+
+        const showTooltipDelayed = (button) => {
+          // Clear any existing timeout
+          if (showTimeout) {
+            clearTimeout(showTimeout);
+          }
+
+          // Set a delay before showing
+          showTimeout = setTimeout(() => {
+            showTooltip(button);
+            showTimeout = null;
+          }, 300);
+        };
+
+        buttonsWithTooltips.forEach((button) => {
+          button.addEventListener("mouseenter", () =>
+            showTooltipDelayed(button),
+          );
+          button.addEventListener("mouseleave", hideTooltip);
+          button.addEventListener("focus", () => showTooltipDelayed(button));
+          button.addEventListener("blur", hideTooltip);
         });
       });
     </script>
@@ -190,6 +290,7 @@
             rel="noopener noreferrer"
             role="listitem"
             aria-label="LinkedIn (opens in new tab)"
+            data-tooltip="LinkedIn"
           >
             <img src="assets/linkedin.svg" alt="LinkedIn" loading="lazy" />
           </a>
@@ -200,6 +301,7 @@
             rel="noopener noreferrer"
             role="listitem"
             aria-label="GitHub (opens in new tab)"
+            data-tooltip="GitHub"
           >
             <img src="assets/github.svg" alt="GitHub" loading="lazy" />
           </a>
@@ -208,6 +310,7 @@
             href="mailto:ognjen.bostjancic@gmail.com"
             role="listitem"
             aria-label="Copy email address"
+            data-tooltip="Email"
           >
             <img src="assets/email.svg" alt="Email" loading="lazy" />
           </a>
@@ -218,6 +321,7 @@
             rel="noopener noreferrer"
             role="listitem"
             aria-label="Resume (opens in new tab)"
+            data-tooltip="Resume"
           >
             <img src="assets/resume.svg" alt="Resume" loading="lazy" />
           </a>
@@ -228,27 +332,39 @@
             rel="noopener noreferrer"
             role="listitem"
             aria-label="Bento profile (opens in new tab)"
+            data-tooltip="Bento"
           >
             <img src="assets/bento.svg" alt="Bento" loading="lazy" />
           </a>
         </div>
         <div id="buttons">
-          <button id="thoughts-btn" aria-label="Thoughts">thoughts</button>
+          <button
+            id="scribble-btn"
+            aria-label="Scribbles"
+            data-tooltip="Read my micro blog"
+          >
+            scribbles
+          </button>
           <a
             id="zentrio-btn"
             href="https://zentrio.ai"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Zentrio (opens in new tab)"
+            data-tooltip="Visit Zentrio AI"
             ><img src="assets/zentrio.svg" alt="Z" class="zentrio-logo" /><span
               class="zentrio-text"
               >entrio</span
             ></a
           >
         </div>
+        <div id="tooltip" role="tooltip" class="tooltip">
+          <div class="tooltip-content"></div>
+          <div class="tooltip-arrow" data-popper-arrow></div>
+        </div>
         <div id="micro-blog" class="hidden">
           <div class="blog-header">
-            <h3>thoughts</h3>
+            <h3>scribbles</h3>
             <button id="close-blog" aria-label="Back to profile">back</button>
           </div>
           <div class="blog-posts">

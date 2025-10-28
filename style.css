@@ -2,11 +2,11 @@
   /* Colors */
   --color-text: #0f0f0f;
   --color-background: #fafafa;
-  --color-highlight: #00a0dc;
-  --color-highlight-dark: #0077b2;
+  --color-highlight: #2c92c3;
+  --color-highlight-dark: #167cc0;
   --color-sentry: #352d56;
   --color-text-muted: #666666;
-  --color-border: rgba(0, 0, 0, 0.1);
+  --color-border: rgba(0, 0, 0, 0.2);
   --color-interactive: var(--color-highlight);
 
   /* Spacing */
@@ -147,8 +147,11 @@ button {
 
 /* Link styles */
 a {
-  text-decoration: none;
+  text-decoration: underline;
   color: var(--color-text);
+  text-underline-offset: 2px;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 1px;
 }
 
 a:hover {
@@ -362,6 +365,10 @@ a:hover {
   letter-spacing: var(--letter-spacing-wide);
 }
 
+#hero h2 > a {
+  text-underline-offset: 5px;
+}
+
 #icons {
   display: flex;
   justify-content: center;
@@ -473,22 +480,10 @@ a:hover {
 }
 
 #zentrio-btn:hover {
-  background:
-    linear-gradient(var(--color-background), var(--color-background))
-      padding-box,
-    linear-gradient(
-        135deg,
-        #c0ff84 0%,
-        #94e19b 12%,
-        #5cbbba 28%,
-        #47adc6 36%,
-        #2c92c3 50%,
-        #167cc0 65%,
-        #096fbf 79%,
-        #056bbf 100%
-      )
-      border-box;
-  border-color: transparent;
+  border-color: transparent !important;
+  box-shadow:
+    0 0 30px rgba(44, 146, 195, 0.3),
+    0 0 60px rgba(44, 146, 195, 0.15);
 }
 
 #thoughts-btn {

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -53,7 +53,7 @@
 
     <!-- Load fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@700&family=Roboto:wght@300;400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@700&family=Roboto:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
 
@@ -98,12 +98,10 @@
     </script>
 
     <script>
-      // Preload audio
       const audio = new Audio("assets/ogi.mp3");
       audio.preload = "auto";
 
       document.addEventListener("DOMContentLoaded", () => {
-        // Theme handling
         const currentTheme = localStorage.getItem("theme") || "light";
         document.documentElement.setAttribute("data-theme", currentTheme);
 
@@ -122,7 +120,6 @@
             targetTheme === "dark" ? "assets/sun.svg" : "assets/moon.svg";
         });
 
-        // Audio handling
         const play = document.querySelector("#play");
         play.addEventListener("click", () => {
           audio.currentTime = 0;
@@ -130,12 +127,34 @@
             console.warn("Audio playback failed:", error);
           });
         });
+
+        const thoughtsBtn = document.querySelector("#thoughts-btn");
+        const microBlog = document.querySelector("#micro-blog");
+        const closeBlog = document.querySelector("#close-blog");
+        const hero = document.querySelector("#hero");
+
+        thoughtsBtn.addEventListener("click", () => {
+          hero.classList.add("blog-active");
+          setTimeout(() => {
+            hero.classList.add("hide-content");
+            microBlog.classList.add("visible");
+          }, 200);
+        });
+
+        closeBlog.addEventListener("click", () => {
+          microBlog.classList.remove("visible");
+          setTimeout(() => {
+            hero.classList.remove("hide-content");
+            setTimeout(() => hero.classList.remove("blog-active"), 10);
+          }, 200);
+        });
       });
     </script>
     <title>Ogi - Software Engineer @ sentry.io</title>
   </head>
 
   <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
     <nav id="menu" role="navigation" aria-label="Theme toggle">
       <button id="theme-toggle" aria-label="Toggle dark mode">
         <img src="assets/sun.svg" alt="Theme toggle" />
@@ -146,7 +165,7 @@
         <div id="title">
           <h1 id="ogi">ogi</h1>
           <div id="phonetic">
-            <button id="play" aria-label="Play pronunciation">
+            <button id="play" aria-label="Play pronunciation" aria-busy="false">
               <img src="assets/speaker.svg" alt="Speaker" />
             </button>
             <h1>o-ghee</h1>
@@ -159,6 +178,7 @@
             href="https://sentry.io"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Sentry (opens in new tab)"
             >sentry.io</a
           >
         </h2>
@@ -169,8 +189,9 @@
             target="_blank"
             rel="noopener noreferrer"
             role="listitem"
+            aria-label="LinkedIn (opens in new tab)"
           >
-            <img src="assets/linkedin.svg" alt="LinkedIn" />
+            <img src="assets/linkedin.svg" alt="LinkedIn" loading="lazy" />
           </a>
           <a
             id="github"
@@ -178,15 +199,17 @@
             target="_blank"
             rel="noopener noreferrer"
             role="listitem"
+            aria-label="GitHub (opens in new tab)"
           >
-            <img src="assets/github.svg" alt="GitHub" />
+            <img src="assets/github.svg" alt="GitHub" loading="lazy" />
           </a>
           <a
             id="email"
             href="mailto:ognjen.bostjancic@gmail.com"
             role="listitem"
+            aria-label="Copy email address"
           >
-            <img src="assets/email.svg" alt="Email" />
+            <img src="assets/email.svg" alt="Email" loading="lazy" />
           </a>
           <a
             id="resume"
@@ -194,8 +217,9 @@
             target="_blank"
             rel="noopener noreferrer"
             role="listitem"
+            aria-label="Resume (opens in new tab)"
           >
-            <img src="assets/resume.svg" alt="Resume" />
+            <img src="assets/resume.svg" alt="Resume" loading="lazy" />
           </a>
           <a
             id="bento"
@@ -203,9 +227,59 @@
             target="_blank"
             rel="noopener noreferrer"
             role="listitem"
+            aria-label="Bento profile (opens in new tab)"
           >
-            <img src="assets/bento.svg" alt="Bento" />
+            <img src="assets/bento.svg" alt="Bento" loading="lazy" />
           </a>
+        </div>
+        <div id="buttons">
+          <button id="thoughts-btn" aria-label="Thoughts">thoughts</button>
+          <a
+            id="zentrio-btn"
+            href="https://zentrio.ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Zentrio (opens in new tab)"
+            ><img src="assets/zentrio.svg" alt="Z" class="zentrio-logo" /><span
+              class="zentrio-text"
+              >entrio</span
+            ></a
+          >
+        </div>
+        <div id="micro-blog" class="hidden">
+          <div class="blog-header">
+            <h3>thoughts</h3>
+            <button id="close-blog" aria-label="Back to profile">back</button>
+          </div>
+          <div class="blog-posts">
+            <article class="blog-post">
+              <h4>TIL: Raspberry Pi 4 can't connect to WPA3 networks</h4>
+              <time datetime="2025-10-24">Oct 24, 2025</time>
+              <p>After a few hours of running in circles with</p>
+              <pre>
+nmcli connection add type wifi con-name foobar ssid foobar</pre
+              >
+              <p>then</p>
+              <pre>
+nmcli connection modify foobar wifi-sec.key-mgmt sae
+nmcli connection modify foobar wifi-sec.psk 12345678
+nmcli connection up foobar</pre
+              >
+              <p>and endless</p>
+              <pre>sudo systemctl restart NetworkManager</pre>
+              <p>
+                I have figured out that the Raspberry Pi 4 is not compatible
+                with WPA3 networks. Ordered a compatible
+                <a
+                  href="https://www.amazon.de/dp/B09SGJRKBW?ref=ppx_yo2ov_dt_b_fed_asin_title"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >USB WiFi adapter</a
+                >
+                and that worked like a charm.
+              </p>
+            </article>
+          </div>
         </div>
       </section>
     </main>

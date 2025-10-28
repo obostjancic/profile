@@ -19,8 +19,9 @@
   /* Typography */
   --font-size-base: 1rem;
   --font-size-lg: 1.5rem;
-  --font-size-xl: 4rem;
-  --font-size-xxl: 6rem;
+  --font-size-xl: 2rem;
+  --font-size-2xl: 4rem;
+  --font-size-3xl: 6rem;
   --line-height-base: 0.7;
   --letter-spacing-wide: 0.05em;
 
@@ -37,7 +38,7 @@
   --icon-size-lg: 2.5rem;
 
   /* Transitions */
-  --transition-duration: 0.25s;
+  --transition-duration: 0.2s;
   --transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
   --transition-all: all var(--transition-duration) var(--transition-timing);
 
@@ -89,8 +90,8 @@ body {
   background-color: var(--color-background);
   font-family: "BioRhyme", serif;
   line-height: 1.5;
-  transition: background-color var(--transition-duration)
-      var(--transition-timing),
+  transition:
+    background-color var(--transition-duration) var(--transition-timing),
     color var(--transition-duration) var(--transition-timing);
 }
 
@@ -278,7 +279,7 @@ a:hover {
 
 #title #phonetic h1 {
   margin: 0.5rem 0;
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-2xl);
   line-height: var(--line-height-base);
   padding: 0.4rem;
   padding-bottom: 0.6rem;
@@ -326,7 +327,7 @@ a:hover {
 
 #title #ogi {
   margin: 0;
-  font-size: var(--font-size-xxl);
+  font-size: var(--font-size-3xl);
   line-height: var(--line-height-base);
   padding: 0.4rem;
   padding-bottom: 1rem;
@@ -393,6 +394,258 @@ a:hover {
   transition: var(--transition-all);
 }
 
+#buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+#buttons button,
+#buttons a {
+  font-family: "Roboto", sans-serif;
+  font-size: var(--font-size-base);
+  font-weight: 400;
+  line-height: 1.25;
+  padding: var(--spacing-md) var(--spacing-xl);
+  border: 1.5px solid var(--color-border);
+  border-radius: 50px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: var(--transition-all);
+  opacity: 0.8;
+  letter-spacing: var(--letter-spacing-wide);
+  text-decoration: none;
+}
+
+#buttons button:hover,
+#buttons a:hover {
+  opacity: 1;
+  transform: none;
+  border-color: var(--color-text);
+  color: var(--color-text);
+}
+
+#buttons button:active,
+#buttons a:active {
+  transform: scale(var(--scale-active));
+}
+
+#buttons button:focus-visible,
+#buttons a:focus-visible {
+  outline: var(--focus-outline-width) solid var(--color-interactive);
+  outline-offset: var(--focus-outline-offset);
+  border-radius: var(--border-radius);
+}
+
+#buttons .zentrio-logo {
+  height: 1em;
+  width: auto;
+  display: inline-block;
+  vertical-align: baseline;
+  filter: none !important;
+  transform: translateY(0.5px);
+}
+
+#buttons a .zentrio-text {
+  font-weight: 600 !important;
+}
+
+#zentrio-btn {
+  border: 2px solid transparent;
+  background:
+    linear-gradient(var(--color-background), var(--color-background))
+      padding-box,
+    linear-gradient(
+        45deg,
+        #c0ff84 0%,
+        #94e19b 12%,
+        #5cbbba 28%,
+        #47adc6 36%,
+        #2c92c3 50%,
+        #167cc0 65%,
+        #096fbf 79%,
+        #056bbf 100%
+      )
+      border-box;
+}
+
+#zentrio-btn:hover {
+  background:
+    linear-gradient(var(--color-background), var(--color-background))
+      padding-box,
+    linear-gradient(
+        135deg,
+        #c0ff84 0%,
+        #94e19b 12%,
+        #5cbbba 28%,
+        #47adc6 36%,
+        #2c92c3 50%,
+        #167cc0 65%,
+        #096fbf 79%,
+        #056bbf 100%
+      )
+      border-box;
+  border-color: transparent;
+}
+
+#thoughts-btn {
+  color: var(--color-text-muted);
+}
+
+#thoughts-btn:hover {
+  color: var(--color-text-muted);
+}
+
+/* Micro Blog Styles */
+#micro-blog {
+  width: 100%;
+  max-width: var(--content-max-width);
+  padding: var(--spacing-xl);
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+#micro-blog.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#hero.blog-active > *:not(#micro-blog) {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+#hero.blog-active.hide-content > *:not(#micro-blog) {
+  position: absolute;
+  visibility: hidden;
+}
+
+.blog-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: var(--spacing-xl);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--color-border);
+  gap: var(--spacing-md);
+}
+
+.blog-header h3 {
+  font-family: "BioRhyme", serif;
+  font-size: var(--font-size-xl);
+  margin: 0;
+  letter-spacing: var(--letter-spacing-wide);
+  flex-grow: 1;
+  text-align: left;
+}
+
+#close-blog {
+  font-family: "Roboto", sans-serif;
+  font-size: var(--font-size-base);
+  padding: var(--spacing-sm) var(--spacing-md);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  opacity: 0.8;
+  transition: var(--transition-all);
+  border-radius: var(--border-radius);
+  color: var(--color-text-muted);
+}
+
+#close-blog:hover {
+  opacity: 1;
+}
+
+#close-blog::before {
+  content: "←";
+  font-size: 1.2rem;
+}
+
+.blog-posts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  text-align: left;
+}
+
+.blog-post {
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.blog-post:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.blog-post h4 {
+  font-family: "BioRhyme", sans-serif;
+  font-size: var(--font-size-lg);
+  margin: 0 0 var(--spacing-xs) 0;
+  letter-spacing: var(--letter-spacing-wide);
+  color: var(--color-text);
+}
+
+.blog-post time {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  display: block;
+  margin-bottom: var(--spacing-sm);
+}
+
+.blog-post p {
+  font-family: "Roboto", sans-serif;
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  margin: 0;
+  color: var(--color-text);
+}
+
+.blog-post pre {
+  background-color: rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-md);
+  margin: var(--spacing-md) 0;
+  overflow-x: auto;
+  font-family: "Courier New", monospace;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+[data-theme="dark"] .blog-post pre {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.blog-post code {
+  font-family: "Courier New", monospace;
+  font-size: 0.875rem;
+}
+
+.blog-post pre code {
+  background: none;
+  padding: 0;
+  border: none;
+}
+
+.blog-post p code {
+  background-color: rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  padding: 0.125rem 0.25rem;
+}
+
+[data-theme="dark"] .blog-post p code {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
 #menu {
   position: fixed;
   top: 0;
@@ -408,11 +661,11 @@ a:hover {
 
 @media (max-width: 768px) {
   #title #phonetic h1 {
-    font-size: calc(var(--font-size-xl) * 0.75);
+    font-size: calc(var(--font-size-2xl) * 0.75);
   }
 
   #title #ogi {
-    font-size: calc(var(--font-size-xxl) * 0.75);
+    font-size: calc(var(--font-size-3xl) * 0.75);
   }
 
   #hero h2 {
@@ -446,5 +699,80 @@ a:hover {
   #menu button:hover,
   #title #phonetic button:hover {
     transform: none !important;
+  }
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-interactive);
+  color: white;
+  padding: 8px;
+  z-index: 100;
+  transition: top 0.25s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Improve focus indicators */
+:focus-visible {
+  outline: 2px solid var(--color-interactive);
+  outline-offset: 2px;
+  border-radius: var(--border-radius);
+}
+
+/* Improve color contrast for better accessibility */
+[data-theme="dark"] {
+  --color-text: #ffffff;
+  --color-background: #121212;
+  --color-text-muted: #b0b0b0;
+  --color-border: rgba(255, 255, 255, 0.1);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+/* Add loading animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+[aria-busy="true"] img {
+  animation: spin 1s linear infinite;
+}
+
+/* Improve hover and focus states for interactive elements */
+button:hover,
+a:hover {
+  opacity: var(--interactive-opacity-hover);
+  transform: translateY(var(--interactive-translate));
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-interactive);
+  outline-offset: 2px;
+  border-radius: var(--border-radius);
+}
+
+/* Add reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .skip-link {
+    transition: none;
+  }
+
+  [aria-busy="true"] img {
+    animation: none;
   }
 }

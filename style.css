@@ -445,7 +445,7 @@ a:hover {
   border-radius: var(--border-radius);
 }
 
-#buttons .zentrio-logo {
+#buttons .railnote-logo {
   height: 1rem;
   width: auto;
   display: inline-block;
@@ -454,30 +454,20 @@ a:hover {
   transform: translateY(0.5px);
 }
 
-#buttons a .zentrio-text {
+#buttons a .railnote-text {
   font-weight: 600 !important;
 }
 
-#zentrio-btn {
+#railnote-btn {
   border: 2px solid transparent;
+
   background:
     linear-gradient(var(--color-background), var(--color-background))
       padding-box,
-    linear-gradient(
-        45deg,
-        #c0ff84 0%,
-        #94e19b 12%,
-        #5cbbba 28%,
-        #47adc6 36%,
-        #2c92c3 50%,
-        #167cc0 65%,
-        #096fbf 79%,
-        #056bbf 100%
-      )
-      border-box;
+    linear-gradient(135deg, #14b8a6 0%, #0d9488 40%, #ffad1f 100%) border-box;
 }
 
-#zentrio-btn:hover {
+#railnote-btn:hover {
   border-color: transparent !important;
   box-shadow:
     0 0 30px rgba(44, 146, 195, 0.3),

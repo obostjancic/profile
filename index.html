@@ -7,7 +7,7 @@
     <meta name="description" content="Software engineer @ Sentry" />
     <meta
       name="keywords"
-      content="ogi, ognjen, bostjancic, bostjančić, zentrio, zentrio ai, ai startup, software engineer, sentry, web developer, react, typescript, node, python, tech entrepreneur, vienna developer, sentry engineer, ai tools"
+      content="ogi, ognjen, bostjancic, bostjančić, railnote, railnote ai, ai startup, software engineer, sentry, web developer, react, typescript, node, python, tech entrepreneur, vienna developer, sentry engineer, ai tools"
     />
     <meta name="author" content="Ognjen Bostjancic" />
     <meta property="og:title" content="Ogi - Software Engineer @ sentry.io" />
@@ -94,9 +94,9 @@
         },
         "founder": {
           "@type": "Organization",
-          "name": "Zentrio AI",
-          "url": "https://zentrio.ai",
-          "description": "Innovative AI solutions and tools"
+          "name": "Railnote",
+          "url": "https://railnote.io",
+          "description": "Productivity tools"
         },
         "description": "Software engineer at Sentry. Building innovative AI solutions and developer tools.",
         "knowsAbout": [
@@ -363,15 +363,15 @@
             scribbles
           </button>
           <a
-            id="zentrio-btn"
-            href="https://zentrio.ai"
+            id="railnote-btn"
+            href="https://railnote.io"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Zentrio (opens in new tab)"
+            aria-label="Railnote (opens in new tab)"
             data-tooltip="Your AI powered workspace"
-            ><img src="assets/zentrio.svg" alt="Z" class="zentrio-logo" /><span
-              class="zentrio-text"
-              >entrio</span
+            ><img src="assets/railnote.svg" alt="Z" class="railnote-logo" /><span
+              class="railnote-text"
+              >ailnote</span
             ></a
           >
         </div>
@@ -385,6 +385,23 @@
             <button id="close-blog" aria-label="Back to profile">back</button>
           </div>
           <div class="blog-posts">
+            <article class="blog-post">
+              <h4>Underrated: Cloudflare tunnels</h4>
+              <time datetime="2025-11-03">Nov 3, 2025</time>
+              <p>If you wanted to expose a node server running on port 3000 on a raspberry pi you would have to to a domain foo.bar that you own you would have to:</p>
+              <ol>
+                <li>Set the static IP address of the raspberry pi and configure it to use the static IP address</li>
+                <li>Configure the router in which the Raspberry Pi is connected to forward external requests on a chosen port (e.g. 80 or 443) to the Raspberry Pi’s internal IP and port 3000 (port forwarding)</li>
+                <li>Reserve or create a DNS A record for foo.bar (or a subdomain like pi.foo.bar) and point it to your router’s public IP address</li>
+                <li>If your ISP assigns a dynamic public IP, set up Dynamic DNS (DDNS) so the domain always resolves to the current public IP, or obtain a static public IP from your ISP</li>
+                <li>Obtain and install an SSL/TLS certificate (for example via Let’s Encrypt) for foo.bar so HTTPS connections are secure, and configure your server or a reverse proxy (nginx, Caddy) on the Raspberry Pi to use it</li
+              </ol>
+              <p> or you could set up a cloudflare tunnel by running </p>
+              <pre>brew install cloudflared</pre>
+              <pre>cloudflared tunnel create foobar</pre>
+              <pre>cloudflared tunnel route dns foobar foo.bar</pre>
+              <p>and that's it</p>
+            </article>
             <article class="blog-post">
               <h4>TIL: Raspberry Pi 4 can't connect to WPA3 networks</h4>
               <time datetime="2025-10-24">Oct 24, 2025</time>
@@ -412,13 +429,10 @@ nmcli connection up foobar</pre
                 and that worked like a charm.
               </p>
             </article>
+
           </div>
         </div>
       </section>
     </main>
-    <script
-      async
-      src="https://scripts.simpleanalyticscdn.com/latest.js"
-    ></script>
   </body>
 </html>

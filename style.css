@@ -474,14 +474,6 @@ a:hover {
     0 0 60px rgba(44, 146, 195, 0.15);
 }
 
-#scribble-btn {
-  color: var(--color-text-muted);
-}
-
-#scribble-btn:hover {
-  color: var(--color-text-muted);
-}
-
 /* Tooltip styles */
 .tooltip {
   position: absolute;
@@ -549,164 +541,11 @@ a:hover {
   left: -4px;
 }
 
-/* Micro Blog Styles */
-#micro-blog {
-  width: 100%;
-  max-width: var(--content-max-width);
-  padding: var(--spacing-xl);
-  position: absolute;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-  pointer-events: none;
-}
-
-#micro-blog.visible {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-#hero.blog-active > *:not(#micro-blog) {
-  opacity: 0;
-  transition: opacity 0.2s ease;
-  pointer-events: none;
-}
-
-#hero.blog-active.hide-content > *:not(#micro-blog) {
-  position: absolute;
-  visibility: hidden;
-}
-
-.blog-header {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-bottom: var(--spacing-xl);
-  padding-bottom: var(--spacing-md);
-  border-bottom: 1px solid var(--color-border);
-  gap: var(--spacing-md);
-}
-
-.blog-header h3 {
-  font-family: "BioRhyme", serif;
-  font-size: var(--font-size-xl);
-  margin: 0;
-  letter-spacing: var(--letter-spacing-wide);
-  flex-grow: 1;
-  text-align: left;
-}
-
-#close-blog {
-  font-family: "Roboto", sans-serif;
-  font-size: var(--font-size-base);
-  padding: var(--spacing-sm) var(--spacing-md);
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-xs);
-  opacity: 0.8;
-  transition: var(--transition-all);
-  border-radius: var(--border-radius);
-  color: var(--color-text-muted);
-}
-
-#close-blog:hover {
-  opacity: 1;
-}
-
-#close-blog::before {
-  content: "←";
-  font-size: 1.2rem;
-}
-
-.blog-posts {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-xl);
-  text-align: left;
-}
-
-.blog-post {
-  padding-bottom: var(--spacing-lg);
-  border-bottom: 1px solid var(--color-border);
-}
-
-.blog-post:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.blog-post h4 {
-  font-family: "BioRhyme", sans-serif;
-  font-size: var(--font-size-lg);
-  margin: 0 0 var(--spacing-xs) 0;
-  letter-spacing: var(--letter-spacing-wide);
-  color: var(--color-text);
-}
-
-.blog-post time {
-  font-family: "Roboto", sans-serif;
-  font-size: 0.875rem;
-  color: var(--color-text-muted);
-  display: block;
-  margin-bottom: var(--spacing-sm);
-}
-
-.blog-post p {
-  font-family: "Roboto", sans-serif;
-  font-size: var(--font-size-base);
-  line-height: 1.6;
-  margin: 0;
-  color: var(--color-text);
-}
-
-.blog-post pre {
-  background-color: rgba(0, 0, 0, 0.05);
-  border: 1px solid var(--color-border);
-  border-radius: var(--border-radius);
-  padding: var(--spacing-md);
-  margin: var(--spacing-md) 0;
-  overflow-x: auto;
-  font-family: "Courier New", monospace;
-  font-size: 0.875rem;
-  line-height: 1.5;
-}
-
-[data-theme="dark"] .blog-post pre {
-  background-color: rgba(255, 255, 255, 0.05);
-}
-
-.blog-post code {
-  font-family: "Courier New", monospace;
-  font-size: 0.875rem;
-}
-
-.blog-post pre code {
-  background: none;
-  padding: 0;
-  border: none;
-}
-
-.blog-post p code {
-  background-color: rgba(0, 0, 0, 0.05);
-  border: 1px solid var(--color-border);
-  border-radius: var(--border-radius);
-  padding: 0.125rem 0.25rem;
-}
-
-[data-theme="dark"] .blog-post p code {
-  background-color: rgba(255, 255, 255, 0.05);
-}
-
 #menu {
   position: fixed;
-  top: 0;
-  width: 100%;
-  height: var(--menu-height);
-  display: flex;
-  justify-content: flex-end;
-  background-color: var(--color-background);
+  top: var(--spacing-lg);
+  right: var(--spacing-lg);
   z-index: var(--z-menu);
-  transition: background-color var(--transition-duration)
-    var(--transition-timing);
 }
 
 @media (max-width: 768px) {

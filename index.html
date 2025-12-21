@@ -148,27 +148,6 @@
           });
         });
 
-        const scribbleBtn = document.querySelector("#scribble-btn");
-        const microBlog = document.querySelector("#micro-blog");
-        const closeBlog = document.querySelector("#close-blog");
-        const hero = document.querySelector("#hero");
-
-        scribbleBtn.addEventListener("click", () => {
-          hero.classList.add("blog-active");
-          setTimeout(() => {
-            hero.classList.add("hide-content");
-            microBlog.classList.add("visible");
-          }, 200);
-        });
-
-        closeBlog.addEventListener("click", () => {
-          microBlog.classList.remove("visible");
-          setTimeout(() => {
-            hero.classList.remove("hide-content");
-            setTimeout(() => hero.classList.remove("blog-active"), 10);
-          }, 200);
-        });
-
         // Tooltip setup
         const tooltip = document.querySelector("#tooltip");
         const tooltipContent = tooltip.querySelector(".tooltip-content");
@@ -355,82 +334,23 @@
           </a>
         </div>
         <div id="buttons">
-          <button
-            id="scribble-btn"
-            aria-label="Scribbles"
-            data-tooltip="Some short ramblings"
-          >
-            scribbles
-          </button>
           <a
             id="railnote-btn"
             href="https://railnote.io"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Railnote (opens in new tab)"
-            data-tooltip="Your AI powered workspace"
-            ><img src="assets/railnote.svg" alt="Z" class="railnote-logo" /><span
-              class="railnote-text"
-              >ailnote</span
-            ></a
+            data-tooltip="Your AI-powered workspace"
+            ><img
+              src="assets/railnote.svg"
+              alt="Z"
+              class="railnote-logo"
+            /><span class="railnote-text">ailnote</span></a
           >
         </div>
         <div id="tooltip" role="tooltip" class="tooltip">
           <div class="tooltip-content"></div>
           <div class="tooltip-arrow" data-popper-arrow></div>
-        </div>
-        <div id="micro-blog" class="hidden">
-          <div class="blog-header">
-            <h3>scribbles</h3>
-            <button id="close-blog" aria-label="Back to profile">back</button>
-          </div>
-          <div class="blog-posts">
-            <article class="blog-post">
-              <h4>Underrated: Cloudflare tunnels</h4>
-              <time datetime="2025-11-03">Nov 3, 2025</time>
-              <p>If you wanted to expose a node server running on port 3000 on a raspberry pi you would have to to a domain foo.bar that you own you would have to:</p>
-              <ol>
-                <li>Set the static IP address of the raspberry pi and configure it to use the static IP address</li>
-                <li>Configure the router in which the Raspberry Pi is connected to forward external requests on a chosen port (e.g. 80 or 443) to the Raspberry Pi’s internal IP and port 3000 (port forwarding)</li>
-                <li>Reserve or create a DNS A record for foo.bar (or a subdomain like pi.foo.bar) and point it to your router’s public IP address</li>
-                <li>If your ISP assigns a dynamic public IP, set up Dynamic DNS (DDNS) so the domain always resolves to the current public IP, or obtain a static public IP from your ISP</li>
-                <li>Obtain and install an SSL/TLS certificate (for example via Let’s Encrypt) for foo.bar so HTTPS connections are secure, and configure your server or a reverse proxy (nginx, Caddy) on the Raspberry Pi to use it</li
-              </ol>
-              <p> or you could set up a cloudflare tunnel by running </p>
-              <pre>brew install cloudflared</pre>
-              <pre>cloudflared tunnel create foobar</pre>
-              <pre>cloudflared tunnel route dns foobar foo.bar</pre>
-              <p>and that's it</p>
-            </article>
-            <article class="blog-post">
-              <h4>TIL: Raspberry Pi 4 can't connect to WPA3 networks</h4>
-              <time datetime="2025-10-24">Oct 24, 2025</time>
-              <p>After a few hours of running in circles with</p>
-              <pre>
-nmcli connection add type wifi con-name foobar ssid foobar</pre
-              >
-              <p>then</p>
-              <pre>
-nmcli connection modify foobar wifi-sec.key-mgmt sae
-nmcli connection modify foobar wifi-sec.psk 12345678
-nmcli connection up foobar</pre
-              >
-              <p>and endless</p>
-              <pre>sudo systemctl restart NetworkManager</pre>
-              <p>
-                I have figured out that the Raspberry Pi 4 is not compatible
-                with WPA3 networks. Ordered a compatible
-                <a
-                  href="https://www.amazon.de/dp/B09SGJRKBW?ref=ppx_yo2ov_dt_b_fed_asin_title"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >USB WiFi adapter</a
-                >
-                and that worked like a charm.
-              </p>
-            </article>
-
-          </div>
         </div>
       </section>
     </main>

@@ -455,12 +455,14 @@ a:hover {
 }
 
 #buttons a .railnote-text {
+  font-family: "Poppins", sans-serif;
   font-weight: 600 !important;
+  line-height: 0;
+  transform: translateX(-3px) translateY(-0.5px) skew(-2deg);
 }
 
 #railnote-btn {
   border: 2px solid transparent;
-
   background:
     linear-gradient(var(--color-background), var(--color-background))
       padding-box,

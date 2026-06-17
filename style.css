@@ -88,7 +88,7 @@
 body {
   color: var(--color-text);
   background-color: var(--color-background);
-  font-family: "BioRhyme", serif;
+  font-family: "Inter", sans-serif;
   line-height: 1.5;
   transition:
     background-color var(--transition-duration) var(--transition-timing),
@@ -283,6 +283,8 @@ a:hover {
 #title #phonetic h1 {
   margin: 0.5rem 0;
   font-size: var(--font-size-2xl);
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
   line-height: var(--line-height-base);
   padding: 0.4rem;
   padding-bottom: 0.6rem;
@@ -331,6 +333,8 @@ a:hover {
 #title #ogi {
   margin: 0;
   font-size: var(--font-size-3xl);
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
   line-height: var(--line-height-base);
   padding: 0.4rem;
   padding-bottom: 1rem;
@@ -359,7 +363,7 @@ a:hover {
 #hero h2 {
   font-size: var(--font-size-lg);
   margin: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 300;
   color: var(--color-text-muted);
   letter-spacing: var(--letter-spacing-wide);
@@ -406,7 +410,7 @@ a:hover {
   color: var(--color-text);
   padding: var(--spacing-sm) var(--spacing-md);
   border-radius: 50px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.75rem;
   z-index: 9999;
   opacity: 0;

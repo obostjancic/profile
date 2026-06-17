@@ -1,0 +1,9 @@
+defaultBranch = "main"
+deploy = "push"
+
+[gates]
+site = "test -f index.html && test -f style.css && test -f sitemap.xml && test -f robots.txt"
+
+[budget]
+wallClockMinutes = 20
+maxUsd = 3

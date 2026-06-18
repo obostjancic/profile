@@ -424,9 +424,7 @@ a:hover {
   pointer-events: none;
   transition:
     color var(--transition-duration) var(--transition-timing),
-    opacity var(--transition-duration) var(--transition-timing),
-    transform var(--transition-duration) var(--transition-timing),
-    left var(--transition-duration) var(--transition-timing);
+    opacity var(--transition-duration) var(--transition-timing);
   opacity: 0;
   transform: translateX(-50%);
 }
@@ -434,7 +432,6 @@ a:hover {
 #icon-status[data-active="true"] {
   color: var(--color-text);
   opacity: 1;
-  transform: translateX(-50%) translateY(-1px);
 }
 
 #menu {

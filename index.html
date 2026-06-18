@@ -114,28 +114,6 @@
         const currentTheme = localStorage.getItem("theme") || "light";
         document.documentElement.setAttribute("data-theme", currentTheme);
 
-        const logConsoleEasterEgg = () => {
-          const accent = currentTheme === "dark" ? "#7dd3fc" : "#167cc0";
-          const muted = currentTheme === "dark" ? "#a0a0a0" : "#666666";
-          const background = currentTheme === "dark" ? "#0f0f0f" : "#fafafa";
-
-          console.log(
-            "%cogi%c — software engineer @ sentry.io",
-            `color: ${accent}; font: 700 24px 'Space Grotesk', sans-serif;`,
-            `color: ${muted}; font: 500 14px 'Instrument Sans', sans-serif;`
-          );
-          console.log(
-            "%cThanks for popping open the console. You clearly know where the good stuff lives.",
-            `color: ${background}; background: ${accent}; padding: 6px 10px; border-radius: 6px; font: 500 12px 'Instrument Sans', sans-serif;`
-          );
-          console.log(
-            "%cP.S. Say hi: ognjen.bostjancic@gmail.com",
-            `color: ${muted}; font: 12px 'Instrument Sans', sans-serif;`
-          );
-        };
-
-        logConsoleEasterEgg();
-
         const themeToggle = document.querySelector("#theme-toggle");
         themeToggle.src =
           currentTheme === "dark" ? "assets/sun.svg" : "assets/moon.svg";

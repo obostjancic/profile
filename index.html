@@ -138,8 +138,7 @@
         });
 
         const iconStatus = document.querySelector("#icon-status");
-        const defaultIconStatus = iconStatus.textContent;
-        const buttonsWithLabels = document.querySelectorAll("[data-tooltip]");
+        const buttonsWithLabels = document.querySelectorAll("#icons [data-tooltip]");
 
         const showIconStatus = (button) => {
           iconStatus.textContent = button.getAttribute("data-tooltip");
@@ -147,7 +146,7 @@
         };
 
         const resetIconStatus = () => {
-          iconStatus.textContent = defaultIconStatus;
+          iconStatus.textContent = "";
           iconStatus.removeAttribute("data-active");
         };
 
@@ -235,7 +234,7 @@
             <img src="assets/resume.svg" alt="Resume" loading="lazy" />
           </a>
         </div>
-        <p id="icon-status" aria-live="polite">LinkedIn · GitHub · Email · Resume</p>
+        <p id="icon-status" aria-live="polite"></p>
       </section>
     </main>
   </body>

@@ -390,6 +390,7 @@ a:hover {
   border-radius: var(--border-radius);
   transition: var(--transition-all);
   opacity: 0.8;
+  text-decoration: none;
 }
 
 #icons a:hover {
@@ -405,14 +406,16 @@ a:hover {
 
 #icon-status {
   min-height: 1.5rem;
-  font-size: 0.85rem;
+  margin-top: calc(var(--spacing-xs) * -1);
+  padding: 0 var(--spacing-sm);
+  font-size: 0.8rem;
   color: var(--color-text-muted);
-  letter-spacing: var(--letter-spacing-wide);
+  letter-spacing: 0.08em;
   transition:
     color var(--transition-duration) var(--transition-timing),
     opacity var(--transition-duration) var(--transition-timing),
     transform var(--transition-duration) var(--transition-timing);
-  opacity: 0.85;
+  opacity: 0;
 }
 
 #icon-status[data-active="true"] {

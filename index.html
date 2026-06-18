@@ -138,15 +138,22 @@
         });
 
         const iconStatus = document.querySelector("#icon-status");
+        const iconsArea = document.querySelector("#icons-area");
         const buttonsWithLabels = document.querySelectorAll("#icons [data-tooltip]");
 
         const showIconStatus = (button) => {
+          const buttonRect = button.getBoundingClientRect();
+          const iconsAreaRect = iconsArea.getBoundingClientRect();
+          const centerX = buttonRect.left - iconsAreaRect.left + buttonRect.width / 2;
+
           iconStatus.textContent = button.getAttribute("data-tooltip");
+          iconStatus.style.left = `${centerX}px`;
           iconStatus.setAttribute("data-active", "true");
         };
 
         const resetIconStatus = () => {
           iconStatus.textContent = "";
+          iconStatus.style.left = "50%";
           iconStatus.removeAttribute("data-active");
         };
 
@@ -190,51 +197,53 @@
             >sentry.io</a
           >
         </h2>
-        <div id="icons" role="list">
-          <a
-            id="linkedin"
-            href="https://linkedin.com/in/obostjancic/"
-            target="_blank"
-            rel="noopener noreferrer"
-            role="listitem"
-            aria-label="LinkedIn (opens in new tab)"
-            data-tooltip="LinkedIn"
-          >
-            <img src="assets/linkedin.svg" alt="LinkedIn" loading="lazy" />
-          </a>
-          <a
-            id="github"
-            href="https://github.com/obostjancic"
-            target="_blank"
-            rel="noopener noreferrer"
-            role="listitem"
-            aria-label="GitHub (opens in new tab)"
-            data-tooltip="GitHub"
-          >
-            <img src="assets/github.svg" alt="GitHub" loading="lazy" />
-          </a>
-          <a
-            id="email"
-            href="mailto:ognjen.bostjancic@gmail.com"
-            role="listitem"
-            aria-label="Copy email address"
-            data-tooltip="Email"
-          >
-            <img src="assets/email.svg" alt="Email" loading="lazy" />
-          </a>
-          <a
-            id="resume"
-            href="./ogi.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            role="listitem"
-            aria-label="Resume (opens in new tab)"
-            data-tooltip="Resume"
-          >
-            <img src="assets/resume.svg" alt="Resume" loading="lazy" />
-          </a>
+        <div id="icons-area">
+          <div id="icons" role="list">
+            <a
+              id="linkedin"
+              href="https://linkedin.com/in/obostjancic/"
+              target="_blank"
+              rel="noopener noreferrer"
+              role="listitem"
+              aria-label="LinkedIn (opens in new tab)"
+              data-tooltip="LinkedIn"
+            >
+              <img src="assets/linkedin.svg" alt="LinkedIn" loading="lazy" />
+            </a>
+            <a
+              id="github"
+              href="https://github.com/obostjancic"
+              target="_blank"
+              rel="noopener noreferrer"
+              role="listitem"
+              aria-label="GitHub (opens in new tab)"
+              data-tooltip="GitHub"
+            >
+              <img src="assets/github.svg" alt="GitHub" loading="lazy" />
+            </a>
+            <a
+              id="email"
+              href="mailto:ognjen.bostjancic@gmail.com"
+              role="listitem"
+              aria-label="Copy email address"
+              data-tooltip="Email"
+            >
+              <img src="assets/email.svg" alt="Email" loading="lazy" />
+            </a>
+            <a
+              id="resume"
+              href="./ogi.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              role="listitem"
+              aria-label="Resume (opens in new tab)"
+              data-tooltip="Resume"
+            >
+              <img src="assets/resume.svg" alt="Resume" loading="lazy" />
+            </a>
+          </div>
+          <p id="icon-status" aria-live="polite"></p>
         </div>
-        <p id="icon-status" aria-live="polite"></p>
       </section>
     </main>
   </body>

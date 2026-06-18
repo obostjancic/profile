@@ -373,6 +373,11 @@ a:hover {
   text-underline-offset: 5px;
 }
 
+#icons-area {
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+
 #icons {
   display: flex;
   justify-content: center;
@@ -405,23 +410,31 @@ a:hover {
 }
 
 #icon-status {
+  position: absolute;
+  top: calc(100% - 0.25rem);
+  left: 50%;
   min-height: 1.5rem;
-  margin-top: calc(var(--spacing-xs) * -1);
+  width: max-content;
+  max-width: 100%;
   padding: 0 var(--spacing-sm);
   font-size: 0.8rem;
   color: var(--color-text-muted);
   letter-spacing: 0.08em;
+  white-space: nowrap;
+  pointer-events: none;
   transition:
     color var(--transition-duration) var(--transition-timing),
     opacity var(--transition-duration) var(--transition-timing),
-    transform var(--transition-duration) var(--transition-timing);
+    transform var(--transition-duration) var(--transition-timing),
+    left var(--transition-duration) var(--transition-timing);
   opacity: 0;
+  transform: translateX(-50%);
 }
 
 #icon-status[data-active="true"] {
   color: var(--color-text);
   opacity: 1;
-  transform: translateY(-1px);
+  transform: translateX(-50%) translateY(-1px);
 }
 
 #menu {

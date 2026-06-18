@@ -59,9 +59,6 @@
     <!-- Load styles -->
     <link rel="stylesheet" type="text/css" href="style.css" />
 
-    <!-- Load Popper.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
-
     <!-- Set theme before page load -->
     <script>
       (function () {
@@ -140,101 +137,25 @@
           });
         });
 
-        // Tooltip setup
-        const tooltip = document.querySelector("#tooltip");
-        const tooltipContent = tooltip.querySelector(".tooltip-content");
-        const buttonsWithTooltips = document.querySelectorAll("[data-tooltip]");
+        const iconStatus = document.querySelector("#icon-status");
+        const defaultIconStatus = iconStatus.textContent;
+        const buttonsWithLabels = document.querySelectorAll("[data-tooltip]");
 
-        let popperInstance = null;
-        let currentButton = null;
-        let showTimeout = null;
-
-        const showTooltip = (button) => {
-          tooltipContent.textContent = button.getAttribute("data-tooltip");
-
-          // If switching to a different button, destroy and recreate
-          if (popperInstance && currentButton !== button) {
-            popperInstance.destroy();
-            popperInstance = null;
-          }
-
-          if (!popperInstance) {
-            popperInstance = Popper.createPopper(button, tooltip, {
-              placement: "top",
-              modifiers: [
-                {
-                  name: "offset",
-                  options: {
-                    offset: [0, 8],
-                  },
-                },
-                {
-                  name: "eventListeners",
-                  enabled: false,
-                },
-              ],
-            });
-            currentButton = button;
-          }
-
-          // Make the tooltip visible
-          tooltip.setAttribute("data-show", "");
-
-          // Enable the event listeners
-          popperInstance.setOptions((options) => ({
-            ...options,
-            modifiers: [
-              ...options.modifiers,
-              { name: "eventListeners", enabled: true },
-            ],
-          }));
-
-          // Update position
-          popperInstance.update();
+        const showIconStatus = (button) => {
+          iconStatus.textContent = button.getAttribute("data-tooltip");
+          iconStatus.setAttribute("data-active", "true");
         };
 
-        const hideTooltip = () => {
-          // Clear the show timeout if tooltip hasn't appeared yet
-          if (showTimeout) {
-            clearTimeout(showTimeout);
-            showTimeout = null;
-          }
-
-          // Hide the tooltip
-          tooltip.removeAttribute("data-show");
-
-          // Disable the event listeners
-          if (popperInstance) {
-            popperInstance.setOptions((options) => ({
-              ...options,
-              modifiers: [
-                ...options.modifiers,
-                { name: "eventListeners", enabled: false },
-              ],
-            }));
-          }
+        const resetIconStatus = () => {
+          iconStatus.textContent = defaultIconStatus;
+          iconStatus.removeAttribute("data-active");
         };
 
-        const showTooltipDelayed = (button) => {
-          // Clear any existing timeout
-          if (showTimeout) {
-            clearTimeout(showTimeout);
-          }
-
-          // Set a delay before showing
-          showTimeout = setTimeout(() => {
-            showTooltip(button);
-            showTimeout = null;
-          }, 300);
-        };
-
-        buttonsWithTooltips.forEach((button) => {
-          button.addEventListener("mouseenter", () =>
-            showTooltipDelayed(button),
-          );
-          button.addEventListener("mouseleave", hideTooltip);
-          button.addEventListener("focus", () => showTooltipDelayed(button));
-          button.addEventListener("blur", hideTooltip);
+        buttonsWithLabels.forEach((button) => {
+          button.addEventListener("mouseenter", () => showIconStatus(button));
+          button.addEventListener("mouseleave", resetIconStatus);
+          button.addEventListener("focus", () => showIconStatus(button));
+          button.addEventListener("blur", resetIconStatus);
         });
       });
     </script>
@@ -314,10 +235,7 @@
             <img src="assets/resume.svg" alt="Resume" loading="lazy" />
           </a>
         </div>
-        <div id="tooltip" role="tooltip" class="tooltip">
-          <div class="tooltip-content"></div>
-          <div class="tooltip-arrow" data-popper-arrow></div>
-        </div>
+        <p id="icon-status" aria-live="polite">LinkedIn · GitHub · Email · Resume</p>
       </section>
     </main>
   </body>

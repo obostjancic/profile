@@ -163,6 +163,37 @@
           button.addEventListener("focus", () => showIconStatus(button));
           button.addEventListener("blur", resetIconStatus);
         });
+
+        const consoleStyles = {
+          title:
+            "color: #2c92c3; font-size: 16px; font-weight: 700; font-family: 'Space Grotesk', sans-serif;",
+          accent: "color: #352d56; font-weight: 700;",
+          text: "color: #666; font-family: 'Instrument Sans', sans-serif;",
+        };
+
+        console.log("%c(•◡•) / hey, curious human", consoleStyles.title);
+        console.log(
+          "%cYou found the console easter egg.%c Try %cogi()%c for a tiny surprise.",
+          consoleStyles.text,
+          "",
+          consoleStyles.accent,
+          consoleStyles.text,
+        );
+
+        window.ogi = () => {
+          const facts = [
+            "Pronounced: o-ghee.",
+            "Current build: minimal, fast, and a little playful.",
+            "Favorite debugging strategy: reproduce, reduce, reason.",
+            "If you're reading this, you probably inspect good websites.",
+          ];
+          const fact = facts[Math.floor(Math.random() * facts.length)];
+
+          console.log("%c⚡ Ogi console unlocked", consoleStyles.title);
+          console.log(`%c${fact}`, consoleStyles.text);
+
+          return "Thanks for visiting.";
+        };
       });
     </script>
     <title>Ogi - Software Engineer @ Sentry</title>

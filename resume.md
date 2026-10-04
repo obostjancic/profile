@@ -2,7 +2,7 @@
 
 **Software Engineer**  
 Vienna, Austria  
-ognjen.bostjancic@gmail.com · linkedin.com/in/obostjancic · github.com/obostjancic · ognjenbostjancic.com
+[ognjen.bostjancic@gmail.com](mailto:ognjen.bostjancic@gmail.com) · [linkedin.com/in/obostjancic](https://linkedin.com/in/obostjancic/) · [github.com/obostjancic](https://github.com/obostjancic) · [ognjenbostjancic.com](https://ognjenbostjancic.com)
 
 Software engineer focused on observability, developer tools, and full-stack product engineering. At Sentry, I work on AI agent monitoring and debugging workflows using TypeScript, React, Python, and Django.
 

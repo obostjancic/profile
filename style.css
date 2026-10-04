@@ -411,7 +411,7 @@ a:hover {
 
 #icon-status {
   position: absolute;
-  top: calc(100% - 0.25rem);
+  top: calc(100% - 1.5rem);
   left: 50%;
   min-height: 1.5rem;
   width: max-content;

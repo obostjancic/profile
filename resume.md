@@ -48,7 +48,7 @@ Developed a REST API backend for the new student management system. I worked mos
 ### Oct 2017 - Coursework completed
 **MA of Computer Science, MSc equivalent, Faculty of Natural Sciences and Mathematics, Sarajevo**
 
-Coursework completed. Notable courses: Computer Geometry and Graphics, Computability Theory, Software Engineering, Artificial Intelligence.
+Coursework completed. Notable courses: Artificial Intelligence, Software Engineering, Computer Geometry and Graphics, Computability Theory.
 
 ### Oct 2014 - Sep 2017
 **BA of Computer Science, BSc equivalent, Faculty of Natural Sciences and Mathematics, Sarajevo**
@@ -57,8 +57,9 @@ Notable courses: Object-Oriented Programming, Data Structures, Algorithm Analysi
 
 ## Core Strengths
 
-- Observability products
 - AI agent monitoring
+- Software engineering
+- Observability products
 - Developer tooling
 - End-to-end feature delivery
 - Product-minded engineering

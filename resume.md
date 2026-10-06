@@ -2,58 +2,65 @@
 
 **Software Engineer**  
 Vienna, Austria  
-[ognjen.bostjancic@gmail.com](mailto:ognjen.bostjancic@gmail.com) · [linkedin.com/in/obostjancic](https://linkedin.com/in/obostjancic/) · [github.com/obostjancic](https://github.com/obostjancic) · [ognjenbostjancic.com](https://ognjenbostjancic.com)
+[ognjen.bostjancic@gmail.com](mailto:ognjen.bostjancic@gmail.com), [linkedin.com/in/obostjancic](https://linkedin.com/in/obostjancic/), [github.com/obostjancic](https://github.com/obostjancic), [ognjenbostjancic.com](https://ognjenbostjancic.com)
 
-Software engineer focused on observability, developer tools, and full-stack product engineering. At Sentry, I work on AI agent monitoring and debugging workflows using TypeScript, React, Python, and Django.
+Software engineer focused on observability, developer tools, and full-stack product engineering. Building AI agent monitoring and debugging workflows at Sentry using TypeScript, React, Python, and Django.
 
 ## Experience
 
-### Jan 2026 - Present
-**Senior Software Engineer II, Sentry, Vienna**
+### Sentry, Vienna
 
-Work on Sentry's Telemetry Experience team, building observability for AI agents and agent-driven systems. Own product features across backend and frontend, helping developers understand tool calls, failures, latency, and full-session behavior.
+**Senior Software Engineer II**, Jan 2026 - Present
 
-### May 2023 - Jan 2026
-**Senior Software Engineer, Sentry, Vienna**
+Building observability for AI agents and agent-driven systems on Sentry's Telemetry Experience team. Owning product features across backend and frontend that help developers understand tool calls, failures, latency, and full-session behavior.
 
-Worked on Sentry's Metrics product, along with various parts of the broader product. Shipped customer-facing, end-to-end features across backend and frontend systems using Django, React, and TypeScript.
+**Senior Software Engineer**, May 2023 - Jan 2026
 
-### Apr 2022 - May 2023
-**Freelance Software Engineer, Toptal, Remote**
+Developed features for Sentry's Metrics product and other parts of the platform. Shipped customer-facing, end-to-end features across backend and frontend systems using Django, React, and TypeScript.
 
-Delivered web application features as a freelance software engineer using Node.js, React, and TypeScript. Joined remote engineering teams and focused on shipping maintainable product features.
+### Toptal, Remote
 
-### Feb 2022 - Apr 2023
-**Software Engineer, Bitmovin GmbH, Vienna**
+**Freelance Software Engineer**, Apr 2022 - May 2023
 
-Developed and maintained multiple codebases used to orchestrate automated testing of a video player across a range of devices. Helped reduce complexity in a growing test orchestration system used across multiple device targets.
+Delivered web application features for remote engineering teams using Node.js, React, and TypeScript. Focused on shipping maintainable product features.
 
-### Feb 2020 - Feb 2022
-**Web Developer, Anyline GmbH, Vienna**
+### Bitmovin GmbH, Vienna
 
-Took ownership of an internal IDE used to develop OCR products. Also worked on multiple microservices inside the cloud-based ecosystem, along with their frontend clients.
+**Software Engineer**, Feb 2022 - Apr 2023
 
-### May 2018 - Jan 2020
-**Backend Web Developer, Workflow EDV, Vienna**
+Developed and maintained codebases for automated video player testing across multiple device targets. Helped reduce complexity in the test orchestration system.
 
-Starting out as an intern, I transitioned into a developer position. I developed a new REST API as part of the existing codebase using the Spring framework.
+### Anyline GmbH, Vienna
 
-### May 2017 - Apr 2018
-**Web Developer, Part Time, IT Services of University of Sarajevo, Sarajevo**
+**Web Developer**, Feb 2020 - Feb 2022
 
-Developed a REST API backend for the new student management system. I worked mostly with Java and Spring.
+Owned an internal IDE for developing OCR products. Worked on microservices and their frontend clients within a cloud-based ecosystem.
+
+### Workflow EDV, Vienna
+
+**Backend Web Developer**, May 2018 - Jan 2020
+
+Progressed from intern to developer. Developed a new REST API within the existing codebase using Spring.
+
+### IT Services of University of Sarajevo, Sarajevo
+
+**Web Developer, Part Time**, May 2017 - Apr 2018
+
+Developed a REST API backend for a new student management system using Java and Spring.
 
 ## Education
 
-### Oct 2017 - Coursework completed
-**MA of Computer Science, MSc equivalent, Faculty of Natural Sciences and Mathematics, Sarajevo**
+### Faculty of Natural Sciences and Mathematics, Sarajevo
+
+**MA of Computer Science, MSc equivalent**, Oct 2017 - Coursework completed
 
 Coursework completed. Notable courses: Artificial Intelligence, Software Engineering, Computer Geometry and Graphics, Computability Theory.
 
-### Oct 2014 - Sep 2017
-**BA of Computer Science, BSc equivalent, Faculty of Natural Sciences and Mathematics, Sarajevo**
+### Faculty of Natural Sciences and Mathematics, Sarajevo
 
-Notable courses: Object-Oriented Programming, Data Structures, Algorithm Analysis, Computer Networking, Probability Theory.
+**BA of Computer Science, BSc equivalent**, Oct 2014 - Sep 2017
+
+Notable courses: Algorithm Analysis, Data Structures, Object-Oriented Programming, Computer Networking, Probability Theory.
 
 ## Core Strengths
 
@@ -93,4 +100,4 @@ Notable courses: Object-Oriented Programming, Data Structures, Algorithm Analysi
 
 ### Kolorkross
 
-A VS Code extension that allows you to organize and access your projects in a color-coded way.
+VS Code extension for organizing and accessing projects by color.
